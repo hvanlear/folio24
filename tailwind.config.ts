@@ -12,7 +12,15 @@ module.exports = {
   content: ["./src/**/*.{ts,tsx}"],
   darkMode: "class",
   theme: {
-    // rest of the code
+    extend: {
+      padding: {
+        "96": "24rem",
+        "120": "30rem",
+      },
+      fontSize: {
+        "10xl": "10rem",
+      },
+    },
   },
   plugins: [
     addVariablesForColors,
@@ -51,4 +59,3 @@ function addVariablesForColors({ addBase, theme }: any) {
     ":root": newVars,
   });
 }
-
