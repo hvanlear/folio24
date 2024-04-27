@@ -1,5 +1,12 @@
 import Image from "next/image";
+import GridHero from "../components/GridHero";
+import Ticker from "../components/ui/Ticker";
 
 export default function Home() {
-  return <h1 className="text-3xl font-bold underline">Toola</h1>;
+  return (
+    <>
+      <GridHero />
+      <Ticker />
+    </>
+  );
 }
