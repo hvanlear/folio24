@@ -2,6 +2,7 @@
 
 import { animate } from "framer-motion";
 import { useEffect } from "react";
+import Button from "./ui/Button";
 
 export default function GridSmallBackgroundDemo() {
   useEffect(() => {
@@ -29,7 +30,7 @@ export default function GridSmallBackgroundDemo() {
             className="text-black text-3xl"
             style={{ opacity: 0, scale: 1, filter: "blur(20px)" }}
           >
-            Welcome to 🖖
+            Welcome 🖖
           </h3>
         </div>
 
@@ -45,6 +46,7 @@ export default function GridSmallBackgroundDemo() {
         >
           Modern Technology Solutions
         </h2>
+        <Button variant="lit" text="Say Hello!" />
       </div>
     </div>
   );
