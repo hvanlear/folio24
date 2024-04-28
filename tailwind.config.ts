@@ -20,6 +20,9 @@ module.exports = {
       fontSize: {
         "10xl": "10rem",
       },
+      fontFamily: {
+        serif: ["Georgia", "Cambria", '"Times New Roman"', "Times", "serif"],
+      },
     },
   },
   plugins: [
