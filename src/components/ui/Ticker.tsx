@@ -27,8 +27,8 @@ export default function Ticker({ tickerClass }: TickerProps) {
       scale: 1,
       filter: "blur(0px)",
       transition: {
-        delay: i * 0.2,
-        duration: 0.2,
+        delay: i * 0.1,
+        duration: 0.1,
       },
     }),
   };
