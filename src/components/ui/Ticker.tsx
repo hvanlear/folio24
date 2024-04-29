@@ -14,7 +14,7 @@ export default function Ticker() {
       {ticketGroup.map((str, index) => (
         <p
           id="ticker"
-          className="text-4xl sm:text-7xl px-5 py-4 text-black font-serif font-light"
+          className="text-ticker-clamp px-5 py-4 text-black font-serif font-light"
           key={index}
         >
           {str}
