@@ -1,6 +1,7 @@
 import GridHero from "./GridHero";
 import Button from "../ui/Button";
 import Ticker from "../ui/Ticker";
+import ContactForm from "./ContactForm";
 
 import { animationStyles } from "../../utils/styleHelpers";
 import { animate } from "framer-motion";
@@ -16,8 +17,10 @@ export default function Home() {
         style={initialFadeIn}
       >
         <Button id="hero-button" variant="lit" text="Say Hello!" />
-        <span className="text-black ">More Coming Soon</span>
+        <span className="text-black ">More b Soon</span>
       </div>
+      <p>help</p>
+      <ContactForm />
     </>
   );
 }
