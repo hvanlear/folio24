@@ -3,6 +3,7 @@
 import { animate } from "framer-motion";
 import { animationStyles } from "../../utils/styleHelpers";
 import { useEffect } from "react";
+import { Rocket } from "../assets/Rocket";
 import Button from "../ui/Button";
 import Ticker from "../ui/Ticker";
 
@@ -58,8 +59,11 @@ export default function GridHero() {
         className="button-container-hero flex flex-col sm:flex-row gap-8 items-center justify-center mt-16 row-start-6"
         style={initialFadeIn}
       >
-        <Button id="hero-button" variant="lit" text="Say Hello!" />
-        <span className="text-black ">More Coming Soon</span>
+        {/* <Button id="hero-button" variant="lit" text="Say Hello!" /> */}
+        <div className="text-1xl flex flex-row items-center gap-2">
+          <span className="text-black ">More Coming Soon</span>
+          <Rocket />
+        </div>
       </div>
     </div>
   );
