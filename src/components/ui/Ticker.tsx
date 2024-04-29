@@ -22,7 +22,7 @@ export default function Ticker({ tickerClass }: TickerProps) {
 
   const variants = {
     hidden: { opacity: 0, scale: 0, filter: "blur(10px)" },
-    visible: (i) => ({
+    visible: (i: number) => ({
       opacity: 1,
       scale: 1,
       filter: "blur(0px)",
