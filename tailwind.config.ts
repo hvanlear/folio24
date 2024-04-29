@@ -23,6 +23,9 @@ module.exports = {
       fontFamily: {
         serif: ["Georgia", "Cambria", '"Times New Roman"', "Times", "serif"],
       },
+      lineHeight: {
+        none: "0.7",
+      },
     },
   },
   plugins: [

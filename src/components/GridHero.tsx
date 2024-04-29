@@ -13,7 +13,7 @@ export default function GridHere() {
 
     document
       .querySelectorAll(
-        "#hero h3,#byline, #hero h1, #hero h2, .button-container-hero"
+        "#hero h3,.byline-container, #hero h1, #hero h2, .button-container-hero"
       )
       .forEach((item, i) => {
         animate(
@@ -25,10 +25,10 @@ export default function GridHere() {
   }, []);
 
   return (
-    <div className="h-[50rem] w-full dark:bg-black bg-white  dark:bg-grid-small-white/[0.2] bg-grid-small-black/[0.2] relative flex items-center justify-start pl-11">
+    <div className="h-[90vh] w-full dark:bg-black bg-white  dark:bg-grid-small-white/[0.2] bg-grid-small-black/[0.2] relative flex items-center justify-center ">
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-      <div id="hero" className="space-y-4  flex-col">
-        <div className="">
+      <div id="hero" className=" w-full grid  justify-center ">
+        <div className="mb-5">
           <h3
             className="text-black text-3xl leading-snug"
             style={initialFadeIn}
@@ -38,24 +38,22 @@ export default function GridHere() {
         </div>
 
         <h1
-          className="leading-none sm:text-10xl font-bold relative z-20 text-black "
+          className="leading-none text-10xl font-bold relative z-20 text-black "
           style={initialFadeIn}
         >
           Toola
         </h1>
-        <h2
-          id="byline"
-          className="text-black text-3xl leading-snug"
-          style={initialFadeIn}
-        >
-          Modern Technology Solutions
-        </h2>
+        <div className="byline-container mt-5 ml-8" style={initialFadeIn}>
+          <h2 id="byline" className="text-black text-3xl leading-snug ">
+            Modern Technology Solutions
+          </h2>
+        </div>
         <div
-          className="button-container-hero flex flex-row gap-4 items-center"
+          className="button-container-hero flex flex-row gap-8 items-center justify-center mt-16"
           style={initialFadeIn}
         >
           <Button id="hero-button" variant="lit" text="Say Hello!" />
-          <span className="text-black">More Coming Soon</span>
+          <span className="text-black ">More Coming Soon</span>
         </div>
       </div>
     </div>
