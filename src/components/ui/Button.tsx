@@ -1,7 +1,5 @@
 "use client";
 
-import { animationStyles } from "@/src/utils/styleHelpers";
-
 interface ButtonProps {
   variant: "lit" | "sketch";
   text: string;
@@ -9,7 +7,6 @@ interface ButtonProps {
 }
 
 export default function Button({ variant, text, id }: ButtonProps) {
-  const initialFadeIn = animationStyles.initialFadeIn;
   if (variant === "lit") {
     return (
       <button id={id} className="p-[3px] relative">

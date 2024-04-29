@@ -1,12 +1,10 @@
 import Image from "next/image";
-import GridHero from "../components/GridHero";
-import Ticker from "../components/ui/Ticker";
+import GridHero from "../components/Home/GridHero";
 
 export default function Home() {
   return (
     <>
       <GridHero />
-      <Ticker />
     </>
   );
 }

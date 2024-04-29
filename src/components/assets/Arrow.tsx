@@ -1,8 +1,8 @@
 export function Arrow() {
   return (
     <svg
-      width="45"
-      height="45"
+      width="clamp(30px, 4vw, 100px)"
+      height="clamp(30px, 4vw, 100px)"
       viewBox="0 0 23 23"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

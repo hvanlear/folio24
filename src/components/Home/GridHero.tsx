@@ -1,11 +1,12 @@
 "use client";
 
 import { animate } from "framer-motion";
-import { animationStyles } from "../utils/styleHelpers";
+import { animationStyles } from "../../utils/styleHelpers";
 import { useEffect } from "react";
-import Button from "./ui/Button";
+import Button from "../ui/Button";
+import Ticker from "../ui/Ticker";
 
-export default function GridHere() {
+export default function GridHero() {
   const initialFadeIn = animationStyles.initialFadeIn;
 
   useEffect(() => {
@@ -25,12 +26,15 @@ export default function GridHere() {
   }, []);
 
   return (
-    <div className="h-[90vh] w-full dark:bg-black bg-white  dark:bg-grid-small-white/[0.2] bg-grid-small-black/[0.2] relative flex items-center justify-center ">
+    <div className="h-[90vh] w-full dark:bg-black bg-white  dark:bg-grid-small-white/[0.2] bg-grid-small-black/[0.2] relative grid grid-rows-6 items-center justify-between ">
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-      <div id="hero" className=" w-full grid  justify-center ">
+      <div
+        id="hero"
+        className=" w-full grid justify-center row-start-3 row-end-4"
+      >
         <div className="mb-5">
           <h3
-            className="text-black text-3xl leading-snug"
+            className="text-black text-h2-clamp leading-snug"
             style={initialFadeIn}
           >
             welcome 🖖
@@ -38,23 +42,24 @@ export default function GridHere() {
         </div>
 
         <h1
-          className="leading-none text-10xl font-bold relative z-20 text-black "
+          className="leading-none text-h1-clamp  font-bold relative z-20 text-black "
           style={initialFadeIn}
         >
           Toola
         </h1>
         <div className="byline-container mt-5 ml-8" style={initialFadeIn}>
-          <h2 id="byline" className="text-black text-3xl leading-snug ">
+          <h2 id="byline" className="text-black text-h2-clamp leading-snug ">
             Modern Technology Solutions
           </h2>
         </div>
-        <div
-          className="button-container-hero flex flex-row gap-8 items-center justify-center mt-16"
-          style={initialFadeIn}
-        >
-          <Button id="hero-button" variant="lit" text="Say Hello!" />
-          <span className="text-black ">More Coming Soon</span>
-        </div>
+      </div>
+      <Ticker tickerClass="row-start-5" />
+      <div
+        className="button-container-hero flex flex-col sm:flex-row gap-8 items-center justify-center mt-16 row-start-6"
+        style={initialFadeIn}
+      >
+        <Button id="hero-button" variant="lit" text="Say Hello!" />
+        <span className="text-black ">More Coming Soon</span>
       </div>
     </div>
   );
