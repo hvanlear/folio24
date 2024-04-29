@@ -30,7 +30,7 @@ export default function GridHere() {
       <div id="hero" className=" w-full grid  justify-center ">
         <div className="mb-5">
           <h3
-            className="text-black text-h2-clamp leading-snug"
+            className="text-black text-3xl leading-snug"
             style={initialFadeIn}
           >
             welcome 🖖
@@ -38,16 +38,13 @@ export default function GridHere() {
         </div>
 
         <h1
-          className="leading-none text-h1-clamp font-bold relative z-20 text-black "
+          className="leading-none text-10xl font-bold relative z-20 text-black "
           style={initialFadeIn}
         >
           Toola
         </h1>
-        <div
-          className="byline-container mt-5 ml-10"
-          style={{ ...initialFadeIn, marginLeft: "clamp(1rem, 9vw, 11rem)" }}
-        >
-          <h2 id="byline" className="text-black text-h2-clamp leading-snug ">
+        <div className="byline-container mt-5 ml-8" style={initialFadeIn}>
+          <h2 id="byline" className="text-black text-3xl leading-snug ">
             Modern Technology Solutions
           </h2>
         </div>
