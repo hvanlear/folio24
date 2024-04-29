@@ -4,12 +4,13 @@ interface ButtonProps {
   variant: "lit" | "sketch";
   text: string;
   id: string;
+  onClick?: () => void;
 }
 
-export default function Button({ variant, text, id }: ButtonProps) {
+export default function Button({ variant, text, id, onClick }: ButtonProps) {
   if (variant === "lit") {
     return (
-      <button id={id} className="p-[3px] relative">
+      <button id={id} className="p-[3px] relative" onClick={onClick}>
         <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
         <div className="font-bold px-8 py-2 bg-black rounded-[6px] relative group transition duration-200 text-white hover:bg-transparent">
           {text}

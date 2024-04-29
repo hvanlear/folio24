@@ -35,7 +35,7 @@ export default function GridHero() {
       >
         <div className="mb-5">
           <h3
-            className="text-black text-h2-clamp leading-snug"
+            className="text-neutral-800 text-h2-clamp leading-snug"
             style={initialFadeIn}
           >
             welcome 🖖
@@ -43,13 +43,16 @@ export default function GridHero() {
         </div>
 
         <h1
-          className="leading-none text-h1-clamp  font-bold relative z-20 text-black "
+          className="leading-none text-h1-clamp  font-bold relative z-20 text-neutral-800 "
           style={initialFadeIn}
         >
           Toola
         </h1>
         <div className="byline-container mt-5 ml-8" style={initialFadeIn}>
-          <h2 id="byline" className="text-black text-h2-clamp leading-snug ">
+          <h2
+            id="byline"
+            className="text-neutral-800 text-h2-clamp leading-snug "
+          >
             Modern Technology Solutions
           </h2>
         </div>
@@ -59,9 +62,18 @@ export default function GridHero() {
         className="button-container-hero flex flex-col sm:flex-row gap-8 items-center justify-center mt-16 row-start-6"
         style={initialFadeIn}
       >
-        {/* <Button id="hero-button" variant="lit" text="Say Hello!" /> */}
+        <Button
+          id="hero-button"
+          variant="lit"
+          text="Say Hello!"
+          onClick={() => {
+            document
+              .getElementById("contact-container")
+              ?.scrollIntoView({ behavior: "smooth" });
+          }}
+        />
         <div className="text-1xl flex flex-row items-center gap-2">
-          <span className="text-black ">More Coming Soon</span>
+          <span className="text-neutral-800 ">More Coming Soon</span>
           <Rocket />
         </div>
       </div>
