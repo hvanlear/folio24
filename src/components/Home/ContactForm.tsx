@@ -21,18 +21,23 @@ export default function ContactForm() {
       return;
     }
 
-    const response = await fetch("/api/sendEmail", {
-      method: "POST",
-      body: JSON.stringify({ name, email, message }),
-      headers: { "Content-Type": "application/json" },
-    });
+    try {
+      const response = await fetch("/api/sendEmail", {
+        method: "POST",
+        body: JSON.stringify({ name, email, message }),
+        headers: { "Content-Type": "application/json" },
+      });
 
-    if (response.ok) {
-      setName("");
-      setEmail("");
-      setMessage("");
-    } else {
-      console.error(`Error: ${response.status}`);
+      if (response.ok) {
+        setName("");
+        setEmail("");
+        setMessage("");
+        console.log("Message sent successfully.");
+      } else {
+        console.error(`HTTP Error: ${response.status}`);
+      }
+    } catch (error) {
+      console.error("Network or other error", error);
     }
   };
 
