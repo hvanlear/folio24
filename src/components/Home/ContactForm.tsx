@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef, useState } from "react";
 import { Label } from "../ui/Label";
+import Button from "../ui/Button";
 import { Input } from "../ui/Input";
 import { TextArea } from "../ui/TextArea";
 import { cn } from "../../utils/cn";
@@ -60,17 +61,19 @@ export default function ContactForm() {
       </p>
       <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
       {isSubmitted ? (
-        <div className="p-5">
+        <div className="p-4">
           <h2 className="font-bold text-3xl text-neutral-800 dark:text-neutral-200">
             Message Sent!
           </h2>
-          <p className="text-neutral-500"> We will be in touch shortly.</p>
-          <button
+          <p className="text-neutral-500 mb-4">
+            Someone will be in touch shortly.
+          </p>
+          <Button
+            text="Drop Another Line"
+            id="contactResetBtn"
+            variant="backdropBlur"
             onClick={resetForm}
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          >
-            Send Another Message
-          </button>
+          />
         </div>
       ) : (
         <form className="my-8" onSubmit={handleSubmit}>
