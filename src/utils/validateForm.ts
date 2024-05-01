@@ -8,7 +8,7 @@ interface Input {
 
 export const validationRules = {
   name: (value: string) =>
-    !value || value.length < 3 ? "must be atleast 3 characters long" : null,
+    !value || value.length < 3 ? "must be at least 3 characters long" : null,
   email: (value: string) =>
     !/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(value)
       ? "is not valid"
@@ -25,15 +25,14 @@ export function validateForm(
 ) {
   for (const input of inputs) {
     const { name, value, validation } = input;
-
-    //if validation function exists call and check
     if (validation) {
       const error = validation(req.body[value]);
       if (error) {
-        return res.status(400).json({ message: `${name} ${error}` });
+        return res
+          .status(400)
+          .json({ message: `Form Validation Error: ${name} ${error}` });
       }
     }
   }
-
   next();
 }

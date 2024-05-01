@@ -1,23 +1,32 @@
 "use client";
-import React from "react";
+import React, { useRef, useState } from "react";
 import { Label } from "../ui/Label";
 import { Input } from "../ui/Input";
 import { TextArea } from "../ui/TextArea";
 import { cn } from "../../utils/cn";
-import { useState } from "react";
 
 export default function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
+  const honeypotRef = useRef<HTMLInputElement>(null);
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    // Check if the honeypot field is filled
+    if (honeypotRef.current && honeypotRef.current.value !== "") {
+      console.log("Bot detected");
+      return;
+    }
+
     const response = await fetch("/api/sendEmail", {
       method: "POST",
       body: JSON.stringify({ name, email, message }),
       headers: { "Content-Type": "application/json" },
     });
+
     if (response.ok) {
       setName("");
       setEmail("");
@@ -41,6 +50,13 @@ export default function ContactForm() {
       </p>
       <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
       <form className="my-8" onSubmit={handleSubmit}>
+        <input
+          ref={honeypotRef}
+          type="text"
+          name="fax"
+          style={{ display: "none" }}
+          autoComplete="off"
+        />
         <div className="flex flex-col  space-y-2 md:space-y-0 md:space-x-2 mb-4">
           <LabelInputContainer className="mb-4">
             <Label htmlFor="message">Message</Label>
