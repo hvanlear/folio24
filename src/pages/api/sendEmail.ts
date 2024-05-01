@@ -15,11 +15,9 @@ export default async function handler(
     to: "toolatech@gmail.com",
     from: "hello@toolatech.com",
     subject: `New message from ${name} ${email}`,
-    text: message,
+    text: `New message from ${name} -  ${email} - ${message}`,
     html: `<p>${message}</p>`,
   };
-
-  console.log(content);
 
   try {
     await sgMail.send(content);

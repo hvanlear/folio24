@@ -38,7 +38,7 @@ export default function Ticker({ tickerClass }: TickerProps) {
       {ticketGroup.map((str, index) => (
         <motion.p
           style={initialFadeIn}
-          className="ticker-item text-ticker-clamp px-5 py-4 text-black font-serif font-light"
+          className="ticker-item text-ticker-clamp px-8 py-4 text-black font-serif font-light"
           key={index}
           variants={variants}
           initial="hidden"
