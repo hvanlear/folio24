@@ -44,7 +44,7 @@ export default function ContactForm() {
       <h2 className="font-bold text-5xl text-neutral-800 dark:text-neutral-200">
         How can we help you?
       </h2>
-      <p className="text-neutral-500 ">
+      <p className="text-neutral-500  mt-4">
         We will <span className="font-bold">never</span> send unsolicited
         emails.
       </p>
