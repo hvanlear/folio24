@@ -18,14 +18,11 @@ export default function ContactForm() {
       body: JSON.stringify({ name, email, message }),
       headers: { "Content-Type": "application/json" },
     });
-    console.log(response.body);
     if (response.ok) {
-      alert("Message sent successfully!");
       setName("");
       setEmail("");
       setMessage("");
     } else {
-      alert("An error occurred. Please try again.");
       console.error(`Error: ${response.status}`);
     }
   };
