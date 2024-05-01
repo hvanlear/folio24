@@ -41,7 +41,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       from: "hello@toolatech.com",
       subject: `New message from ${name}`,
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
-      html: `<strong>Message from ${name}</strong><p>${message}</p>`,
+      html: `<strong>Message from ${name} @ ${email}</strong><p>${message} </p>`,
     };
 
     try {
