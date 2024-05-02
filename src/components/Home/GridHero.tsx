@@ -31,7 +31,7 @@ export default function GridHero() {
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
       <div
         id="hero"
-        className=" w-full grid justify-center row-start-3 row-end-4"
+        className=" w-full grid justify-center row-start-2 row-end-3 sm:row-start-3 "
       >
         <div className="mb-5">
           <h3
@@ -57,9 +57,9 @@ export default function GridHero() {
           </h2>
         </div>
       </div>
-      <Ticker tickerClass="row-start-5" />
+      <Ticker tickerClass="row-start-4 sm:row-start-5" />
       <div
-        className="button-container-hero flex flex-col sm:flex-row gap-8 items-center justify-center mt-16 row-start-6"
+        className="button-container-hero flex flex-col sm:flex-row gap-8 items-center justify-center mt-16  row-start-5 sm:row-start-6"
         style={initialFadeIn}
       >
         <Button
