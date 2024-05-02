@@ -50,7 +50,7 @@ export default function ContactForm() {
   return (
     <div
       id="contact-container"
-      className=" mx-auto w-1/2 rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black"
+      className=" mx-auto w-full sm:w-3/4 lg:w-1/2 rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black"
     >
       <h2 className="font-bold text-5xl text-neutral-800 dark:text-neutral-200">
         How can we help you?

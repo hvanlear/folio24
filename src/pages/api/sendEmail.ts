@@ -3,7 +3,7 @@ import { validateForm, validationRules } from "@/src/utils/validateForm";
 import { NextApiRequest, NextApiResponse } from "next";
 import sgMail from "@sendgrid/mail";
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY as string); // Ensure your API key is securely stored and accessed
+sgMail.setApiKey(process.env.SENDGRID_API_KEY as string);
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "POST") {
