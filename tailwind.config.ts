@@ -19,8 +19,8 @@ module.exports = {
       },
       fontSize: {
         "10xl": "10rem",
-        "h1-clamp": "clamp(2rem, 37vw, 15rem)",
-        "h2-clamp": "clamp(1.5rem, 2vw, 6rem)",
+        "h1-clamp": "clamp(2rem, 34vw, 15rem)",
+        "h2-clamp": "clamp(1.3rem, 2vw, 6rem)",
         "ticker-clamp": "clamp(3rem, 4vw, 9.5rem)",
       },
       fontFamily: {
