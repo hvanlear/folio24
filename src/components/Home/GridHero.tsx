@@ -71,6 +71,11 @@ export default function GridHero() {
               .getElementById("contact-container")
               ?.scrollIntoView({ behavior: "smooth" });
           }}
+          onTouchEnd={() => {
+            document
+              .getElementById("contact-container")
+              ?.scrollIntoView({ behavior: "smooth" });
+          }}
         />
         <div className="text-1xl flex flex-row items-center gap-2">
           <span className="text-neutral-800 ">More Coming Soon</span>

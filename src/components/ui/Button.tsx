@@ -5,6 +5,7 @@ interface ButtonProps {
   text: string;
   id: string;
   onClick?: () => void;
+  onTouchEnd?: () => void;
 }
 
 export default function Button({ variant, text, id, onClick }: ButtonProps) {
