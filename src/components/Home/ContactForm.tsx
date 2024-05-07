@@ -50,12 +50,12 @@ export default function ContactForm() {
   return (
     <div
       id="contact-container"
-      className=" relative top-30 z-10 mx-auto w-full sm:w-3/4 lg:w-1/2 max-w-5xl rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black"
+      className=" relative top-30 z-10 mx-auto w-full sm:w-3/4 lg:w-1/2 max-w-5xl rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black"
     >
-      <h2 className="font-bold text-5xl text-neutral-800 dark:text-neutral-200">
+      <h2 className="font-bold text-3xl md:text-4xl sm:text-5xl text-neutral-800 dark:text-neutral-200">
         How can we help you?
       </h2>
-      <p className="text-neutral-500  mt-4">
+      <p className="text-neutral-500 mt-4">
         We will <span className="font-bold">never</span> send unsolicited
         emails.
       </p>
