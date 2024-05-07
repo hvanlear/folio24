@@ -9,8 +9,12 @@ interface FooterProps {
 export default function Footer({ footerClass }: FooterProps) {
   return (
     <>
-      <div className="z-10 absolute bottom-1">
-        <p className="text-4xl text-white">TEST</p>
+      <div className="w-full px-10 z-10 absolute bottom-1">
+        <div className="flex flex-row py-1">
+          <p className=" text-neutral-300 text-sm font-serif">
+            © Toola LLC 2023 - 2024
+          </p>
+        </div>
       </div>
     </>
     // <div className="relative overflow-hidden p-12">
