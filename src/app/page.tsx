@@ -9,13 +9,13 @@ export default function Home() {
     <>
       <GridHero />
       <div className="relative" style={{ minHeight: "80rem" }}>
-        <div style={{ height: "40vh" }} />
+        <div style={{ height: "15vh" }} />
         <ContactForm />
         <Footer />
         <svg
           xmlns="http://www.w3.org/2000/svg"
           id="visual"
-          viewBox="0 0 2000 1200"
+          viewBox="0 0 2000 1001"
           className="absolute bottom-0 z-0 "
           version="1.1"
         >

@@ -11,7 +11,7 @@ export default function Footer({ footerClass }: FooterProps) {
     <>
       <div className="w-full px-10 z-10 absolute bottom-1 ">
         <div className="flex flex-row py-1">
-          <p className=" text-neutral-300 text-sm font-serif">
+          <p className=" text-neutral-500 text-sm font-bold">
             © Toola LLC 2023 - 2024
           </p>
         </div>
