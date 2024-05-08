@@ -9,7 +9,7 @@ interface FooterProps {
 export default function Footer({ footerClass }: FooterProps) {
   return (
     <>
-      <div className="w-full px-10 z-10 absolute bottom-1">
+      <div className="w-full px-10 z-10 absolute bottom-1 ">
         <div className="flex flex-row py-1">
           <p className=" text-neutral-300 text-sm font-serif">
             © Toola LLC 2023 - 2024
