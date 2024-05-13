@@ -59,7 +59,7 @@ export default function GridHero() {
       </div>
       <Ticker tickerClass="row-start-4 sm:row-start-5" />
       <div
-        className="button-container-hero flex flex-col sm:flex-row gap-8 items-center justify-center mt-16  row-start-5 sm:row-start-6"
+        className="z-10 button-container-hero flex flex-col sm:flex-row gap-8 items-center justify-center mt-16  row-start-5 sm:row-start-6"
         style={initialFadeIn}
       >
         <Button
