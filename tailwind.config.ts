@@ -13,6 +13,9 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      backgroundColor: {
+        "black-2": "#212529",
+      },
       padding: {
         "96": "24rem",
         "120": "30rem",
@@ -20,8 +23,8 @@ module.exports = {
       fontSize: {
         "10xl": "10rem",
         "h1-clamp": "clamp(2rem, 34vw, 15rem)",
-        "h2-clamp": "clamp(1.3rem, 2vw, 6rem)",
-        "ticker-clamp": "clamp(3rem, 4vw, 9.5rem)",
+        "h2-clamp": "clamp(1.4rem, 3vw, 6rem)",
+        "ticker-clamp": "clamp(6rem, 4vw, 9.5rem)",
       },
       fontFamily: {
         serif: ["Georgia", "Cambria", '"Times New Roman"', "Times", "serif"],

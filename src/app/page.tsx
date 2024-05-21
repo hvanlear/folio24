@@ -1,17 +1,19 @@
-import Head from "next/head";
-
 import GridHero from "../components/Home/GridHero";
 import ContactForm from "../components/Home/ContactForm";
 import Footer from "../components/Footer/Footer";
+import Header from "../components/Header/Header";
+import Ticker from "../components/ui/Ticker";
 
 export default function Home() {
   return (
     <>
-      <GridHero />
+      <Header />
+
+      {/* <GridHero /> */}
       <div className="relative" style={{ minHeight: "80rem" }}>
         <div style={{ height: "15vh" }} />
-        <ContactForm />
-        <Footer />
+        {/* <ContactForm />
+        <Footer /> */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           id="visual"

@@ -34,7 +34,7 @@ export default function Ticker({ tickerClass }: TickerProps) {
   };
 
   return (
-    <Marquee className={tickerClass}>
+    <Marquee direction="right" className={tickerClass}>
       {ticketGroup.map((str, index) => (
         <motion.p
           style={initialFadeIn}
