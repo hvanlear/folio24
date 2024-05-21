@@ -37,4 +37,4 @@ next-env.d.ts
 sendgrid.env
 
 #stuff
-src/pages/api/sendEmail.ts
+sendEmail.ts
