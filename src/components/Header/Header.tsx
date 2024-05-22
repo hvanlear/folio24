@@ -2,13 +2,14 @@
 
 import { animate } from "framer-motion";
 
-import { animationStyles } from "../../utils/styleHelpers";
 import { useEffect } from "react";
 
+import useCycleGradients from "@/src/hooks/useCycleGradients";
 import SvgShape from "../ui/SvgShape";
 import Ticker from "../ui/Ticker";
 
 export default function Header() {
+  const currentGradient = useCycleGradients();
   useEffect(() => {
     const staggerDelay = 0.2;
 
@@ -36,8 +37,7 @@ export default function Header() {
           <div
             style={{
               clipPath: "polygon(0px 72%, 100% 0px, 100% 25%, 0px 97%)",
-              backgroundImage:
-                "linear-gradient(90deg, rgba(251,237,150,1) 0%, rgba(171,236,214,1) 100%)",
+              backgroundImage: currentGradient,
               position: "absolute",
               left: 0,
               top: "18%",
