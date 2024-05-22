@@ -1,13 +1,13 @@
 import GridHero from "../components/Home/GridHero";
 import ContactForm from "../components/Home/ContactForm";
 import Footer from "../components/Footer/Footer";
-import Header from "../components/Header/Header";
+import Hero from "../components/Header/Hero";
 import Ticker from "../components/ui/Ticker";
 
 export default function Home() {
   return (
     <>
-      <Header />
+      <Hero />
 
       {/* <GridHero /> */}
       <div className="relative" style={{ minHeight: "80rem" }}>

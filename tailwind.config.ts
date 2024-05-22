@@ -24,6 +24,7 @@ module.exports = {
         "10xl": "10rem",
         "h1-clamp": "clamp(2rem, 34vw, 15rem)",
         "h2-clamp": "clamp(1.4rem, 3vw, 6rem)",
+        "h3-clamp": "clamp(1rem, 2vw, 4rem)",
         "ticker-clamp": "clamp(6rem, 4vw, 9.5rem)",
       },
       fontFamily: {

@@ -1,6 +1,6 @@
 ## ~~Toola~~
 
-## V3 Portfolio V3
+# V3 Portfolio V3
 
 ## To-Do List
 
@@ -21,10 +21,16 @@
 
   - [ ] responsive
   - [ ] view height
+  - [ ] Resume Contact Buttons
   - [x] Word Grid
   - [ ] Arrow
     - [x] animate
     - [ ] gradient
+
+- [ ] Work Section
+
+  - [ ] Create component
+  - [ ] Cycle Feature
 
 ### Upcoming
 
