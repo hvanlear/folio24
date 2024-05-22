@@ -9,10 +9,12 @@ import SvgShape from "../ui/SvgShape";
 import Ticker from "../ui/Ticker";
 
 export default function Header() {
+  //cycle gradients
   const currentGradient = useCycleGradients();
+
   useEffect(() => {
     const staggerDelay = 0.2;
-
+    // The marquee relies on this, need to detach
     document
       .querySelectorAll(
         "#hero h3,.byline-container, #hero h1, #hero h2, .button-container-hero"
@@ -52,6 +54,7 @@ export default function Header() {
         </div>
       </div>
       <div
+        id="container-welcome"
         className="min-h-screen grid grid-cols-8 grid-rows-8  bg-black-2"
         style={{ gridTemplateRows: ".5fr 2fr 1fr 1fr 1fr 1fr 1fr 1fr" }}
       >
