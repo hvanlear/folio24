@@ -39,7 +39,7 @@ export default function Hero() {
           .grid-container {
             display: grid;
             grid-template-rows: .5fr 2fr 1fr 1fr 1fr;
-            height: calc(100vh - 256px)
+            height: calc(100vh - 250px)
           }
 
           @media (min-width: 1800px) {
