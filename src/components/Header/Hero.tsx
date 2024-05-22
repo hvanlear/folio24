@@ -5,8 +5,9 @@ import { useEffect } from "react";
 
 import RightNav from "./RightNav";
 import useCycleGradients from "@/src/hooks/useCycleGradients";
-import SvgShape from "../ui/SvgShape";
+import SvgArrow from "../ui/SvgArrow";
 import Ticker from "../ui/Ticker";
+import WelcomeLinks from "./WelcomeLinks";
 
 export default function Hero() {
   //cycle gradients
@@ -30,9 +31,27 @@ export default function Hero() {
 
   return (
     <>
+      {/* //so we can dymaically change the grid layout via MQ 
+            height calc us based off of the header-clip width
+      */}
+      <style>
+        {`
+          .grid-container {
+            display: grid;
+            grid-template-rows: .5fr 2fr 1fr 1fr 1fr;
+            height: calc(100vh - 256px)
+          }
+
+          @media (min-width: 1800px) {
+            .grid-container {
+              grid-template-rows: .5fr 1fr 1fr 1fr;
+            }
+          }
+        `}
+      </style>
       <section
         id="section-ticker"
-        className=" bg-black-2  w-full overflow-hidden"
+        className=" bg-black  w-full overflow-hidden"
       >
         <div
           id="header-clip"
@@ -57,21 +76,15 @@ export default function Hero() {
         </div>
       </section>
       <section id="section-welcome">
-        <div
-          className=" grid grid-cols-8 grid-rows-8  bg-black-2"
-          style={{
-            gridTemplateRows: ".5fr 2fr 1fr 1fr ",
-            height: "100vh",
-          }}
-        >
+        <div className="grid-container grid lg:grid-cols-8   bg-black">
           <div
             id=" container-welcome-welcome"
-            className="row-start-1 col-start-2 col-end-6 flex items-center justify-center "
+            className="row-start-1  col-start-2 col-end-6 flex justify-center 3xl:row-start-2"
           >
-            <div id="welcome" className="flex ">
+            <div id="welcome" className="flex items-center 3xl:items-start">
               <h3 className="text-h2-clamp leading-snug mr-4">Welcome! Im</h3>
             </div>
-            <SvgShape />
+            <SvgArrow />
           </div>
           <div className="col-start-8 row-start-1 flex items-center justify-center  ">
             <RightNav />
@@ -79,20 +92,10 @@ export default function Hero() {
 
           <div
             id="container-welcome-name"
-            className="row-start-2 col-start-4 col-end-6 flex flex-col items-start  "
+            className="row-start-2 col-start-4 col-end-6 flex flex-col  3xl:justify-center "
           >
             <h1 className="text-h1-clamp mt-0 mb-0 leading-none ">Hunter</h1>
-            <div
-              id="container-welcome-links"
-              className="flex items-start flex-row space-x-8 ml-4 mt-4"
-            >
-              <a className="welcome-links text-h3-clamp" href="#">
-                resume
-              </a>
-              <a className="welcome-links text-h3-clamp" href="#">
-                contact me
-              </a>
-            </div>
+            <WelcomeLinks />
           </div>
         </div>
       </section>

@@ -13,6 +13,10 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      screens: {
+        "2xl": "1536px",
+        "3xl": "1800px",
+      },
       backgroundColor: {
         "black-2": "#212529",
       },
@@ -22,7 +26,7 @@ module.exports = {
       },
       fontSize: {
         "10xl": "10rem",
-        "h1-clamp": "clamp(2rem, 34vw, 15rem)",
+        "h1-clamp": "clamp(2rem, 15vw, 15rem)",
         "h2-clamp": "clamp(1.4rem, 3vw, 6rem)",
         "h3-clamp": "clamp(1rem, 2vw, 4rem)",
         "ticker-clamp": "clamp(6rem, 4vw, 9.5rem)",
@@ -36,6 +40,11 @@ module.exports = {
       boxShadow: {
         input: `0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08)`,
       },
+    },
+  },
+  variants: {
+    extend: {
+      alignItems: ["responsive", "3xl"],
     },
   },
   plugins: [

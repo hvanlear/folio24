@@ -17,7 +17,7 @@ const draw = {
   }),
 };
 
-export default function SvgShape() {
+export default function SvgArrow() {
   return (
     <motion.svg
       width="150"
