@@ -29,8 +29,11 @@
 
 - [ ] Work Section
 
-  - [ ] Create component
-  - [ ] Cycle Feature
+  - [x] Create component
+  - [x] Work Animation
+  - [ ] Carousel Feature
+    - [x] Integrate
+    - [ ] Create Cards
 
 ### Upcoming
 
