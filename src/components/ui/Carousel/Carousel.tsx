@@ -29,31 +29,21 @@ const Carousel: React.FC<PropType> = (props) => {
 
   return (
     <section className="embla">
-      <div className="embla__viewport" ref={emblaRef}>
-        <div className="embla__container">
-          {slides.map((index) => (
-            <div className="embla__slide" key={index}>
-              <div className="embla__slide__number">{index + 1}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-
       <div className="embla__controls">
         <div className="embla__buttons">
           <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
           <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
         </div>
-
-        <div className="embla__dots">
-          {scrollSnaps.map((_, index) => (
-            <DotButton
+      </div>
+      <div className="embla__viewport" ref={emblaRef}>
+        <div className="embla__container">
+          {slides.map((index) => (
+            <div
+              className="embla__slide shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]"
               key={index}
-              onClick={() => onDotButtonClick(index)}
-              className={"embla__dot".concat(
-                index === selectedIndex ? " embla__dot--selected" : ""
-              )}
-            />
+            >
+              <div className="embla__slide__number">{index + 1}</div>
+            </div>
           ))}
         </div>
       </div>

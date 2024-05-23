@@ -13,7 +13,6 @@ const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 export default function WorkAnimation() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll();
-  const [maxY, setMaxY] = useState(0);
 
   useEffect(() => {
     if (containerRef.current) {
@@ -21,8 +20,6 @@ export default function WorkAnimation() {
       // Calculate the maximum allowed Y movement
       // Assuming the height of the 'Work' text div is 100px for example
       const textHeight = 100; // Adjust this to your actual height
-      const maxMovement = containerHeight - textHeight;
-      setMaxY(-maxMovement);
     }
   }, []);
 
@@ -56,7 +53,7 @@ export default function WorkAnimation() {
           >
             <h1>Work</h1>
           </motion.div>
-          <div className="text-3xl text-black absolute top-[213px] left-0 z-10 w-full ">
+          <div className="text-3xl text-black absolute top-[100px] left-0 z-10 w-full ">
             <Carousel slides={SLIDES} options={OPTIONS} />
           </div>
         </div>

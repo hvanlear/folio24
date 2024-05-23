@@ -81,6 +81,7 @@
   .embla__viewport {
     overflow: hidden;
   }
+
   .embla__container {
     backface-visibility: hidden;
     display: flex;
@@ -103,8 +104,10 @@
     padding-left: var(--slide-spacing);
     margin-left:1rem;
     margin-right:1rem;
-    border:1px solid black;
-    background-color: aqua;
+    margin-bottom: 2rem;
+    background-color: white;
+    width:calc(25% - 1.5em);
+    border-radius: 20px;
   }
   @media (min-width: 750px) {
     .embla__slide {
@@ -129,11 +132,11 @@
     height: var(--slide-height);
   }
   .embla__controls {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    justify-content: space-between;
+    display: flex;
     gap: 1.2rem;
-    margin-top: 1.8rem;
+    margin-bottom: 1rem;
+    justify-content: end;
+  
   }
   .embla__buttons {
     display: grid;
