@@ -1,10 +1,12 @@
 "use client";
 
 import "../ui/Carousel/carousel.css";
+
 import React, { useRef, useEffect, useState } from "react";
 import { motion, useTransform, useScroll } from "framer-motion";
-import Carousel from "../ui/Carousel/Carousel";
 import { EmblaOptionsType } from "embla-carousel";
+
+import Carousel from "../ui/Carousel/Carousel";
 
 const OPTIONS: EmblaOptionsType = { loop: true };
 const SLIDE_COUNT = 6;
@@ -13,15 +15,6 @@ const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 export default function WorkAnimation() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll();
-
-  useEffect(() => {
-    if (containerRef.current) {
-      const containerHeight = containerRef.current.offsetHeight;
-      // Calculate the maximum allowed Y movement
-      // Assuming the height of the 'Work' text div is 100px for example
-      const textHeight = 100; // Adjust this to your actual height
-    }
-  }, []);
 
   // Calculate vertical movement based on scroll progress
   // Use dynamically calculated maxY to ensure it doesn't move outside the container
