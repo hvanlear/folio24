@@ -1,50 +1,58 @@
 "use client";
-import React, { useRef, useState } from "react";
 
-import {
-  motion,
-  useTransform,
-  useScroll,
-  useSpring,
-  useInView,
-} from "framer-motion";
+import useCycleGradients from "@/src/hooks/useCycleGradients";
 
-interface FooterProps {
-  footerClass?: string;
-}
-
-export default function Footer({ footerClass }: FooterProps) {
-  const ref = useRef(null);
-  const isInView = useInView(ref);
-
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll();
-
-  // Calculate vertical movement based on scroll progress
-  // Use dynamically calculated maxY to ensure it doesn't move outside the container
-  const y = useTransform(scrollYProgress, [0, 1], [0, -300]);
-  const springY = useSpring(y, {
-    stiffness: 80,
-    damping: 30,
-  });
+export default function Footer() {
+  const currentGradient = useCycleGradients();
   return (
     <>
-      <motion.section
-        style={{
-          y: springY,
-        }}
-        animate={isInView ? "visible" : "hidden"}
+      {/* //so we can dymaically change the grid layout via MQ 
+            height calc us based off of the header-clip width
+      */}
+      <style>
+        {`
+          .grid-container {
+            display: grid;
+            grid-template-rows: .5fr 2fr 1fr 1fr 1fr;
+            height: calc(100vh - 250px)
+          }
+
+          @media (min-width: 1800px) {
+            .grid-container {
+              grid-template-rows: .5fr 1fr 1fr 1fr;
+            }
+          }
+        `}
+      </style>
+      <section
+        id="section-ticker"
+        className=" bg-black  w-full overflow-hidden"
       >
         <div
-          className="w-full px-10 z-10 h-72 bg-black  rounded-tl-[5rem] rounded-tr-[5rem] top-[2rem]"
-          style={{ height: "300px" }}
-          ref={containerRef}
+          id="header-clip"
+          style={{
+            clipPath: "polygon(0px 68%, 100% 0px, 100% 100%, 0px 100%)",
+          }}
+          className="bg-white relative h-64 flex  dark:bg-grid-small-white/[0.2] bg-grid-small-black/[0.2]"
         >
-          <div className="flex flex-row py-1">
-            <h1 className="text-white text-3xl">Contact me</h1>
+          <div
+            className="gradient-clip"
+            style={{
+              clipPath: "polygon( 0% 0%, 100% 0%, 100% 13%, -68% 129%)",
+              backgroundImage: currentGradient,
+              position: "absolute",
+              left: 0,
+              top: "-5%",
+              right: 0,
+              height: "100%",
+              zIndex: 9,
+            }}
+          ></div>
+          <div className="text-lg text-black-2 ">
+            <h1>HELLO</h1>
           </div>
         </div>
-      </motion.section>
+      </section>
     </>
   );
 }
