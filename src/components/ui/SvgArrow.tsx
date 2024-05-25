@@ -1,6 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { useInView } from "framer-motion";
 
 const draw = {
   hidden: { pathLength: 0, opacity: 0 },

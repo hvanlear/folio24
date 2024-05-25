@@ -25,23 +25,32 @@ export default function WorkAnimation() {
   });
   return (
     <>
-      <section>
-        <div className="h-100 h-[40rem] relative mt-[10rem] mb-[10rem] ">
-          <div ref={containerRef}>
-            <motion.div
-              className="text-30xl absolute text-stone-950 font-bold z-10"
-              style={{
-                y: springY,
-              }}
-            >
-              <h1>Work</h1>
-            </motion.div>
-            <div className="text-3xl text-black absolute top-[100px] left-0 z-10 w-full ">
-              <Carousel slides={SLIDES} options={OPTIONS} />
+      <motion.section
+        style={{
+          y: springY,
+        }}
+      >
+        <section
+          ref={containerRef}
+          className="h-[48rem] relative mb-0 rounded-tl-[5rem] rounded-tr-[5rem] top-[2rem] bg-white"
+        >
+          <div className="">
+            <div>
+              <motion.div
+                className="text-30xl absolute text-stone-950 font-bold z-10"
+                style={{
+                  y: springY,
+                }}
+              >
+                <h1>Work</h1>
+              </motion.div>
+              <div className="text-3xl text-black absolute top-[100px] left-0 z-10 w-full ">
+                <Carousel slides={SLIDES} options={OPTIONS} />
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </motion.section>
     </>
   );
 }

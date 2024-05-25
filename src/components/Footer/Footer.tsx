@@ -1,28 +1,50 @@
 "use client";
 import React, { useRef, useState } from "react";
-import { cn } from "../../utils/cn";
+
+import {
+  motion,
+  useTransform,
+  useScroll,
+  useSpring,
+  useInView,
+} from "framer-motion";
 
 interface FooterProps {
   footerClass?: string;
 }
 
 export default function Footer({ footerClass }: FooterProps) {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll();
+
+  // Calculate vertical movement based on scroll progress
+  // Use dynamically calculated maxY to ensure it doesn't move outside the container
+  const y = useTransform(scrollYProgress, [0, 1], [0, -300]);
+  const springY = useSpring(y, {
+    stiffness: 80,
+    damping: 30,
+  });
   return (
     <>
-      <div
-        className="w-full px-10 z-10 h-72 bg-slate-400 "
-        style={{ height: "300px" }}
+      <motion.section
+        style={{
+          y: springY,
+        }}
+        animate={isInView ? "visible" : "hidden"}
       >
-        <div className="flex flex-row py-1">
-          <p className=" text-neutral-500 text-sm font-bold">© Hunter</p>
+        <div
+          className="w-full px-10 z-10 h-72 bg-black  rounded-tl-[5rem] rounded-tr-[5rem] top-[2rem]"
+          style={{ height: "300px" }}
+          ref={containerRef}
+        >
+          <div className="flex flex-row py-1">
+            <h1 className="text-white text-3xl">Contact me</h1>
+          </div>
         </div>
-      </div>
+      </motion.section>
     </>
-    // <div className="relative overflow-hidden p-12">
-
-    //   <div className="absolute w-full h-full bg-red-500 rounded-t-lg top-0 right-0 z-[-1]   "></div>
-    //   {/* Rest of your footer content goes here */}
-    //   <p>TEST</p>
-    // </div>
   );
 }
