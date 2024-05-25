@@ -17,7 +17,7 @@ const SvgWaveyLine = () => {
     return () => clearInterval(interval);
   }, [controls]);
 
-  function generateWavePath(time) {
+  function generateWavePath(time: number) {
     const points = Array.from({ length: 20 }, (_, i) => {
       const x = (i / 19) * 456; // Scale the x position across the SVG width
       const y = 50 + Math.sin(time + i * 0.3) * 25; // Generate the y position based on a sine wave
