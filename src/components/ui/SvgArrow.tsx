@@ -4,19 +4,22 @@ import { useInView } from "framer-motion";
 
 const draw = {
   hidden: { pathLength: 0, opacity: 0 },
-  visible: (i) => ({
-    pathLength: 1,
-    opacity: 1,
-    transition: {
-      pathLength: {
-        delay: 1 + i * 0.5,
-        type: "spring",
-        duration: 1,
-        bounce: 0,
+  visible: (i: number) => {
+    // console.log(i);
+    return {
+      pathLength: 1,
+      opacity: 1,
+      transition: {
+        pathLength: {
+          delay: 1 + i * 0.5,
+          type: "spring",
+          duration: 1,
+          bounce: 0,
+        },
+        opacity: { delay: 1 + i * 0.5, duration: 0.01 },
       },
-      opacity: { delay: 1 + i * 0.5, duration: 0.01 },
-    },
-  }),
+    };
+  },
 };
 
 export default function SvgArrow() {
@@ -67,8 +70,8 @@ export default function SvgArrow() {
           y2="92.0811"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FBED96" />
-          <stop offset="1" stop-color="#ABECD6" />
+          <stop stopColor="#FBED96" />
+          <stop offset="1" stopColor="#ABECD6" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_908_1120"
@@ -78,8 +81,8 @@ export default function SvgArrow() {
           y2="97.175"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FBED96" />
-          <stop offset="1" stop-color="#ABECD6" />
+          <stop stopColor="#FBED96" />
+          <stop offset="1" stopColor="#ABECD6" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_908_1120"
@@ -89,8 +92,8 @@ export default function SvgArrow() {
           y2="96.3714"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FBED96" />
-          <stop offset="1" stop-color="#ABECD6" />
+          <stop stopColor="#FBED96" />
+          <stop offset="1" stopColor="#ABECD6" />
         </linearGradient>
       </defs>
     </motion.svg>

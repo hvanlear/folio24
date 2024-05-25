@@ -3,7 +3,7 @@
 import "../ui/Carousel/carousel.css";
 
 import React, { useRef, useEffect, useState } from "react";
-import { motion, useTransform, useScroll } from "framer-motion";
+import { motion, useTransform, useScroll, useSpring } from "framer-motion";
 import { EmblaOptionsType } from "embla-carousel";
 
 import Carousel from "../ui/Carousel/Carousel";
@@ -19,7 +19,10 @@ export default function WorkAnimation() {
   // Calculate vertical movement based on scroll progress
   // Use dynamically calculated maxY to ensure it doesn't move outside the container
   const y = useTransform(scrollYProgress, [0, 1], [0, -300]);
-
+  const springY = useSpring(y, {
+    stiffness: 100,
+    damping: 30,
+  });
   return (
     <>
       <div
@@ -41,7 +44,7 @@ export default function WorkAnimation() {
           <motion.div
             className="text-30xl absolute text-stone-950 font-bold z-10"
             style={{
-              y, // Apply the dynamic vertical movement
+              y: springY,
             }}
           >
             <h1>Work</h1>

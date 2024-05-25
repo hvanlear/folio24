@@ -8,17 +8,22 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+::-moz-selection {
+  color: rgba(0, 0, 0, 0.947);
+  background: rgba(0, 149, 255, 0.572);
+}
+
+::selection {
+  color: rgba(0, 0, 0, 0.947);
+  background: rgba(0, 149, 255, 0.572);
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
 
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  
-}
 
 @media (prefers-color-scheme: dark) {
   :root {
