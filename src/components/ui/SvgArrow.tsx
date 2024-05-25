@@ -5,7 +5,6 @@ import { useInView } from "framer-motion";
 const draw = {
   hidden: { pathLength: 0, opacity: 0 },
   visible: (i: number) => {
-    // console.log(i);
     return {
       pathLength: 1,
       opacity: 1,
