@@ -18,7 +18,7 @@ export default function WorkAnimation() {
 
   // Calculate vertical movement based on scroll progress
   // Use dynamically calculated maxY to ensure it doesn't move outside the container
-  const y = useTransform(scrollYProgress, [0, 1], [0, -300]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, -500]);
   const springY = useSpring(y, {
     stiffness: 100,
     damping: 30,
@@ -32,7 +32,7 @@ export default function WorkAnimation() {
       >
         <section
           ref={containerRef}
-          className="h-[48rem] relative mb-0 rounded-tl-[5rem] rounded-tr-[5rem] top-[2rem] bg-white"
+          className="h-[48rem] relative mb-0 rounded-tl-[5rem] rounded-tr-[5rem] top-[2rem] bg-white flex items-center "
         >
           <div className="">
             <div>
@@ -44,7 +44,7 @@ export default function WorkAnimation() {
               >
                 <h1>Work</h1>
               </motion.div>
-              <div className="text-3xl text-black absolute top-[100px] left-0 z-10 w-full ">
+              <div className="text-3xl text-black absolute left-0 z-10 w-full ">
                 <Carousel slides={SLIDES} options={OPTIONS} />
               </div>
             </div>
