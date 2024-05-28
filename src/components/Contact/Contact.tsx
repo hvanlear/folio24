@@ -9,6 +9,8 @@ import {
   useInView,
 } from "framer-motion";
 
+import ContactForm from "../Home/ContactForm";
+
 interface ContactProps {
   contactClass?: string;
 }
@@ -37,12 +39,12 @@ export default function Contact({ contactClass }: ContactProps) {
         animate={isInView ? "visible" : "hidden"}
       >
         <div
-          className="w-full px-10 z-10 h-72 bg-black  rounded-tl-[5rem] rounded-tr-[5rem] "
-          style={{ height: "300px" }}
+          className="w-full  z-20 h-72 bg-black  rounded-tl-[5rem] rounded-tr-[5rem] "
+          style={{ height: "500px" }}
           ref={containerRef}
         >
-          <div className="flex flex-row py-1">
-            <h1 className="text-white text-3xl">Contact me</h1>
+          <div className="flex flex-row z-10 py-1">
+            <ContactForm />
           </div>
         </div>
       </motion.section>

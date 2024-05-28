@@ -15,7 +15,6 @@
 
   - [x] Clipped border with gradient
     - [ ] gradient smooth transition
-  - [ ] Ticker
 
 - [ ] Hero
 
@@ -25,7 +24,7 @@
   - [x] Word Grid
   - [ ] Arrow
     - [x] animate
-    - [ ] gradient
+    - [ ] gradient animate
 
 - [ ] Work Section
 
@@ -35,9 +34,37 @@
     - [x] Integrate
     - [ ] Create Cards
 
+- [ ] Footer
+
+  - [x] Create component
+  - [x] Section Animation
+  - [ ] Clipped section
+    - [ ] new ticker - Shaped version with possible click interaction
+    - [x] Border
+    - [ ] ensure responsive
+  - [ ] Form
+    - [ ] install component
+    - [ ] Border
+    - [ ] ensure responsive
+  - [ ] Right side
+    - [ ] name
+    - [ ] links
+    - [ ] raleigh status
+
+- [ ] Nav Bar
+
+  - [ ] Create component
+  - [ ] Logo
+  - [ ] Responsive
+  - [ ] inverse color effect
+    - [ ]
+  - [ ] Menu Effect
+    - [ ]
+
 ### Upcoming
 
 - [ ] Party Mode
+- [ ] Light / Dark mode
   - [ ] ?
   - [ ] 🖖
 - [ ] Tests 🤷‍♂️

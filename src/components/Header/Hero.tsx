@@ -38,7 +38,7 @@ export default function Hero() {
         {`
           .grid-container {
             display: grid;
-            grid-template-rows: .5fr 2fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
             height: calc(100vh - 250px)
           }
 
