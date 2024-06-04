@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 
 import {
   motion,
@@ -9,7 +9,8 @@ import {
   useInView,
 } from "framer-motion";
 
-import ContactForm from "../Home/ContactForm";
+import ContactForm from "./ContactForm";
+import ContactInfo from "./ContactInfo";
 
 interface ContactProps {
   contactClass?: string;
@@ -40,11 +41,12 @@ export default function Contact({ contactClass }: ContactProps) {
       >
         <div
           className="w-full  z-20 h-72 bg-black  rounded-tl-[5rem] rounded-tr-[5rem] "
-          style={{ height: "500px" }}
+          style={{ height: "700px" }}
           ref={containerRef}
         >
-          <div className="flex flex-row z-10 py-1">
+          <div className="flex flex-row z-10 px-24 md:p-24 gap-24">
             <ContactForm />
+            <ContactInfo />
           </div>
         </div>
       </motion.section>

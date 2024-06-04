@@ -2,6 +2,7 @@
 import React, { useRef, useState } from "react";
 import { Label } from "../ui/Label";
 import Button from "../ui/Button";
+import { AnimatedTooltip } from "../ui/AnimatedTooltip";
 import { Input } from "../ui/Input";
 import { TextArea } from "../ui/TextArea";
 import { cn } from "../../utils/cn";
@@ -13,6 +14,16 @@ export default function ContactForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const honeypotRef = useRef<HTMLInputElement>(null);
+
+  const people = [
+    {
+      id: 1,
+      name: "John Doe",
+      designation: "Software Engineer",
+      image:
+        "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80",
+    },
+  ];
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -50,15 +61,18 @@ export default function ContactForm() {
   return (
     <div
       id="contact-container"
-      className=" relative top-30 z-10  w-full sm:w-3/4 lg:w-1/2 max-w-5xl rounded-3xl p-4 md:p-8 shadow-input  dark:bg-black"
+      className=" relative z-10  w-full sm:w-3/4 lg:w-1/2 max-w-5xl rounded-3xl shadow-input  dark:bg-black"
     >
       <h2 className="font-bold text-3xl md:text-4xl sm:text-5xl text-neutral-50 dark:text-neutral-200">
         How can we help you?
       </h2>
       <p className=" mt-4">
-        If you're a real <span className="font-bold">person</span> I'll get back
-        to ya!
+        If you&apos;re a real <span className="font-bold">person</span>{" "}
+        I&apos;ll get back to ya!
       </p>
+      <div className="flex  mb-10 w-full">
+        {/* <AnimatedTooltip items={people} /> */}
+      </div>
       <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
       {isSubmitted ? (
         <div className="p-4">
@@ -85,7 +99,7 @@ export default function ContactForm() {
             autoComplete="off"
           />
           <div className="flex flex-col  space-y-2 md:space-y-0 md:space-x-2 mb-4">
-            <LabelInputContainer className="mb-4">
+            <LabelInputContainer className="">
               <Label htmlFor="message">Message</Label>
               <TextArea
                 id="message"

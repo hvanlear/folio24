@@ -48,9 +48,6 @@ export default function Footer() {
               zIndex: 9,
             }}
           ></div>
-          <div className="text-lg text-black-2 ">
-            <h1>HELLO</h1>
-          </div>
         </div>
       </section>
     </>

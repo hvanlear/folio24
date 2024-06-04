@@ -18,10 +18,10 @@ export default function WorkAnimation() {
 
   // Calculate vertical movement based on scroll progress
   // Use dynamically calculated maxY to ensure it doesn't move outside the container
-  const y = useTransform(scrollYProgress, [0, 1], [0, -500]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, -600]);
   const springY = useSpring(y, {
-    stiffness: 100,
-    damping: 30,
+    stiffness: 60,
+    damping: 20,
   });
   return (
     <>
