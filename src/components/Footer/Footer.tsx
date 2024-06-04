@@ -9,21 +9,7 @@ export default function Footer() {
       {/* //so we can dymaically change the grid layout via MQ 
             height calc us based off of the header-clip width
       */}
-      <style>
-        {`
-          .grid-container {
-            display: grid;
-            grid-template-rows: .5fr 2fr 1fr 1fr 1fr;
-            height: calc(100vh - 250px)
-          }
-
-          @media (min-width: 1800px) {
-            .grid-container {
-              grid-template-rows: .5fr 1fr 1fr 1fr;
-            }
-          }
-        `}
-      </style>
+      <style></style>
       <section
         id="section-ticker"
         className=" bg-black  w-full overflow-hidden"

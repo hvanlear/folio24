@@ -38,13 +38,13 @@ export default function Hero() {
         {`
           .grid-container {
             display: grid;
-            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
             height: calc(100vh - 250px)
           }
 
           @media (min-width: 1800px) {
             .grid-container {
-              grid-template-rows: .5fr 1fr 1fr 1fr;
+              grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
             }
           }
         `}
@@ -79,23 +79,22 @@ export default function Hero() {
         <div className="grid-container grid lg:grid-cols-8   bg-black">
           <div
             id=" container-welcome-welcome"
-            className="row-start-1  col-start-2 col-end-6 flex justify-center 3xl:row-start-2"
+            className="row-start-1  col-start-2 col-end-6 flex justify-center 3xl:row-start-2 mt-10"
           >
             <div id="welcome" className="flex items-center 3xl:items-start">
               <h3 className="text-h2-clamp leading-snug mr-4">Welcome! Im</h3>
             </div>
             <SvgArrow />
           </div>
-          <div className="col-start-8 row-start-1 flex items-center justify-center  ">
-            <RightNav />
-          </div>
-
           <div
             id="container-welcome-name"
-            className="row-start-2 col-start-4 col-end-6 flex flex-col  3xl:justify-center "
+            className="row-start-2 col-start-4 col-end-6 flex flex-col  3xl:justify-center 3xl:row-start-3 mt-4"
           >
             <h1 className="text-h1-clamp mt-0 mb-0 leading-none ">Hunter</h1>
             <WelcomeLinks />
+          </div>
+          <div className="col-start-8 row-start-1 flex items-center justify-center  ">
+            <RightNav />
           </div>
         </div>
       </section>
