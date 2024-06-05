@@ -1,3 +1,5 @@
+import ButtonStroke from "../ui/ButtonStroke";
+
 export default function WelcomeLinks() {
   return (
     <div
@@ -9,6 +11,7 @@ export default function WelcomeLinks() {
           resume
         </a>
       </div>
+      <ButtonStroke />
       <div className="link-container flex flex-col">
         <a className="welcome-links text-h3-clamp font-bold " href="#">
           contact me
