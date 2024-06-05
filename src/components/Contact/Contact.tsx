@@ -1,5 +1,6 @@
 "use client";
 import React, { useRef } from "react";
+import styled from "styled-components";
 
 import {
   motion,
@@ -16,6 +17,23 @@ interface ContactProps {
   contactClass?: string;
 }
 
+const ResponsiveDiv = styled.div`
+  width: 100%;
+  z-index: 20;
+  background-color: black;
+  border-top-left-radius: 5rem;
+  border-top-right-radius: 5rem;
+  height: 700px;
+
+  @media (max-width: 768px) {
+    height: 900px;
+  }
+
+  @media (max-width: 480px) {
+    height: 1100px;
+  }
+`;
+
 export default function Contact({ contactClass }: ContactProps) {
   const ref = useRef(null);
   const isInView = useInView(ref);
@@ -27,8 +45,8 @@ export default function Contact({ contactClass }: ContactProps) {
   // Use dynamically calculated maxY to ensure it doesn't move outside the container
   const y = useTransform(scrollYProgress, [0, 1], [200, -0]);
   const springY = useSpring(y, {
-    stiffness: 80,
-    damping: 30,
+    stiffness: 40,
+    damping: 20,
   });
   return (
     <>
@@ -39,16 +57,12 @@ export default function Contact({ contactClass }: ContactProps) {
         }}
         animate={isInView ? "visible" : "hidden"}
       >
-        <div
-          className="w-full  z-20 h-72 bg-black  rounded-tl-[5rem] rounded-tr-[5rem] "
-          style={{ height: "700px" }}
-          ref={containerRef}
-        >
-          <div className="flex flex-row z-10 px-24 md:p-24 gap-24">
+        <ResponsiveDiv ref={containerRef}>
+          <div className="flex flex-col-reverse md:flex-row z-10 px-24  p-12 md:p-24 justify-between">
             <ContactForm />
             <ContactInfo />
           </div>
-        </div>
+        </ResponsiveDiv>
       </motion.section>
     </>
   );

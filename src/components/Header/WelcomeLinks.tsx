@@ -1,4 +1,4 @@
-import ButtonStroke from "../ui/ButtonStroke";
+import ButtonUnderline from "../ui/ButtonStroke";
 
 export default function WelcomeLinks() {
   return (
@@ -6,17 +6,12 @@ export default function WelcomeLinks() {
       id="container-welcome-links"
       className="flex flex-row space-x-8 ml-4 mt-8"
     >
-      <div className="link-container flex flex-col">
-        <a className="welcome-links text-h3-clamp font-bold " href="#">
-          resume
-        </a>
-      </div>
-      <ButtonStroke />
-      <div className="link-container flex flex-col">
-        <a className="welcome-links text-h3-clamp font-bold " href="#">
-          contact me
-        </a>
-      </div>
+      <ButtonUnderline href="#resume">
+        <span className="text-3xl">Resume</span>
+      </ButtonUnderline>
+      <ButtonUnderline href="#contact">
+        <span className="text-3xl">Resume</span>
+      </ButtonUnderline>
     </div>
   );
 }

@@ -71,7 +71,7 @@ export default function ContactForm() {
         I&apos;ll get back to ya!
       </p>
       <div className="flex  mb-10 w-full">
-        {/* <AnimatedTooltip items={people} /> */}
+        <AnimatedTooltip items={people} />
       </div>
       <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
       {isSubmitted ? (
