@@ -54,6 +54,9 @@ export default function Contact({ contactClass }: ContactProps) {
         style={{
           y: springY,
           zIndex: -1,
+          backgroundColor: "black",
+          borderTopLeftRadius: "5rem",
+          borderTopRightRadius: "5rem",
         }}
         animate={isInView ? "visible" : "hidden"}
       >
