@@ -1,5 +1,5 @@
 import Marquee from "react-fast-marquee";
-import { Arrow } from "../assets/Arrow";
+import { Arrow } from "../../assets/Arrow";
 
 import { animate } from "framer-motion";
 import { motion } from "framer-motion";

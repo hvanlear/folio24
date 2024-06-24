@@ -1,21 +1,15 @@
 import React from "react";
 import { EmblaOptionsType } from "embla-carousel";
-
 import {
   PrevButton,
   NextButton,
   usePrevNextButtons,
 } from "./CarouselArrowButtons";
 import useEmblaCarousel from "embla-carousel-react";
-
-type Project = {
-  image: string;
-  title: string;
-  tags: string[];
-};
+import CarouselSlide, { Project } from "./CarouselSlide";
 
 type PropType = {
-  slides: number;
+  slides: Project[];
   options?: EmblaOptionsType;
 };
 
@@ -40,13 +34,13 @@ const Carousel: React.FC<PropType> = (props) => {
       </div>
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
-          {slides.map((index) => (
-            <div
-              className="embla__slide shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]"
+          {slides.map((project, index) => (
+            <CarouselSlide
               key={index}
-            >
-              <div className="embla__slide__number">{index + 1}</div>
-            </div>
+              image={project.image}
+              title={project.title}
+              tags={project.tags}
+            />
           ))}
         </div>
       </div>
