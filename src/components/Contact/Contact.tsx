@@ -8,6 +8,8 @@ import {
   useScroll,
   useSpring,
   useInView,
+  useVelocity,
+  useMotionValue,
 } from "framer-motion";
 
 import ContactForm from "./ContactForm";
@@ -45,7 +47,7 @@ export default function Contact({ contactClass }: ContactProps) {
   // Use dynamically calculated maxY to ensure it doesn't move outside the container
   const y = useTransform(scrollYProgress, [0, 1], [200, -0]);
   const springY = useSpring(y, {
-    stiffness: 40,
+    stiffness: 60,
     damping: 20,
   });
   return (

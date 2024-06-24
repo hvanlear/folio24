@@ -8,8 +8,14 @@ import {
 } from "./CarouselArrowButtons";
 import useEmblaCarousel from "embla-carousel-react";
 
+type Project = {
+  image: string;
+  title: string;
+  tags: string[];
+};
+
 type PropType = {
-  slides: number[];
+  slides: number;
   options?: EmblaOptionsType;
 };
 
