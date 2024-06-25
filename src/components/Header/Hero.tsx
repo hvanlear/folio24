@@ -3,7 +3,6 @@
 import { animate } from "framer-motion";
 import { useEffect } from "react";
 
-import RightNav from "./RightNav";
 import useCycleGradients from "@/src/hooks/useCycleGradients";
 import SvgArrow from "../ui/SvgArrow";
 import Ticker from "../ui/Ticker";
@@ -92,9 +91,6 @@ export default function Hero() {
           >
             <h1 className="text-h1-clamp mt-0 mb-0 leading-none ">Hunter</h1>
             <WelcomeLinks />
-          </div>
-          <div className="col-start-8 row-start-1 flex items-center justify-center  ">
-            <RightNav />
           </div>
         </div>
       </section>
