@@ -3,20 +3,21 @@
 import Logo from "@/src/assets/Logo";
 import styled from "styled-components";
 
-const BlendedLogo = styled(Logo)`
+const BlendedSpan = styled.span`
   mix-blend-mode: difference;
-  filter: invert(1);
-
-  path,
-  rect {
-    fill: white;
-  }
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  color: white;
+  z-index: 1000;
+  width: 100%;
+  top: 10%;
+  padding-right: 1rem;
 `;
-
 export default function Nav() {
   return (
-    <span className="fixed top-0 z-50">
-      <BlendedLogo />
-    </span>
+    <BlendedSpan>
+      <Logo />
+    </BlendedSpan>
   );
 }

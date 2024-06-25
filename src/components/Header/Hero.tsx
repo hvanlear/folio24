@@ -30,7 +30,7 @@ export default function Hero() {
 
   return (
     <>
-      {/* //so we can dymaically change the grid layout via MQ 
+      {/* //so we can dynamically change the grid layout via MQ 
             height calc us based off of the header-clip width
       */}
       <style>
