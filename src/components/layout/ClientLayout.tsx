@@ -2,6 +2,7 @@
 
 import React from "react";
 import { AnimatePresence } from "framer-motion";
+import LogoGroup from "@/src/components/Header/LogoGroup";
 import HamburgerMenu from "@/src/components/ui/Hamburger";
 
 export default function ClientLayout({
@@ -11,8 +12,11 @@ export default function ClientLayout({
 }) {
   return (
     <>
-      <HamburgerMenu />
-      <AnimatePresence mode="wait">{children}</AnimatePresence>
+      <AnimatePresence mode="wait">
+        <LogoGroup />
+        <HamburgerMenu />
+        {children}
+      </AnimatePresence>
     </>
   );
 }

@@ -18,8 +18,9 @@ export default function HamburgerMenu() {
     <div>
       <motion.button
         onClick={toggleMenu}
-        className="fixed top-4 right-4 z-50 p-2"
+        className="fixed top-6 right-4 z-50 p-2"
         whileTap={{ scale: 0.95 }}
+        style={{ mixBlendMode: "difference" }}
       >
         {[0, 1].map((i) => (
           <motion.div
@@ -27,7 +28,7 @@ export default function HamburgerMenu() {
             variants={hamburgerVariants}
             custom={i}
             animate={isOpen ? "open" : "closed"}
-            className="w-6 h-0.5 bg-black my-1"
+            className="w-6 h-0.5 bg-white my-1"
           />
         ))}
       </motion.button>
@@ -36,7 +37,7 @@ export default function HamburgerMenu() {
         variants={menuVariants}
         initial="closed"
         animate={isOpen ? "open" : "closed"}
-        className="fixed top-0 right-0 bottom-0 w-full bg-white shadow-lg p-4 z-40"
+        className="fixed top-0 right-0 bottom-0 w-64 bg-white shadow-lg p-4 z-40"
       >
         <ul className="mt-16">
           {["Home", "Projects", "About", "Contact"].map((item) => (

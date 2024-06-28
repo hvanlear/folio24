@@ -21,7 +21,7 @@ export const pageTransition = {
 
 export const hamburgerVariants = {
   closed: { rotate: 0, y: 0 },
-  open: (i) => ({ rotate: i === 1 ? 45 : -45, y: i === 1 ? 0 : -8 }),
+  open: (i: number) => ({ rotate: i === 1 ? 45 : -45, y: i === 1 ? 0 : -8 }),
 };
 
 export const menuVariants = {
