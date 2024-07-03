@@ -26,7 +26,7 @@ export const hamburgerVariants = {
   }),
   open: (i: number) => ({
     rotate: i === 0 ? 45 : -45,
-    y: i === 0 ? 11 : 5, // 10px for first line, 5px for second line
+    y: i === 0 ? 11 : 5, // 11px for first line, 5px for second line
   }),
 };
 
