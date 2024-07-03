@@ -22,13 +22,14 @@ export const pageTransition = {
 export const hamburgerVariants = {
   closed: (i: number) => ({
     rotate: 0,
-    y: i * 5, // Separate the lines in the closed state
+    y: i * 5, // 0px for first line, 5px for second line
   }),
   open: (i: number) => ({
     rotate: i === 0 ? 45 : -45,
-    y: 5, // Move both lines to the center
+    y: i === 0 ? 11 : 5, // 10px for first line, 5px for second line
   }),
 };
+
 export const menuVariants = {
   closed: { opacity: 0, x: "100%" },
   open: { opacity: 1, x: 0, transition: { staggerChildren: 0.1 } },
