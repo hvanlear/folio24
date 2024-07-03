@@ -37,20 +37,26 @@ export default function HamburgerMenu() {
         variants={menuVariants}
         initial="closed"
         animate={isOpen ? "open" : "closed"}
-        className="fixed top-0 right-0 bottom-0 w-64 bg-white shadow-lg p-4 z-40"
+        className="fixed top-0 right-0 bottom-0 w-full bg-white shadow-lg flex justify-center items-center z-40"
       >
-        <ul className="mt-16">
-          {["Home", "Projects", "About", "Contact"].map((item) => (
-            <motion.li key={item} variants={menuItemVariants} className="my-4">
-              <Link
-                href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                className="text-xl hover:text-blue-500 text-black"
+        <div className="nav-container ">
+          <ul className="mt-16">
+            {["Home", "Projects", "About", "Contact"].map((item) => (
+              <motion.li
+                key={item}
+                variants={menuItemVariants}
+                className="my-4"
               >
-                {item}
-              </Link>
-            </motion.li>
-          ))}
-        </ul>
+                <Link
+                  href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                  className="text-9xl hover:text-blue-500 text-black"
+                >
+                  {item}
+                </Link>
+              </motion.li>
+            ))}
+          </ul>
+        </div>
       </motion.nav>
     </div>
   );
