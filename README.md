@@ -53,13 +53,13 @@
 
 - [ ] Nav Bar
 
-  - [ ] Create component
-  - [ ] Logo
-  - [ ] Responsive
-  - [ ] inverse color effect
+  - [x] Create component
+  - [x] Logo
+  - [ ] Responsive / Final Positioning
+  - [x] inverse color effect
     - [ ]
   - [ ] Menu Effect
-    - [ ]
+    - [x] Animate the Burg
 
 ### Upcoming
 

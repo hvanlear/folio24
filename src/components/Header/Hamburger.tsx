@@ -15,10 +15,10 @@ export default function HamburgerMenu() {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <div>
+    <>
       <motion.button
         onClick={toggleMenu}
-        className="fixed top-6 right-4 z-50 p-2"
+        className=" top-6 right-4  p-2 z-50"
         whileTap={{ scale: 0.95 }}
         style={{ mixBlendMode: "difference" }}
       >
@@ -37,7 +37,7 @@ export default function HamburgerMenu() {
         variants={menuVariants}
         initial="closed"
         animate={isOpen ? "open" : "closed"}
-        className="fixed top-0 right-0 bottom-0 w-full bg-white shadow-lg flex justify-center items-center z-40"
+        className="fixed top-0 right-0 bottom-0 w-full bg-white flex justify-center items-center z-40"
       >
         <div className="nav-container ">
           <ul className="mt-16">
@@ -58,6 +58,6 @@ export default function HamburgerMenu() {
           </ul>
         </div>
       </motion.nav>
-    </div>
+    </>
   );
 }

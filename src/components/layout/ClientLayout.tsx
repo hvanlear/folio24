@@ -2,8 +2,9 @@
 
 import React from "react";
 import { AnimatePresence } from "framer-motion";
-import LogoGroup from "@/src/components/Header/LogoGroup";
-import HamburgerMenu from "@/src/components/ui/Hamburger";
+// import LogoGroup from "@/src/components/Header/LogoGroup";
+// import HamburgerMenu from "@/src/components/Header/Hamburger";
+import Header from "@/src/components/Header/Header";
 
 export default function ClientLayout({
   children,
@@ -13,8 +14,9 @@ export default function ClientLayout({
   return (
     <>
       <AnimatePresence mode="wait">
-        <LogoGroup />
-        <HamburgerMenu />
+        {/* <LogoGroup />
+        <HamburgerMenu /> */}
+        <Header />
         {children}
       </AnimatePresence>
     </>
