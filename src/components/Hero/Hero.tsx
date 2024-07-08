@@ -81,7 +81,9 @@ export default function Hero() {
             className="row-start-1  col-start-2 col-end-6 flex justify-center 3xl:row-start-2 mt-10"
           >
             <div id="welcome" className="flex items-center 3xl:items-start">
-              <h3 className="text-h2-clamp leading-snug mr-4">Welcome! Im</h3>
+              <h3 className="text-h2-clamp leading-snug mr-4">
+                Welcome! I&apos;m
+              </h3>
             </div>
             <SvgArrow />
           </div>

@@ -31,8 +31,25 @@ export const hamburgerVariants = {
 };
 
 export const menuVariants = {
-  closed: { opacity: 0, x: "100%" },
-  open: { opacity: 1, x: 0, transition: { staggerChildren: 0.1 } },
+  closed: {
+    opacity: 0,
+    x: "100%",
+    transition: {
+      type: "tween",
+      ease: "easeInOut",
+      duration: 0.3,
+    },
+  },
+  open: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: "tween",
+      ease: "easeOut",
+      duration: 0.3,
+      staggerChildren: 0.15,
+    },
+  },
 };
 
 export const menuItemVariants = {
