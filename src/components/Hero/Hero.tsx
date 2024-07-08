@@ -50,7 +50,7 @@ export default function Hero() {
       </style>
       <section
         id="section-ticker"
-        className=" bg-black  w-full overflow-hidden"
+        className=" bg-black w-full overflow-hidden z-0"
       >
         <div
           id="header-clip"

@@ -16,7 +16,7 @@ export const pageVariants = {
 export const pageTransition = {
   type: "tween",
   ease: "anticipate",
-  duration: 10,
+  duration: 0.6,
 };
 
 export const hamburgerVariants = {
