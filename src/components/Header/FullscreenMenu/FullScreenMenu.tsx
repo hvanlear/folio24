@@ -1,3 +1,7 @@
+"use client";
+
+import FSMContactLinks from "./FSMContactLinks";
+
 import { motion } from "framer-motion";
 import Link from "next/link";
 import {
@@ -27,6 +31,7 @@ export default function FullScreenMenu({ isOpen }: { isOpen: boolean }) {
             </motion.li>
           ))}
         </ul>
+        <FSMContactLinks />
       </div>
     </motion.nav>
   );
