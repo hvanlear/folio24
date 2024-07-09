@@ -1,22 +1,22 @@
 import React from "react";
-import contactData from "@/src/utils/contactData";
-
-const socialContactData = contactData.filter((item) => item.type === "social");
+import { socialContactData } from "@/src/utils/contactData";
 
 const FSMContactLinks: React.FC = () => {
+  const socialContacts = socialContactData();
+
   return (
     <>
       <h3 className="text-black">CONTACT</h3>
       <ul className="flex flex-row gap-4">
-        {socialContactData.map((item, index) => (
+        {socialContacts.map((contact, index) => (
           <li key={index}>
             <a
-              href={item.link}
+              href={contact.link}
               className="text-black text-5xl"
               target="_blank"
               rel="noopener n oreferrer"
             >
-              {item.value}
+              {contact.value}
             </a>
           </li>
         ))}

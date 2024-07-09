@@ -53,10 +53,10 @@ export const getContactDataByType = (
   return contactData.filter((item) => item.type === type);
 };
 
-export const getSocialContacts = (): ContactInfo[] =>
+export const socialContactData = (): ContactInfo[] =>
   getContactDataByType("social");
 
-export const getEmailContacts = (): ContactInfo[] =>
+export const emailContactData = (): ContactInfo[] =>
   getContactDataByType("email");
 
 export default contactData;
