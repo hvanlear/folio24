@@ -1,32 +1,38 @@
-export interface Contact {
-  id: number;
-  name: string;
-  logo?: string;
-  url: string;
+// data/contactData.ts
+
+export interface ContactInfo {
+  type: "email" | "phone" | "social";
+  value: string;
+  link?: string;
+  icon?: React.ComponentType<{
+    size?: number;
+    color?: string;
+    className?: string;
+  }>;
 }
 
-export const contact: Contact[] = [
+const contactData: ContactInfo[] = [
   {
-    id: 1,
-    name: "hvanlear@gmail.com",
-    url: "mailto:hvanlear@gmail.com",
+    type: "email",
+    value: "hvanlear@gmial.com",
+    link: "mailto:hvanlear@gmail.com",
   },
   {
-    id: 2,
-    name: "LinkedIn",
-    logo: "This is a description for Project Two.",
-    url: "www.test.com",
+    type: "social",
+    value: "LinkedIn",
+    link: "https://www.linkedin.com/in/yourprofile",
+    // icon: (props) => <SocialIcon name="linkedin" {...props} />,
   },
   {
-    id: 2,
-    name: "GitHub",
-    logo: "This is a description for Project Two.",
-    url: "www.test.com",
+    type: "social",
+    value: "Instagram",
+    link: "https://www.instagram.com/yourprofile",
   },
   {
-    id: 2,
-    name: "Dribbble",
-    logo: "This is a description for Project Two.",
-    url: "www.test.com",
+    type: "social",
+    value: "GitHub",
+    link: "https://github.com/yourusername",
   },
 ];
+
+export default contactData;
