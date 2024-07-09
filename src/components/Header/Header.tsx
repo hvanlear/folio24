@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import LogoGroup from "./LogoGroup";
 import Hamburger from "./Hamburger";
-import FullScreenMenu from "./FullScreenMenu";
+import FullScreenMenu from "./FullscreenMenu/FullScreenMenu";
 import styled from "styled-components";
 
 const HeaderContainer = styled.header`

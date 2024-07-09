@@ -43,13 +43,12 @@
     - [x] Border
     - [ ] ensure responsive
   - [ ] Form
-    - [ ] install component
+    - [x] install component
     - [ ] Border
     - [ ] ensure responsive
   - [ ] Right side
     - [ ] name
     - [ ] links
-    - [ ] raleigh status
 
 - [ ] Nav Bar
 
@@ -58,8 +57,12 @@
   - [ ] Responsive / Final Positioning
   - [x] inverse color effect
     - [ ]
-  - [ ] Menu Effect
-    - [x] Animate the Burg
+  - [x] Menu Effect
+    - [x] Animate the Burger
+    - [x] Main Menu
+    - [ ] Weather and Time
+    - [ ] Contact links
+    - [ ] Right side Copyright + Email
 
 ### Upcoming
 

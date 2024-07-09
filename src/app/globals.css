@@ -10,7 +10,7 @@ html {
 
 ::-moz-selection {
   color: rgba(0, 0, 0, 0.947);
-  background: rgba(0, 149, 255, 0.572);
+  background: rgba(0, 255, 174, 0.572);
 }
 
 ::selection {
