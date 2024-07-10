@@ -91,7 +91,9 @@ export default function Hero() {
             id="container-welcome-name"
             className="row-start-2 col-start-4 col-end-6 flex flex-col  3xl:justify-center 3xl:row-start-3 mt-4"
           >
-            <h1 className="text-h1-clamp mt-0 mb-0 leading-none ">Hunter</h1>
+            <h1 className="text-h1-clamp mt-0 mb-0 leading-none tracking-tighter ">
+              Hunter
+            </h1>
             <WelcomeLinks />
           </div>
         </div>

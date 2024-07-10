@@ -47,7 +47,7 @@ export const menuVariants = {
       type: "tween",
       ease: "easeOut",
       duration: 0.3,
-      staggerChildren: 0.15,
+      staggerChildren: 0.09,
     },
   },
 };

@@ -16,6 +16,10 @@
   - [x] Clipped border with gradient
     - [ ] gradient smooth transition
 
+- [ ] Site
+
+  - [ ] Page transitions
+
 - [ ] Hero
 
   - [ ] responsive
@@ -58,15 +62,18 @@
   - [x] inverse color effect
     - [ ]
   - [x] Menu Effect
+
     - [x] Animate the Burger
     - [x] Main Menu
     - [ ] Weather and Time
+
     - [ ] Contact links
     - [ ] Right side Copyright + Email
 
 ### Upcoming
 
 - [ ] Party Mode
+- [ ] Weather History
 - [ ] Light / Dark mode
   - [ ] ?
   - [ ] 🖖
