@@ -1,3 +1,5 @@
+//Utilizing contact icons: <contact.icon size={24} color="currentColor" stroke={2} />
+
 import {
   IconMail,
   IconBrandLinkedin,
@@ -56,7 +58,9 @@ export const getContactDataByType = (
 export const socialContactData = (): ContactInfo[] =>
   getContactDataByType("social");
 
-export const emailContactData = (): ContactInfo[] =>
-  getContactDataByType("email");
+export const emailContactData = (): ContactInfo => {
+  const emailData = getContactDataByType("email");
+  return emailData[0];
+};
 
 export default contactData;

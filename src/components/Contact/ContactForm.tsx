@@ -64,15 +64,13 @@ export default function ContactForm() {
       className=" relative z-10  w-full sm:w-3/4 lg:w-1/2 max-w-5xl rounded-3xl shadow-input  dark:bg-black"
     >
       <h2 className="font-bold text-3xl md:text-4xl sm:text-5xl text-neutral-50 dark:text-neutral-200">
-        How can we help you?
+        Drop me a line!
       </h2>
-      <p className=" mt-4">
-        If you&apos;re a real <span className="font-bold">person</span>{" "}
-        I&apos;ll get back to ya!
-      </p>
-      <div className="flex  mb-10 w-full">
+      <p className=" mt-4">If you&apos;re a real</p>
+      <span className="flex ">
         <AnimatedTooltip items={people} />
-      </div>
+      </span>
+
       <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
       {isSubmitted ? (
         <div className="p-4">

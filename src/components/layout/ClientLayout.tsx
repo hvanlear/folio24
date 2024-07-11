@@ -11,7 +11,7 @@ export default function ClientLayout({
 }) {
   return (
     <>
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="sync">
         <Header />
         {children}
       </AnimatePresence>

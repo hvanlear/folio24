@@ -47,7 +47,7 @@ export const AnimatedTooltip = ({
           onMouseLeave={() => setHoveredIndex(null)}
         >
           {hoveredIndex === item.id && (
-            <motion.div
+            <motion.span
               initial={{ opacity: 0, y: 20, scale: 0.6 }}
               animate={{
                 opacity: 1,
@@ -73,13 +73,13 @@ export const AnimatedTooltip = ({
                 {item.name}
               </div>
               <div className="text-white text-xs">{item.designation}</div>
-            </motion.div>
+            </motion.span>
           )}
           <span
             onMouseMove={handleMouseMove}
-            className="h-14 w-14  grouspan-hover:scale-105 group-hover:z-30 border-white  relative transition duration-500"
+            className="h-14 w-14  grouspan-hover:scale-105 group-hover:z-30 border-white font-bold  relative transition duration-500"
           >
-            HELLO
+            person
           </span>
           {/* <Image
             height={100}
