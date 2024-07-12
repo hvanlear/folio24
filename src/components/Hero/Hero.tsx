@@ -69,8 +69,8 @@ export default function Hero() {
               zIndex: 9,
             }}
           ></div>
-          <div className="text-lg text-black-2 ">
-            <Ticker tickerClass="row-start-4 sm:row-start-5 h-full" />
+          <div className="">
+            <Ticker baseVelocity={1}>UX Designer Web Developer </Ticker>
           </div>
         </div>
       </section>

@@ -36,23 +36,7 @@ export default function Footer() {
               zIndex: 9,
             }}
           ></div>
-          <div className="text-lg text-black-2 ">
-            <Ticker
-              speed={100}
-              tickerWords={[
-                "Thanks for coming!",
-                "Adios",
-                "👋",
-                "Adieu",
-                "Thanks for coming!",
-                "Adios",
-                "👋",
-                "Adieu",
-              ]}
-              tickerDirection="left"
-              tickerClass=" flex h-full"
-            />
-          </div>
+          <div className="text-lg text-black-2 "></div>
         </div>
       </section>
     </>
