@@ -28,7 +28,7 @@
   - [x] Word Grid
   - [ ] Arrow
     - [x] animate
-    - [ ] gradient animate
+    - [ ] animate gradient
 
 - [ ] Work Section
 
@@ -62,13 +62,11 @@
   - [x] inverse color effect
     - [ ]
   - [x] Menu Effect
-
     - [x] Animate the Burger
     - [x] Main Menu
     - [ ] Weather and Time
-
-    - [ ] Contact links
-    - [ ] Right side Copyright + Email
+    - [x] Contact links
+    - [x] Right side Copyright + Email
 
 ### Upcoming
 

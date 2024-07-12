@@ -63,7 +63,7 @@ export default function Contact({ contactClass }: ContactProps) {
         animate={isInView ? "visible" : "hidden"}
       >
         <ResponsiveDiv ref={containerRef}>
-          <div className="flex flex-col-reverse md:flex-row z-10 px-24  p-12 md:p-24 justify-between">
+          <div className="flex flex-col-reverse md:flex-row z-10 px-24  p-12 md:p-32 justify-between">
             <ContactForm />
             <ContactInfo />
           </div>

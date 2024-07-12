@@ -2,7 +2,6 @@
 import React, { useRef, useState } from "react";
 import { Label } from "../ui/Label";
 import Button from "../ui/Button";
-import { AnimatedTooltip } from "../ui/AnimatedTooltip";
 import { Input } from "../ui/Input";
 import { TextArea } from "../ui/TextArea";
 import { cn } from "../../utils/cn";
@@ -14,16 +13,6 @@ export default function ContactForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const honeypotRef = useRef<HTMLInputElement>(null);
-
-  const people = [
-    {
-      id: 1,
-      name: "John Doe",
-      designation: "Software Engineer",
-      image:
-        "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80",
-    },
-  ];
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -66,10 +55,10 @@ export default function ContactForm() {
       <h2 className="font-bold text-3xl md:text-4xl sm:text-5xl text-neutral-50 dark:text-neutral-200">
         Drop me a line!
       </h2>
-      <p className=" mt-4">If you&apos;re a real</p>
-      <span className="flex ">
-        <AnimatedTooltip items={people} />
-      </span>
+      <p className="mt-4 text-xl">
+        Delivered straight to
+        <span className="font-bold"> hvanlear@gmail.com</span>
+      </p>
 
       <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
       {isSubmitted ? (
@@ -98,10 +87,12 @@ export default function ContactForm() {
           />
           <div className="flex flex-col  space-y-2 md:space-y-0 md:space-x-2 mb-4">
             <LabelInputContainer className="">
-              <Label htmlFor="message">Message</Label>
+              <Label className="text-white" htmlFor="message">
+                Message
+              </Label>
               <TextArea
                 id="message"
-                placeholder="Tell us about your project"
+                placeholder="Say hello!"
                 rows={5}
                 cols={50}
                 value={message}
@@ -111,7 +102,9 @@ export default function ContactForm() {
           </div>
           <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
             <LabelInputContainer className="mb-4">
-              <Label htmlFor="name">Name</Label>
+              <Label className="text-white" htmlFor="name">
+                Name
+              </Label>
               <Input
                 id="name"
                 placeholder="Your Name"
@@ -121,7 +114,9 @@ export default function ContactForm() {
               />
             </LabelInputContainer>
             <LabelInputContainer className="mb-4">
-              <Label htmlFor="email">Email</Label>
+              <Label className="text-white" htmlFor="email">
+                Email
+              </Label>
               <Input
                 id="email"
                 placeholder="Your Email"
@@ -141,11 +136,6 @@ export default function ContactForm() {
         </form>
       )}
       <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
-
-      <p className="">
-        This goes straight to my email
-        <span className="font-bold"> hvanlear@gmail.com</span>
-      </p>
     </div>
   );
 }

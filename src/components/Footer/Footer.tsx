@@ -1,5 +1,7 @@
 "use client";
 
+import Ticker from "../ui/Ticker";
+
 import useCycleGradients from "@/src/hooks/useCycleGradients";
 
 export default function Footer() {
@@ -34,6 +36,23 @@ export default function Footer() {
               zIndex: 9,
             }}
           ></div>
+          <div className="text-lg text-black-2 ">
+            <Ticker
+              speed={100}
+              tickerWords={[
+                "Thanks for coming!",
+                "Adios",
+                "👋",
+                "Adieu",
+                "Thanks for coming!",
+                "Adios",
+                "👋",
+                "Adieu",
+              ]}
+              tickerDirection="left"
+              tickerClass=" flex h-full"
+            />
+          </div>
         </div>
       </section>
     </>

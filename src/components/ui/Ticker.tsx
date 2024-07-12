@@ -8,16 +8,19 @@ import { useEffect } from "react";
 
 interface TickerProps {
   tickerClass?: string;
+  tickerWords: string[];
+  speed: number;
+  tickerDirection: "left" | "right" | "up" | "down" | undefined;
 }
 
-const services = ["UI Design", "UX Audit", "AI Consultancy", "Web Development"];
+// const services = ["UI Design", "UX Audit", "AI Consultancy", "Web Development"];
 
-const ticketGroup = services.flatMap((service, index) => [
-  service,
-  <Arrow key={index} />,
-]);
-
-export default function Ticker({ tickerClass }: TickerProps) {
+export default function Ticker({
+  tickerClass = "left",
+  tickerWords = [],
+  tickerDirection,
+  speed = 50,
+}: TickerProps) {
   const initialFadeIn = animationStyles.initialFadeIn;
 
   const variants = {
@@ -33,8 +36,13 @@ export default function Ticker({ tickerClass }: TickerProps) {
     }),
   };
 
+  const ticketGroup = tickerWords.flatMap((word, index) => [
+    word,
+    <Arrow key={`arrow-${index}`} />,
+  ]);
+
   return (
-    <Marquee direction="right" className={tickerClass}>
+    <Marquee speed={speed} direction={tickerDirection} className={tickerClass}>
       {ticketGroup.map((str, index) => (
         <motion.p
           style={initialFadeIn}

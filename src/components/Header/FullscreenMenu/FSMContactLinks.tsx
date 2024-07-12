@@ -17,7 +17,7 @@ const FSMContactLinks: React.FC = () => {
                 href={contact.link}
                 className="text-black text-3xl hover:text-blue-500 font-bold"
                 target="_blank"
-                rel="noopener n oreferrer"
+                rel="noopener noreferrer"
               >
                 {contact.value}
               </a>
