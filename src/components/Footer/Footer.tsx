@@ -36,7 +36,9 @@ export default function Footer() {
               zIndex: 9,
             }}
           ></div>
-          <div className="text-lg text-black-2 "></div>
+          <div className="text-lg text-black-2 ">
+            <Ticker baseVelocity={1}>Thanks! Adios Adeio </Ticker>
+          </div>
         </div>
       </section>
     </>

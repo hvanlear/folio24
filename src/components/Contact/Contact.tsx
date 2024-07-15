@@ -8,8 +8,6 @@ import {
   useScroll,
   useSpring,
   useInView,
-  useVelocity,
-  useMotionValue,
 } from "framer-motion";
 
 import ContactForm from "./ContactForm";
