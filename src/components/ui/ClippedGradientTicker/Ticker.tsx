@@ -1,4 +1,5 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
+import { Cube } from "@/src/assets/Cube";
 import styled from "styled-components";
 import {
   motion,
@@ -12,7 +13,7 @@ import {
 import { wrap } from "@motionone/utils";
 
 interface ParallaxProps {
-  children: string;
+  children: React.ReactNode;
   baseVelocity: number;
 }
 
@@ -91,10 +92,18 @@ export default function Ticker({
   return (
     <ParallaxContainer>
       <Scroller style={{ x }}>
-        <ScrollerSpan>{children} </ScrollerSpan>
-        <ScrollerSpan>{children} </ScrollerSpan>
-        <ScrollerSpan>{children} </ScrollerSpan>
-        <ScrollerSpan>{children} </ScrollerSpan>
+        <ScrollerSpan>
+          {children} <Cube />
+        </ScrollerSpan>
+        <ScrollerSpan>
+          {children} <Cube />
+        </ScrollerSpan>
+        <ScrollerSpan>
+          {children} <Cube />
+        </ScrollerSpan>
+        <ScrollerSpan>
+          {children} <Cube />
+        </ScrollerSpan>
       </Scroller>
     </ParallaxContainer>
   );

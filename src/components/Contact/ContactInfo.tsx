@@ -1,4 +1,19 @@
+import { socialContactData } from "@/src/utils/contactData";
+
+//Utilizing contact icons:
+//  const socialContacts = socialContactData();
+// {socialContacts.map((contact, index) => (
+//   <li key={index} variants={menuItemVariants}>
+//     <a
+//       href={contact.link}
+//     >
+//       {contact.value}
+//     </a>
+//      <contact.icon size={24} color="currentColor" stroke={2} />
+//   </li>
+
 export default function ContactInfo() {
+  const socialContacts = socialContactData();
   return (
     <div className="flex flex-col gap-4 justify-center">
       <div className="">
@@ -25,8 +40,20 @@ export default function ContactInfo() {
           </li>
         </ul>
       </nav>
-      <div className="flex flex-row">
-        <p>Elsewhere</p>
+      <div className="flex flex-row gap-4 items-center">
+        <p className="text-xl">Elsewhere</p>
+        {socialContacts.map((contact, index) => (
+          <li key={index}>
+            <a
+              href={contact.link}
+              className="text-white text-3xl hover:text-blue-500 font-bold"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <contact.icon size={35} color="currentColor" stroke={2} />
+            </a>
+          </li>
+        ))}
       </div>
     </div>
   );

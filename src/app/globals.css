@@ -44,4 +44,12 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  li {
+    text-decoration: none ;
+  }
+
+  li::marker {
+    content: none;
+}
 }

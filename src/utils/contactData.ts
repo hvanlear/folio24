@@ -1,5 +1,3 @@
-//Utilizing contact icons: <contact.icon size={24} color="currentColor" stroke={2} />
-
 import {
   IconMail,
   IconBrandLinkedin,
@@ -54,6 +52,22 @@ export const getContactDataByType = (
 ): ContactInfo[] => {
   return contactData.filter((item) => item.type === type);
 };
+
+//Utilizing contact icons:
+//  const socialContacts = socialContactData();
+// {socialContacts.map((contact, index) => (
+//   <li key={index} >
+//     <a
+//       href={contact.link}
+//       className="text-black text-3xl hover:text-blue-500 font-bold"
+//       target="_blank"
+//       rel="noopener noreferrer"
+//     >
+//       {contact.value}
+//     </a>
+//        <contact.icon size={24} color="currentColor" stroke={2} />
+//   </li>
+// ))}
 
 export const socialContactData = (): ContactInfo[] =>
   getContactDataByType("social");

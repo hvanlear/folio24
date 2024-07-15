@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 //tailwind couldn't accommodate this styling therefore styled comps
 
-const HeaderContainer = styled.header`
+const NavContainer = styled.nav`
   position: fixed;
   display: flex;
   justify-content: space-between;
@@ -17,17 +17,17 @@ const HeaderContainer = styled.header`
   mix-blend-mode: difference;
 `;
 
-export default function Header() {
+export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
     <>
-      <HeaderContainer>
+      <NavContainer>
         <LogoGroup />
         <Hamburger isOpen={isMenuOpen} toggleMenu={toggleMenu} />
-      </HeaderContainer>
+      </NavContainer>
       <FullScreenMenu isOpen={isMenuOpen} />
     </>
   );

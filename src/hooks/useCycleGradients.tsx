@@ -12,7 +12,11 @@ function useCycleGradients(initialIndex = 0) {
     return () => clearInterval(intervalId);
   }, []);
 
-  return gradients[gradientIndex];
+  return {
+    gradient: gradients[gradientIndex],
+    startColor: gradients[gradientIndex].split(",")[3].trim(),
+    endColor: gradients[gradientIndex].split(",")[5].trim().slice(0, -1),
+  };
 }
 
 export default useCycleGradients;

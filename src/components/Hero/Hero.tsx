@@ -5,12 +5,13 @@ import { useEffect } from "react";
 
 import useCycleGradients from "@/src/hooks/useCycleGradients";
 import SvgArrow from "../ui/SvgArrow";
-import Ticker from "../ui/Ticker";
+// import Ticker from "../ui/ClippedGradientTicker/Ticker";
+import ClippedGradientTicker from "../ui/ClippedGradientTicker/ClippedGradientTicker";
 import WelcomeLinks from "./WelcomeLinks";
 
 export default function Hero() {
   //cycle gradients
-  const currentGradient = useCycleGradients();
+  const { gradient } = useCycleGradients();
 
   useEffect(() => {
     const staggerDelay = 0.2;
@@ -52,27 +53,13 @@ export default function Hero() {
         id="section-ticker"
         className=" bg-black w-full overflow-hidden z-0"
       >
-        <div
-          id="header-clip"
-          style={{ clipPath: "polygon(0 0%, 100% 0, 100% 24%, 0 98%)" }}
-          className="bg-white relative h-64 flex  dark:bg-grid-small-white/[0.2] bg-grid-small-black/[0.2]"
-        >
-          <div
-            style={{
-              clipPath: "polygon(0px 72%, 100% 0px, 100% 25%, 0px 97%)",
-              backgroundImage: currentGradient,
-              position: "absolute",
-              left: 0,
-              top: "18%",
-              right: 0,
-              height: "100%",
-              zIndex: 9,
-            }}
-          ></div>
-          <div className="">
-            <Ticker baseVelocity={1}>UX Designer Web Developer </Ticker>
-          </div>
-        </div>
+        <ClippedGradientTicker
+          containerClipPath="polygon(0 0%, 100% 0, 100% 24%, 0 98%)"
+          gradientClipPath="polygon(0px 72%, 100% 0px, 100% 25%, 0px 97%)"
+          gradientTop="18%"
+          tickerContent="UX TES Web Developer"
+          gradient={gradient}
+        />
       </section>
       <section id="section-welcome">
         <div className="grid-container grid lg:grid-cols-8   bg-black">

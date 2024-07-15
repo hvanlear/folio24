@@ -2,7 +2,7 @@
 
 import React from "react";
 import { AnimatePresence } from "framer-motion";
-import Header from "@/src/components/Header/Header";
+import Nav from "@/src/components/Nav/Nav";
 
 export default function ClientLayout({
   children,
@@ -12,7 +12,7 @@ export default function ClientLayout({
   return (
     <>
       <AnimatePresence mode="sync">
-        <Header />
+        <Nav />
         {children}
       </AnimatePresence>
     </>
