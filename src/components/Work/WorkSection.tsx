@@ -1,7 +1,7 @@
 "use client";
 
 import "../ui/Carousel/carousel.css";
-
+import useWindowSize from "@/src/hooks/useWindowSize";
 import { useRef, useState, useEffect } from "react";
 import {
   motion,
@@ -9,6 +9,7 @@ import {
   useTransform,
   useSpring,
   MotionValue,
+  spring,
 } from "framer-motion";
 import { EmblaOptionsType } from "embla-carousel";
 import modelMac from "@/src/assets/images/projects/modelMac.png";
@@ -46,10 +47,12 @@ const PROJECTS: Project[] = [
 //   const containerRef = useRef<HTMLDivElement>(null);
 //   const { scrollYProgress } = useScroll();
 
-//   // Calculate vertical movement based on scroll progress
+//   // Limit the upward movement to -400px
 //   const y = useTransform(scrollYProgress, [0, 1], [0, -800], {
-//     clamp: true,
+//     clamp: false,
+//     ease: (t) => Math.min(t, 0.5), // This caps the movement at 50% of the full range
 //   });
+
 //   const springY = useSpring(y, {
 //     stiffness: 60,
 //     damping: 20,
@@ -80,30 +83,22 @@ const PROJECTS: Project[] = [
 //     </>
 //   );
 // }
+
 export default function WorkAnimation() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll();
-  const [maxMove, setMaxMove] = useState(0);
+  const [width] = useWindowSize();
 
-  useEffect(() => {
-    const updateMaxMove = () => {
-      const viewportHeight = window.innerHeight;
-      setMaxMove(Math.min(-viewportHeight * 0.5, -400));
-    };
-
-    updateMaxMove();
-    window.addEventListener("resize", updateMaxMove);
-    return () => window.removeEventListener("resize", updateMaxMove);
-  }, []);
-
-  const y: MotionValue<number> = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [0, maxMove],
-    {
-      clamp: true,
-    }
-  );
+  const y = useTransform(scrollYProgress, [0, 1], [0, -800], {
+    clamp: false,
+    ease: (t) => {
+      if (width <= 768) {
+        // Adjust this breakpoint as needed
+        return Math.min(t, 124.97 / 800); // Limit to -124.97px on smaller screens
+      }
+      return Math.min(t, 0.5); // Original limit for larger screens
+    },
+  });
 
   const springY = useSpring(y, {
     stiffness: 60,
@@ -112,7 +107,7 @@ export default function WorkAnimation() {
 
   return (
     <>
-      <motion.section>
+      <motion.section style={{ y: springY }}>
         <section
           ref={containerRef}
           className="h-[30rem] relative mb-0 rounded-tl-[5rem] rounded-tr-[5rem] top-[2rem] bg-white flex items-center "
