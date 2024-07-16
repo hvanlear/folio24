@@ -29,7 +29,7 @@ export default function SvgArrow() {
   // Calculate the SVG dimensions based on screen size
   const baseWidth = 247;
   const baseHeight = 50;
-  const scaleFactor = windowWidth / 3000; // Assuming 1920px as the base width
+  const scaleFactor = windowWidth / 2000; // Assuming 1920px as the base width
   const width = baseWidth * scaleFactor;
   const height = baseHeight * scaleFactor;
 
