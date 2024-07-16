@@ -29,19 +29,18 @@ export default function SvgArrow() {
   // Define base dimensions and maximum width
   const baseWidth = 247;
   const baseHeight = 50;
-  const maxWidth = 200; // Adjust this value as needed
+  const maxWidth = 200;
 
   // Calculate the SVG dimensions based on screen size
-  let scaleFactor = windowWidth / 3000;
+  let scaleFactor = windowWidth / 2000;
   let width = baseWidth * scaleFactor;
+  const height = baseHeight * scaleFactor;
 
   // Cap the width at maxWidth
   if (width > maxWidth) {
     scaleFactor = maxWidth / baseWidth;
     width = maxWidth;
   }
-
-  const height = baseHeight * scaleFactor;
 
   return (
     <motion.svg
