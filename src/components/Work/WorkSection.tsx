@@ -89,11 +89,11 @@ export default function WorkAnimation() {
   const { scrollYProgress } = useScroll();
   const [width] = useWindowSize();
 
-  const y = useTransform(scrollYProgress, [0, 1], [0, -800], {
+  const y = useTransform(scrollYProgress, [0, 1], [0, -400], {
     clamp: false,
     ease: (t) => {
+      // Adjust this breakpoint as needed
       if (width <= 768) {
-        // Adjust this breakpoint as needed
         return Math.min(t, 124.97 / 800); // Limit to -124.97px on smaller screens
       }
       return Math.min(t, 0.5); // Original limit for larger screens
@@ -110,7 +110,7 @@ export default function WorkAnimation() {
       <motion.section style={{ y: springY }}>
         <section
           ref={containerRef}
-          className="h-[30rem] relative mb-0 rounded-tl-[5rem] rounded-tr-[5rem] top-[2rem] bg-white flex items-center "
+          className="h-[30rem] 1xl:h-[70rem] relative mb-0 rounded-tl-[5rem] rounded-tr-[5rem] top-[2rem] bg-white flex items-center "
         >
           <div className="">
             <div>
@@ -118,7 +118,7 @@ export default function WorkAnimation() {
                 className="text-30xl absolute text-stone-950 font-bold z-0"
                 style={{ y: springY }}
               >
-                <h1>Work</h1>
+                <h1 className="leading-none">Work</h1>
               </motion.div>
               <div className="text-3xl text-black absolute left-0 z-10 w-full ">
                 <Carousel slides={PROJECTS} options={OPTIONS} />
