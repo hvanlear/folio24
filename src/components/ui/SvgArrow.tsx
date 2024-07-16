@@ -26,11 +26,21 @@ export default function SvgArrow() {
   const isInView = useInView(ref);
   const [windowWidth] = useWindowSize();
 
-  // Calculate the SVG dimensions based on screen size
+  // Define base dimensions and maximum width
   const baseWidth = 247;
   const baseHeight = 50;
-  const scaleFactor = windowWidth / 2000; // Assuming 1920px as the base width
-  const width = baseWidth * scaleFactor;
+  const maxWidth = 200; // Adjust this value as needed
+
+  // Calculate the SVG dimensions based on screen size
+  let scaleFactor = windowWidth / 3000;
+  let width = baseWidth * scaleFactor;
+
+  // Cap the width at maxWidth
+  if (width > maxWidth) {
+    scaleFactor = maxWidth / baseWidth;
+    width = maxWidth;
+  }
+
   const height = baseHeight * scaleFactor;
 
   return (

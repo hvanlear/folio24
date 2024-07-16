@@ -16,7 +16,7 @@ export default function ClippedGradientTicker({
   gradientTop,
   tickerWords,
   gradient,
-  baseVelocity = 1,
+  baseVelocity = 0.5,
 }: ClippedGradientTickerProps) {
   return (
     <div
