@@ -52,4 +52,8 @@ body {
   li::marker {
     content: none;
 }
+
+svg{
+  overflow: visible;
+}
 }

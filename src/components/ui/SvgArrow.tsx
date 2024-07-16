@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import useWindowSize from "@/src/hooks/useWindowSize";
 
 const draw = {
   hidden: { pathLength: 0, opacity: 0 },
@@ -23,17 +24,26 @@ const draw = {
 export default function SvgArrow() {
   const ref = useRef(null);
   const isInView = useInView(ref);
+  const [windowWidth] = useWindowSize();
+
+  // Calculate the SVG dimensions based on screen size
+  const baseWidth = 247;
+  const baseHeight = 50;
+  const scaleFactor = windowWidth / 3000; // Assuming 1920px as the base width
+  const width = baseWidth * scaleFactor;
+  const height = baseHeight * scaleFactor;
 
   return (
     <motion.svg
       ref={ref}
-      width="150"
-      height="108"
-      viewBox="0 0 247 50"
+      width={width}
+      height={height}
+      viewBox={`0 0 ${baseWidth} ${baseHeight}`}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
+      style={{ maxWidth: "100%", height: "auto" }}
     >
       <motion.path
         d="M18.6589 27.2045C37.122 13.7261 61.685 6.97269 84.2849 6.25544C106.885 5.53819 127.522 10.8571 145.748 18.4992C182.726 34.0149 210.267 60.2155 223 92"
