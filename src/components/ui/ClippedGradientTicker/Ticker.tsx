@@ -1,3 +1,4 @@
+import React from "react";
 import { useRef } from "react";
 import { Cube } from "@/src/assets/Cube";
 import styled from "styled-components";
@@ -13,7 +14,7 @@ import {
 import { wrap } from "@motionone/utils";
 
 interface ParallaxProps {
-  children: React.ReactNode;
+  words: string[];
   baseVelocity: number;
 }
 
@@ -36,15 +37,11 @@ const Scroller = styled(motion.div)`
 `;
 
 const ScrollerSpan = styled.span`
-  display: block;
-  margin-right: 30px;
+  display: flex;
   color: black;
 `;
 
-export default function Ticker({
-  children,
-  baseVelocity = 100,
-}: ParallaxProps) {
+export default function Ticker({ words, baseVelocity = 100 }: ParallaxProps) {
   const baseX = useMotionValue(0);
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
@@ -82,6 +79,20 @@ export default function Ticker({
     baseX.set(baseX.get() + moveBy);
   });
 
+  const renderContent = () => {
+    if (!words || words.length === 0) {
+      return <ScrollerSpan>No content</ScrollerSpan>;
+    }
+
+    return words.map((word, index) => (
+      <React.Fragment key={index}>
+        <ScrollerSpan>
+          <Cube /> {word}
+        </ScrollerSpan>
+      </React.Fragment>
+    ));
+  };
+
   /**
    * The number of times to repeat the child text should be dynamically calculated
    * based on the size of the text and viewport. Likewise, the x motion value is
@@ -92,18 +103,10 @@ export default function Ticker({
   return (
     <ParallaxContainer>
       <Scroller style={{ x }}>
-        <ScrollerSpan>
-          {children} <Cube />
-        </ScrollerSpan>
-        <ScrollerSpan>
-          {children} <Cube />
-        </ScrollerSpan>
-        <ScrollerSpan>
-          {children} <Cube />
-        </ScrollerSpan>
-        <ScrollerSpan>
-          {children} <Cube />
-        </ScrollerSpan>
+        {renderContent()}
+        {renderContent()}
+        {renderContent()}
+        {renderContent()}
       </Scroller>
     </ParallaxContainer>
   );

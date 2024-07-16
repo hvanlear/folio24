@@ -1,33 +1,13 @@
 "use client";
 
-import { animate } from "framer-motion";
-import { useEffect } from "react";
-
 import useCycleGradients from "@/src/hooks/useCycleGradients";
 import SvgArrow from "../ui/SvgArrow";
-// import Ticker from "../ui/ClippedGradientTicker/Ticker";
 import ClippedGradientTicker from "../ui/ClippedGradientTicker/ClippedGradientTicker";
 import WelcomeLinks from "./WelcomeLinks";
 
 export default function Hero() {
   //cycle gradients
   const { gradient } = useCycleGradients();
-
-  useEffect(() => {
-    const staggerDelay = 0.2;
-    // The marquee relies on this, need to detach
-    document
-      .querySelectorAll(
-        "#hero h3,.byline-container, #hero h1, #hero h2, .button-container-hero"
-      )
-      .forEach((item, i) => {
-        animate(
-          item,
-          { opacity: 1, scale: 1, filter: "blur(0px)" },
-          { duration: 0.2, delay: i * staggerDelay }
-        );
-      });
-  }, []);
 
   return (
     <>
@@ -57,7 +37,12 @@ export default function Hero() {
           containerClipPath="polygon(0 0%, 100% 0, 100% 24%, 0 98%)"
           gradientClipPath="polygon(0px 72%, 100% 0px, 100% 25%, 0px 97%)"
           gradientTop="18%"
-          tickerContent="UX TES Web Developer"
+          tickerWords={[
+            "UX Engineer",
+            "Web Developer",
+            "UI Designer",
+            "User Advocate",
+          ]}
           gradient={gradient}
         />
       </section>

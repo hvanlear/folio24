@@ -5,7 +5,7 @@ interface ClippedGradientTickerProps {
   containerClipPath: string;
   gradientClipPath: string;
   gradientTop: string;
-  tickerContent: React.ReactNode;
+  tickerWords: string[];
   gradient: string;
   baseVelocity?: number;
 }
@@ -14,7 +14,7 @@ export default function ClippedGradientTicker({
   containerClipPath,
   gradientClipPath,
   gradientTop,
-  tickerContent,
+  tickerWords,
   gradient,
   baseVelocity = 1,
 }: ClippedGradientTickerProps) {
@@ -38,7 +38,7 @@ export default function ClippedGradientTicker({
         }}
       ></div>
       <div>
-        <Ticker baseVelocity={baseVelocity}>{tickerContent}</Ticker>
+        <Ticker baseVelocity={baseVelocity} words={tickerWords} />
       </div>
     </div>
   );
