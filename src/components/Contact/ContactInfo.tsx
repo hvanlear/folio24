@@ -28,7 +28,7 @@ export default function ContactInfo() {
         </h1>
       </div>
       <nav>
-        <ul className="flex flex-row gap-10 ">
+        <ul className="flex flex-row gap-5 md:gap-10">
           <li className="text-h3-clamp font-bold">
             <a href="http://">Home</a>
           </li>
