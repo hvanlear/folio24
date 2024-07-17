@@ -45,16 +45,17 @@ body {
     text-wrap: balance;
   }
 
-  li {
-    text-decoration: none ;
-  }
-
-  li::marker {
-    content: none !important;
 }
-
 svg{
   overflow: visible;
 }
 
+li {
+  text-decoration: none ;
+}
+
+li::marker,
+li::-webkit-details-marker {
+  content: none !important;
+  display: none !important;
 }

@@ -60,7 +60,7 @@ export default function ContactForm() {
         <span className="font-bold"> hvanlear@gmail.com</span>
       </p>
 
-      <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
+      <div className="bg-neutral-300 my-8 h-[1px] w-full" />
       {isSubmitted ? (
         <div className="p-4">
           <h2 className="font-bold text-3xl text-neutral-50 dark:text-neutral-200">
@@ -135,7 +135,7 @@ export default function ContactForm() {
           </button>
         </form>
       )}
-      <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
+      <div className="bg-neutral-300 my-8 h-[1px] w-full" />
     </div>
   );
 }

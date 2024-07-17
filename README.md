@@ -36,7 +36,8 @@
   - [x] Work Animation
   - [ ] Carousel Feature
     - [x] Integrate
-    - [ ] Create Cards
+    - [x] Create Cards
+    - [ ] Integrate Links
 
 - [ ] Footer
 
@@ -58,7 +59,7 @@
 
   - [x] Create component
   - [x] Logo
-  - [ ] Responsive / Final Positioning
+  - [x] Responsive / Final Positioning
   - [x] inverse color effect
     - [ ]
   - [x] Menu Effect
