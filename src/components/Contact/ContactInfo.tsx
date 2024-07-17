@@ -38,6 +38,9 @@ export default function ContactInfo() {
           <li className="text-h3-clamp font-bold">
             <a href="http://">About</a>
           </li>
+          <li className="text-h3-clamp font-bold">
+            <a href="http://">Contact</a>
+          </li>
         </ul>
       </nav>
       <div className="flex flex-row gap-4 items-center">

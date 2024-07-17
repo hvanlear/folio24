@@ -50,10 +50,11 @@ body {
   }
 
   li::marker {
-    content: none;
+    content: none !important;
 }
 
 svg{
   overflow: visible;
 }
+
 }

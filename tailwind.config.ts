@@ -29,6 +29,7 @@ module.exports = {
         "20xl": "20rem",
         "30xl": "clamp(4rem, 40vw, 30rem)",
         "h1-clamp": "clamp(2rem, 15vw, 15rem)",
+        "h1.5-clamp": "clamp(2rem, 15vw, 8rem)",
         "h2-clamp": "clamp(2rem, 4.5vw, 6rem)",
         "h3-clamp": "clamp(1rem, 2vw, 4rem)",
         "ticker-clamp": "clamp(6rem, 4vw, 9.5rem)",

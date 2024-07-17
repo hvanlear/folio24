@@ -24,10 +24,14 @@ export default function FullScreenMenu({ isOpen }: { isOpen: boolean }) {
           <div className="fsmMainLinks  flex justify-center">
             <ul className="">
               {["Home", "Projects", "About", "Contact"].map((item) => (
-                <motion.li key={item} variants={menuItemVariants}>
+                <motion.li
+                  className="mb-9"
+                  key={item}
+                  variants={menuItemVariants}
+                >
                   <Link
                     href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                    className="text-9xl hover:text-blue-500 text-black font-bold"
+                    className="text-h1.5-clamp leading-none hover:text-blue-500 text-black font-bold"
                   >
                     {item}
                   </Link>

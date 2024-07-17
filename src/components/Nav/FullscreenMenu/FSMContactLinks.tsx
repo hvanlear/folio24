@@ -10,12 +10,12 @@ const FSMContactLinks: React.FC = () => {
     <>
       <div className="fsmContactLinks">
         <h3 className="text-black">CONTACT</h3>
-        <ul className="flex flex-row gap-32">
+        <ul className="flex flex-row gap-5 md:gap-32">
           {socialContacts.map((contact, index) => (
             <motion.li key={index} variants={menuItemVariants}>
               <a
                 href={contact.link}
-                className="text-black text-3xl hover:text-blue-500 font-bold"
+                className="text-black text-h3-clamp hover:text-blue-500 font-bold"
                 target="_blank"
                 rel="noopener noreferrer"
               >
