@@ -110,7 +110,7 @@ export default function WorkAnimation() {
       <motion.section style={{ y: springY }}>
         <section
           ref={containerRef}
-          className="h-[30rem] 1xl:h-[70rem] relative mb-0 rounded-tl-[5rem] rounded-tr-[5rem] top-[2rem] bg-white flex items-center "
+          className="h-[30rem] 1xl:h-[70rem] relative mb-24 rounded-tl-[5rem] rounded-tr-[5rem] top-[2rem] bg-white flex items-center "
         >
           <div className="">
             <div>

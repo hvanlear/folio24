@@ -52,7 +52,7 @@ export default function ContactForm() {
       id="contact-container"
       className=" relative z-10  w-full sm:w-3/4 lg:w-1/2 max-w-5xl rounded-3xl shadow-input  dark:bg-black"
     >
-      <h2 className="font-bold text-3xl md:text-4xl sm:text-5xl text-neutral-50 dark:text-neutral-200">
+      <h2 className="font-bold text-h2-clamp md:text-4xl sm:text-5xl text-neutral-50 dark:text-neutral-200">
         Drop me a line!
       </h2>
       <p className="mt-4 text-xl">

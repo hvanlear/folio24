@@ -18,7 +18,7 @@ export default function ContactInfo() {
     <div className="flex flex-col gap-4 justify-center">
       <div className="">
         <h1
-          className="text-7xl font-bold"
+          className="text-h2-clamp font-bold"
           style={{
             WebkitTextFillColor: "black",
             WebkitTextStroke: "1px white",
@@ -29,19 +29,19 @@ export default function ContactInfo() {
       </div>
       <nav>
         <ul className="flex flex-row gap-10 ">
-          <li className="text-4xl font-bold">
+          <li className="text-h3-clamp font-bold">
             <a href="http://">Home</a>
           </li>
-          <li className="text-4xl font-bold">
+          <li className="text-h3-clamp font-bold">
             <a href="http://">Work</a>
           </li>
-          <li className="text-4xl font-bold">
+          <li className="text-h3-clamp font-bold">
             <a href="http://">About</a>
           </li>
         </ul>
       </nav>
       <div className="flex flex-row gap-4 items-center">
-        <p className="text-xl">Elsewhere</p>
+        <p className="hidden md:block text-xl">Elsewhere</p>
         {socialContacts.map((contact, index) => (
           <li key={index}>
             <a
