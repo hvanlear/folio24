@@ -41,33 +41,49 @@ export default function WorkAnimation() {
   const { scrollYProgress } = useScroll();
   const [width] = useWindowSize();
 
-  const y = useTransform(scrollYProgress, [0, 1], [0, -400], {
+  const growth = useTransform(scrollYProgress, [0, 1], [0, 400], {
     clamp: false,
     ease: (t) => {
-      // Adjust this breakpoint as needed
       if (width <= 768) {
-        return Math.min(t, 124.97 / 800); // Limit to -124.97px on smaller screens
+        return Math.min(t, 124.97); // Limit to 124.97px on smaller screens
       }
-      return Math.min(t, 0.5); // Original limit for larger screens
+      return Math.min(t, 200); // Limit to 200px on larger screens
     },
   });
 
-  const springY = useSpring(y, {
+  const springGrowth = useSpring(growth, {
     stiffness: 60,
     damping: 20,
   });
 
   return (
     <>
-      <motion.section style={{ y: springY }}>
+      <motion.section
+        //Change the height of the section
+        style={{
+          height: useTransform(
+            springGrowth,
+            (latest) => `calc(35rem + ${latest}px)`
+          ),
+          marginTop: useTransform(springGrowth, (latest) => `-${latest}px`),
+        }}
+        className="work-container"
+      >
         <section
           ref={containerRef}
-          className="h-[50rem]  relative rounded-tl-[5rem] rounded-tr-[5rem] top-[2rem] bg-white flex items-center "
+          className="h-full relative rounded-tl-[5rem] rounded-tr-[5rem] bg-white flex items-center "
         >
           <div className="h-full w-full flex items-center">
             <motion.div
               className="text-30xl absolute text-stone-950 font-bold z-0"
-              style={{ y: springY }}
+              style={{
+                y: useTransform(
+                  springGrowth,
+                  [0, 50, 100, 150, 200],
+                  [0, -50, -100, -150, -200],
+                  { clamp: true }
+                ),
+              }}
             >
               <h1 className="leading-none">Work</h1>
             </motion.div>

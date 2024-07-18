@@ -51,14 +51,14 @@ export default function Contact({ contactClass }: ContactProps) {
   return (
     <>
       <motion.section
-        style={{
-          y: springY,
-          zIndex: -1,
-          backgroundColor: "black",
-          borderTopLeftRadius: "5rem",
-          borderTopRightRadius: "5rem",
-        }}
-        animate={isInView ? "visible" : "hidden"}
+      // style={{
+      //   y: springY,
+      //   zIndex: -1,
+      //   backgroundColor: "black",
+      //   borderTopLeftRadius: "5rem",
+      //   borderTopRightRadius: "5rem",
+      // }}
+      // animate={isInView ? "visible" : "hidden"}
       >
         <ResponsiveDiv ref={containerRef}>
           <div className="flex flex-col gap-10 md:flex-row z-10 p-12 md:p-32 justify-between">
