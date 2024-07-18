@@ -30,7 +30,7 @@ export default function AboutPage() {
   const { gradient } = useCycleGradients();
   return (
     <>
-      <main className="h-[70rem] relative">
+      <main className="h-[85vh] relative">
         <section
           id="section-ticker"
           className=" bg-white w-full overflow-hidden z-0"
@@ -44,16 +44,16 @@ export default function AboutPage() {
             isDark={true}
           />
         </section>
-        <div className="bottom-0 absolute w-full">
+        <div className="bottom-0 h-full  w-full">
           <motion.div
-            className="text-30xl absolute text-stone-950 font-bold z-0"
+            className="text-30xl  text-stone-950 font-bold z-0"
             style={{ y: springY }}
           >
             <h1 className="leading-none">Hello!</h1>
           </motion.div>
-          <AnimatedSection className="w-full">
+          <section className="bg-black h-full">
             <h1>hello</h1>
-          </AnimatedSection>
+          </section>
         </div>
       </main>
     </>
