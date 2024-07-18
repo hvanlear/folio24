@@ -37,9 +37,9 @@ const Scroller = styled(motion.div)`
   flex-wrap: nowrap;
 `;
 
-const ScrollerSpan = styled.span<{ isDark: boolean }>`
+const ScrollerSpan = styled.span<{ $isDark: boolean }>`
   display: flex;
-  color: ${(props) => (props.isDark ? "white" : "black")};
+  color: ${(props) => (props.$isDark ? "white" : "black")};
 `;
 
 export default function Ticker({
@@ -86,12 +86,12 @@ export default function Ticker({
 
   const renderContent = () => {
     if (!words || words.length === 0) {
-      return <ScrollerSpan isDark={isDark}>No content</ScrollerSpan>;
+      return <ScrollerSpan $isDark={isDark}>No content</ScrollerSpan>;
     }
 
     return words.map((word, index) => (
       <React.Fragment key={index}>
-        <ScrollerSpan isDark={isDark}>
+        <ScrollerSpan $isDark={isDark}>
           <Cube isDark={isDark} /> {word}
         </ScrollerSpan>
       </React.Fragment>

@@ -8,6 +8,7 @@ interface ClippedGradientTickerProps {
   tickerWords: string[];
   gradient: string;
   baseVelocity?: number;
+  isDark?: boolean;
 }
 
 export default function ClippedGradientTicker({
@@ -17,12 +18,17 @@ export default function ClippedGradientTicker({
   tickerWords,
   gradient,
   baseVelocity = 0.5,
+  isDark = false,
 }: ClippedGradientTickerProps) {
+  const bgColor = isDark ? "bg-black" : "bg-white";
+  const gridClass = isDark
+    ? "dark:bg-grid-small-black/[0.2] bg-grid-small-white/[0.5]"
+    : "dark:bg-grid-small-white/[0.2] bg-grid-small-black/[0.2]";
   return (
     <div
       id="header-clip"
       style={{ clipPath: containerClipPath }}
-      className="bg-white relative h-64 flex dark:bg-grid-small-white/[0.2] bg-grid-small-black/[0.2]"
+      className={`${bgColor} z-0 relative h-64 flex ${gridClass}`}
     >
       <div
         className="gradient-clip"
@@ -38,7 +44,11 @@ export default function ClippedGradientTicker({
         }}
       ></div>
       <div>
-        <Ticker baseVelocity={baseVelocity} words={tickerWords} />
+        <Ticker
+          baseVelocity={baseVelocity}
+          words={tickerWords}
+          isDark={isDark}
+        />
       </div>
     </div>
   );
