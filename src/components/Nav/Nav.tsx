@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import LogoGroup from "./LogoGroup";
 import Hamburger from "./Hamburger";
 import FullScreenMenu from "./FullscreenMenu/FullScreenMenu";
@@ -19,8 +20,13 @@ const NavContainer = styled.nav`
 
 export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
 
   return (
     <>
@@ -28,7 +34,10 @@ export default function Nav() {
         <LogoGroup />
         <Hamburger isOpen={isMenuOpen} toggleMenu={toggleMenu} />
       </NavContainer>
-      <FullScreenMenu isOpen={isMenuOpen} />
+      <FullScreenMenu
+        isOpen={isMenuOpen}
+        onClose={() => setIsMenuOpen(false)}
+      />
     </>
   );
 }

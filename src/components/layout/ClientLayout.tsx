@@ -11,10 +11,8 @@ export default function ClientLayout({
 }) {
   return (
     <>
-      <AnimatePresence mode="sync">
-        <Nav />
-        {children}
-      </AnimatePresence>
+      <Nav />
+      <AnimatePresence mode="sync">{children}</AnimatePresence>
     </>
   );
 }

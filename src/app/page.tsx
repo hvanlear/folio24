@@ -1,5 +1,3 @@
-"use client";
-
 import Hero from "../components/Hero/Hero";
 import WorkSection from "../components/Work/WorkSection";
 import Contact from "../components/Contact/Contact";

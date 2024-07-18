@@ -16,6 +16,7 @@ import { wrap } from "@motionone/utils";
 interface ParallaxProps {
   words: string[];
   baseVelocity: number;
+  isDark?: boolean;
 }
 
 const ParallaxContainer = styled.div`
@@ -36,12 +37,16 @@ const Scroller = styled(motion.div)`
   flex-wrap: nowrap;
 `;
 
-const ScrollerSpan = styled.span`
+const ScrollerSpan = styled.span<{ isDark: boolean }>`
   display: flex;
-  color: black;
+  color: ${(props) => (props.isDark ? "white" : "black")};
 `;
 
-export default function Ticker({ words, baseVelocity = 100 }: ParallaxProps) {
+export default function Ticker({
+  words,
+  baseVelocity = 100,
+  isDark = false,
+}: ParallaxProps) {
   const baseX = useMotionValue(0);
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
@@ -81,13 +86,13 @@ export default function Ticker({ words, baseVelocity = 100 }: ParallaxProps) {
 
   const renderContent = () => {
     if (!words || words.length === 0) {
-      return <ScrollerSpan>No content</ScrollerSpan>;
+      return <ScrollerSpan isDark={isDark}>No content</ScrollerSpan>;
     }
 
     return words.map((word, index) => (
       <React.Fragment key={index}>
-        <ScrollerSpan>
-          <Cube /> {word}
+        <ScrollerSpan isDark={isDark}>
+          <Cube isDark={isDark} /> {word}
         </ScrollerSpan>
       </React.Fragment>
     ));

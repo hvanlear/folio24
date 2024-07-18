@@ -10,7 +10,13 @@ import {
   menuItemVariants,
 } from "@/src/animations/pageTransitions";
 
-export default function FullScreenMenu({ isOpen }: { isOpen: boolean }) {
+export default function FullScreenMenu({
+  isOpen,
+  onClose,
+}: {
+  isOpen: boolean;
+  onClose: () => void;
+}) {
   return (
     <motion.nav
       variants={menuVariants}
@@ -32,6 +38,7 @@ export default function FullScreenMenu({ isOpen }: { isOpen: boolean }) {
                   <Link
                     href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
                     className="text-h1.5-clamp leading-none hover:text-blue-500 text-black font-bold"
+                    onClick={onClose}
                   >
                     {item}
                   </Link>
