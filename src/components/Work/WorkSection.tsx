@@ -63,13 +63,13 @@ export default function WorkAnimation() {
         style={{
           height: useTransform(
             springGrowth,
-            (latest) => `calc(35rem + ${latest}px)`
+            (latest) => `calc(50rem + ${latest}px)`
           ),
           marginTop: useTransform(springGrowth, (latest) => `-${latest}px`),
         }}
         className="work-container"
       >
-        <section
+        <div
           ref={containerRef}
           className="h-full relative rounded-tl-[5rem] rounded-tr-[5rem] bg-white flex items-center "
         >
@@ -85,13 +85,13 @@ export default function WorkAnimation() {
                 ),
               }}
             >
-              <h1 className="leading-none">Work</h1>
+              <h1 className="leading-none pl-8">Work</h1>
             </motion.div>
             <div className="text-3xl text-black absolute left-0 z-10 w-full ">
               <Carousel slides={PROJECTS} options={OPTIONS} />
             </div>
           </div>
-        </section>
+        </div>
       </motion.section>
     </>
   );
