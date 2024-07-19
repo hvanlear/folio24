@@ -122,7 +122,7 @@ export default function Contact({ contactClass }: ContactProps) {
         >
           <motion.div
             ref={containerRef}
-            className="contact-container_inner-animated absolute bottom-0 left-0 right-0 px-24"
+            className="contact-container_inner-animated absolute bottom-0 left-0 right-0 p-8 md:px-24"
             style={{
               height: "15rem",
               y: useTransform(springGrowth, (latest) => `-${latest}px`),

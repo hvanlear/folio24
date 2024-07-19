@@ -85,7 +85,7 @@ export default function WorkAnimation() {
                 ),
               }}
             >
-              <h1 className="leading-none pl-8">Work</h1>
+              <h1 className="leading-none md:pl-8">Work</h1>
             </motion.div>
             <div className="text-3xl text-black absolute left-0 z-10 w-full ">
               <Carousel slides={PROJECTS} options={OPTIONS} />
