@@ -2,7 +2,7 @@
 
 import "../ui/Carousel/carousel.css";
 import useWindowSize from "@/src/hooks/useWindowSize";
-import { useRef } from "react";
+import { useRef, useMemo } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { EmblaOptionsType } from "embla-carousel";
 import modelMac from "@/src/assets/images/projects/modelMac.png";
@@ -56,6 +56,13 @@ export default function WorkAnimation() {
     damping: 20,
   });
 
+  // Calculate initial height based on screen size
+  const initialHeight = useMemo(() => {
+    if (width < 640) return "40rem";
+    if (width < 768) return "25rem";
+    return "50rem";
+  }, [width]);
+
   return (
     <>
       <motion.section
@@ -63,7 +70,7 @@ export default function WorkAnimation() {
         style={{
           height: useTransform(
             springGrowth,
-            (latest) => `calc(50rem + ${latest}px)`
+            (latest) => `calc(${initialHeight} + ${latest}px)`
           ),
           marginTop: useTransform(springGrowth, (latest) => `-${latest}px`),
         }}
