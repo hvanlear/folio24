@@ -12,7 +12,7 @@ const NavContainer = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 2rem 0 2rem;
+  /* padding: 2rem 2rem 0 2rem; */
   width: 100%;
   z-index: 3000;
   mix-blend-mode: difference;
@@ -30,7 +30,7 @@ export default function Nav() {
 
   return (
     <>
-      <NavContainer>
+      <NavContainer className="px-4 pt-4">
         <LogoGroup />
         <Hamburger isOpen={isMenuOpen} toggleMenu={toggleMenu} />
       </NavContainer>

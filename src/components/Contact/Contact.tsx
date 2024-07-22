@@ -62,7 +62,7 @@ export default function Contact({ contactClass }: ContactProps) {
             y: useTransform(springGrowth, (latest) => `-${latest}px`),
           }}
         >
-          <div className="flex flex-col gap-4 md:gap-44 md:flex-row z-10 p-20 sm:p-12 md:p-20  w-full ">
+          <div className="flex flex-col gap-4 md:gap-44 md:flex-row z-10 p-8 sm:p-12 md:p-20  w-full ">
             <ContactForm />
             <ContactInfo />
           </div>
