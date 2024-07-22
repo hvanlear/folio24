@@ -28,7 +28,7 @@ export default function ClippedGradientTicker({
     <div
       id="header-clip"
       style={{ clipPath: containerClipPath }}
-      className={`${bgColor} z-0 relative h-64 flex ${gridClass}`}
+      className={`${bgColor} z-0 relative h-52 flex ${gridClass}`}
     >
       <div
         className="gradient-clip"

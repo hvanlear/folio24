@@ -19,7 +19,7 @@ export default function Hero() {
           .grid-container {
             display: grid;
             grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-            height: calc(100vh - 250px)
+            height: 100vh
           }
 
           @media (min-width: 1800px) {
@@ -34,7 +34,7 @@ export default function Hero() {
         className=" bg-black w-full overflow-hidden z-0"
       >
         <ClippedGradientTicker
-          containerClipPath="polygon(0 0%, 100% 0, 100% 24%, 0 98%)"
+          containerClipPath="polygon(0 0%, 100% 0, 100% 25%, 0 98%)"
           gradientClipPath="polygon(0px 72%, 100% 0px, 100% 25%, 0px 97%)"
           gradientTop="18%"
           tickerWords={[

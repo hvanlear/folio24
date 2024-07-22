@@ -7,7 +7,7 @@ export default function FSMFooter() {
 
   return (
     <>
-      <div className="w-full flex flex-row-reverse absolute bottom-0 p-8">
+      <div className="w-full flex flex-row-reverse absolute bottom-0 p-4 md:p-8">
         <div className="flex flex-col ">
           <div className="flex flex-row items-center">
             <span className="text-small-clamp font-extrabold text-black">
