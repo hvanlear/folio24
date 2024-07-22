@@ -46,7 +46,7 @@ export default function FullScreenMenu({
               ))}
             </ul>
           </div>
-          <div className="fsmContact-container flex justify-center  md:mt-16">
+          <div className="fsmContact-container flex justify-center  md:mt-8">
             <FSMContactLinks />
           </div>
         </div>

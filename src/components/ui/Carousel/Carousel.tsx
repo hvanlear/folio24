@@ -32,7 +32,7 @@ const Carousel: React.FC<PropType> = (props) => {
           <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
         </div>
       </div>
-      <div className="embla__viewport" ref={emblaRef}>
+      <div className="embla__viewport px-4" ref={emblaRef}>
         <div className="embla__container">
           {slides.map((project, index) => (
             <CarouselSlide

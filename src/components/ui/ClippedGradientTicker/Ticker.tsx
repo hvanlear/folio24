@@ -31,7 +31,7 @@ const ParallaxContainer = styled.div`
 `;
 
 const Scroller = styled(motion.div)`
-  font-size: 100px;
+  font-size: clamp(2rem, 4.5vw, 6rem);
   display: flex;
   white-space: nowrap;
   flex-wrap: nowrap;
@@ -92,7 +92,8 @@ export default function Ticker({
     return words.map((word, index) => (
       <React.Fragment key={index}>
         <ScrollerSpan $isDark={isDark}>
-          <Cube isDark={isDark} /> {word}
+          <Cube isDark={isDark} />
+          <span className="h-full flex items-center"> {word}</span>
         </ScrollerSpan>
       </React.Fragment>
     ));
