@@ -10,9 +10,11 @@ export default function FSMFooter() {
       <div className="w-full flex flex-row-reverse absolute bottom-0 p-8">
         <div className="flex flex-col ">
           <div className="flex flex-row items-center">
-            <span className="font-extrabold text-xl text-black">No.3</span>
-            <span className=" text-black px-2">|</span>
-            <span className=" text-black">
+            <span className="text-h4-clamp font-extrabold text-black">
+              No.3
+            </span>
+            <span className="text-h4-clamp text-black px-2">|</span>
+            <span className="text-h4-clamp text-black">
               designed and built by hand in NC
             </span>
           </div>
