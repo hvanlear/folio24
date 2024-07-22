@@ -27,7 +27,7 @@ export default function FullScreenMenu({
     >
       <div className="fsm-container w-full h-full flex flex-col justify-center">
         <div className="">
-          <div className="fsmMainLinks  flex justify-center">
+          <div className="fsmMainLinks h-full md:h-fit flex items-center justify-center">
             <ul className="">
               {["Home", "Projects", "About", "Contact"].map((item) => (
                 <motion.li
@@ -46,7 +46,7 @@ export default function FullScreenMenu({
               ))}
             </ul>
           </div>
-          <div className="fsmContact-container flex justify-center mt-16">
+          <div className="fsmContact-container flex justify-center mt-8 md:mt-16">
             <FSMContactLinks />
           </div>
         </div>

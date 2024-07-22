@@ -9,7 +9,7 @@ const FSMContactLinks: React.FC = () => {
   return (
     <>
       <div className="fsmContactLinks">
-        <h3 className="text-black">CONTACT</h3>
+        <h3 className="text-black text-small-clamp">CONTACT</h3>
         <ul className="flex flex-row gap-3 sm:gap-5 md:gap-16 lg:gap-32">
           {socialContacts.map((contact, index) => (
             <motion.li key={index} variants={menuItemVariants}>
