@@ -26,8 +26,8 @@ export const hamburgerVariants = {
   }),
   open: (i: number) => ({
     rotate: i === 0 ? 45 : -45,
-    y: i === 0 ? 6 : -8, // Y: 6px line #1 | -8px line #2
-    x: i === 0 ? 4 : 2, // X: 4px line #1 | -2px line #2
+    y: i === 0 ? 6 : -4, // Y: 6px line #1 | -8px line #2
+    x: i === 0 ? 0 : 0, // X: 4px line #1 | -2px line #2
   }),
 };
 
