@@ -2,7 +2,6 @@
 
 import ClippedGradientTicker from "@/src/components/ui/ClippedGradientTicker/ClippedGradientTicker";
 import useCycleGradients from "@/src/hooks/useCycleGradients";
-import AnimatedSection from "@/src/components/ui/AnimatedSection";
 
 import useWindowSize from "@/src/hooks/useWindowSize";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
@@ -52,8 +51,8 @@ export default function AboutPage() {
         {/* background */}
         <div className="bg-slate-50 top-0 absolute w-full -z-20 h-[100vh]" />
         {/* background */}
-        <div className="absolute w-full bg-slate-50 z-10 h-full border-2 top-1/2 border-slate-600">
-          <div className=" ">
+        <div className="absolute w-full bg-slate-50 z-10 h-full border-2 top-1/3 md:top-[55%] border-slate-600 rounded-tl-[5rem] rounded-tr-[5rem]">
+          <div className=" pl-8 pt-16">
             <h1 className="text-black">hello</h1>
           </div>
         </div>
