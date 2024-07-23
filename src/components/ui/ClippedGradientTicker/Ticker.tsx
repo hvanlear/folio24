@@ -39,7 +39,7 @@ const Scroller = styled(motion.div)`
 
 const ScrollerSpan = styled.span<{ $isDark: boolean }>`
   display: flex;
-  color: ${(props) => (props.$isDark ? "white" : "black")};
+  color: ${(props) => (props.$isDark ? "white" : "#0c0a09")};
 `;
 
 export default function Ticker({

@@ -11,7 +11,7 @@ export default function AboutPage() {
   const { scrollYProgress } = useScroll();
   const [width] = useWindowSize();
 
-  const y = useTransform(scrollYProgress, [0, 1], [0, -400], {
+  const y = useTransform(scrollYProgress, [0, 1], [0, -200], {
     clamp: false,
     ease: (t) => {
       // Adjust this breakpoint as needed
@@ -30,11 +30,8 @@ export default function AboutPage() {
   const { gradient } = useCycleGradients();
   return (
     <>
-      <main className="h-[85vh] relative">
-        <section
-          id="section-ticker"
-          className=" bg-white w-full overflow-hidden z-0"
-        >
+      <main className=" relative h-[100vh]">
+        <section id="section-ticker" className=" w-full overflow-hidden z-0">
           <ClippedGradientTicker
             containerClipPath="polygon(0 0%, 100% 0, 100% 24%, 0 98%)"
             gradientClipPath="polygon(0px 72%, 100% 0px, 100% 25%, 0px 97%)"
@@ -44,16 +41,21 @@ export default function AboutPage() {
             isDark={true}
           />
         </section>
-        <div className="bottom-0 h-full  w-full">
+        <div className="">
           <motion.div
-            className="text-30xl  text-stone-950 font-bold z-0"
+            className="  text-stone-950 font-bold -z-10 absolute"
             style={{ y: springY }}
           >
-            <h1 className="leading-none">Hello!</h1>
+            <h1 className="leading-none text-30xl">Hello!</h1>
           </motion.div>
-          <section className="bg-black h-full">
-            <h1>hello</h1>
-          </section>
+        </div>
+        {/* background */}
+        <div className="bg-slate-50 top-0 absolute w-full -z-20 h-[100vh]" />
+        {/* background */}
+        <div className="absolute w-full bg-slate-50 z-10 h-full border-2 top-1/2 border-slate-600">
+          <div className=" ">
+            <h1 className="text-black">hello</h1>
+          </div>
         </div>
       </main>
     </>

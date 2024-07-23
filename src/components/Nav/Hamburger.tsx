@@ -9,7 +9,7 @@ interface HamburgerProps {
 
 export default function Hamburger({ isOpen, toggleMenu }: HamburgerProps) {
   return (
-    <button onClick={toggleMenu} className="p-2 z-3001">
+    <button onClick={toggleMenu} className=" z-3001">
       {[0, 1].map((i) => (
         <motion.div
           key={i}

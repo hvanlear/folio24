@@ -27,7 +27,7 @@ module.exports = {
       fontSize: {
         "10xl": "10rem",
         "20xl": "20rem",
-        "30xl": "clamp(4rem, 40vw, 30rem)",
+        "30xl": "clamp(4rem, 35vw, 30rem)",
         "h1-clamp": "clamp(2rem, 15vw, 15rem)",
         "h1.5-clamp": "clamp(2rem, 15vw, 8rem)",
         "h2-clamp": "clamp(2rem, 4.5vw, 6rem)",
