@@ -18,7 +18,7 @@ export default function ContactInfo() {
     <div className="flex flex-col gap-4 md:items-start items-center justify-center">
       <div className="">
         <h1
-          className="text-h2-clamp font-bold"
+          className="text-h2-clamp font-bold leading-none"
           style={{
             WebkitTextFillColor: "black",
             WebkitTextStroke: "1px white",
