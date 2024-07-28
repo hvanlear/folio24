@@ -37,6 +37,7 @@ html {
 body {
   color: rgb(var(--foreground-rgb));
   background-color: green ;
+  overscroll-behavior: none;
 
 }
 
