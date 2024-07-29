@@ -1,3 +1,6 @@
+//TODO COMBINE THIS and other version
+// Refactor Footer directory
+
 "use client";
 import ClippedGradientTicker from "../ui/ClippedGradientTicker/ClippedGradientTicker";
 

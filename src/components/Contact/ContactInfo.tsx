@@ -1,3 +1,6 @@
+// TODO - COMBINE Both contact infos and move into footer directory
+// Add New version of <NavLinks/> to replace the current inner site nav
+
 import { socialContactData } from "@/src/utils/contactData";
 
 //Utilizing contact icons:
@@ -28,7 +31,7 @@ export default function ContactInfo() {
         </h1>
       </div>
       <nav>
-        <ul className="flex flex-row gap-3 md:gap-10">
+        <ul className="flex flex-row gap-3 md:gap-5">
           <li className="text-h3-clamp hover:text-blue-500 font-bold">
             <a href="http://">Home</a>
           </li>
@@ -44,8 +47,10 @@ export default function ContactInfo() {
         </ul>
       </nav>
       <div className="flex flex-row gap-4  items-center">
-        <p className="hidden md:block text-xl text-gray-400">Elsewhere</p>
-        <ul className="flex flex-row justify-between md:justify-normal gap-5">
+        <p className="hidden md:block text-xl text-gray-400 font-serif">
+          Elsewhere
+        </p>
+        <ul className="flex flex-row justify-between md:justify-normal gap-3 md:gap-5">
           {socialContacts.map((contact, index) => (
             <li key={index}>
               <a
