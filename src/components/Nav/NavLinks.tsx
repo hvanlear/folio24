@@ -27,7 +27,9 @@ export default function NavLinks({ isFullScreen, onClose }: NavLinksProps) {
   return (
     <ul
       className={`${
-        isFullScreen ? "flex flex-col" : "flex flex-row gap-3 md:gap-5"
+        isFullScreen
+          ? "flex flex-col"
+          : "flex flex-row items-center gap-3 md:gap-5 "
       }`}
     >
       {navItems.map((item) => (

@@ -59,7 +59,7 @@ export default function AboutPage() {
             className="text-stone-950 font-bold -z-10 pl-4 w-full"
             style={{ y: springY }}
             initial={{ y: -100, opacity: 0 }}
-            animate={{ y: 50, opacity: 1 }}
+            animate={{ y: 30, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h1 id="heading-about" className="leading-none text-30xl">
@@ -97,7 +97,7 @@ export default function AboutPage() {
             </div>
           </section>
           {/* footer */}
-          <div className="bg-slate-50 container-footer border-x-2 border-t-2 border-slate-600 p-12 w-full">
+          <div className="bg-slate-50 container-footer border-x-2 border-slate-600 px-12 py-6 w-full">
             <ContactInfoBasic />
           </div>
         </div>
