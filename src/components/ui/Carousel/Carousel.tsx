@@ -1,3 +1,5 @@
+// src/components/ui/Carousel/Carousel.tsx
+
 import React from "react";
 import { EmblaOptionsType } from "embla-carousel";
 import {
@@ -6,15 +8,15 @@ import {
   usePrevNextButtons,
 } from "./CarouselArrowButtons";
 import useEmblaCarousel from "embla-carousel-react";
-import CarouselSlide, { Project } from "./CarouselSlide";
+import CarouselSlide from "./CarouselSlide";
+import { FullProjectInfo } from "@/src/utils/projectData";
 
 type PropType = {
-  slides: Project[];
+  projects?: FullProjectInfo[];
   options?: EmblaOptionsType;
 };
 
-const Carousel: React.FC<PropType> = (props) => {
-  const { slides, options } = props;
+const Carousel: React.FC<PropType> = ({ projects = [], options }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
 
   const {
@@ -23,6 +25,10 @@ const Carousel: React.FC<PropType> = (props) => {
     onPrevButtonClick,
     onNextButtonClick,
   } = usePrevNextButtons(emblaApi);
+
+  if (!projects || projects.length === 0) {
+    return <div>No projects available</div>;
+  }
 
   return (
     <section className="embla">
@@ -34,13 +40,8 @@ const Carousel: React.FC<PropType> = (props) => {
       </div>
       <div className="embla__viewport px-4" ref={emblaRef}>
         <div className="embla__container">
-          {slides.map((project, index) => (
-            <CarouselSlide
-              key={index}
-              image={project.image}
-              title={project.title}
-              tags={project.tags}
-            />
+          {projects.map((project, index) => (
+            <CarouselSlide key={index} project={project} />
           ))}
         </div>
       </div>

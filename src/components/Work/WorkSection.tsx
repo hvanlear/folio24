@@ -5,36 +5,11 @@ import useWindowSize from "@/src/hooks/useWindowSize";
 import { useRef, useMemo } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { EmblaOptionsType } from "embla-carousel";
-import modelMac from "@/src/assets/images/projects/modelMac.png";
+import { projects } from "@/src/utils/projectData";
 
 import Carousel from "../ui/Carousel/Carousel";
-import { Project } from "../ui/Carousel/CarouselSlide"; // Import the Project type
 
 const OPTIONS: EmblaOptionsType = { loop: true };
-
-// Define projects
-const PROJECTS: Project[] = [
-  {
-    image: modelMac,
-    title: "Project 1",
-    tags: ["React", "TypeScript", "Next.js"],
-  },
-  {
-    image: modelMac,
-    title: "Project 2",
-    tags: ["Vue", "JavaScript", "Firebase"],
-  },
-  {
-    image: modelMac,
-    title: "Project 2",
-    tags: ["Vue", "JavaScript", "Firebase"],
-  },
-  {
-    image: modelMac,
-    title: "Project 2",
-    tags: ["Vue", "JavaScript", "Firebase"],
-  },
-];
 
 export default function WorkAnimation() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -95,7 +70,7 @@ export default function WorkAnimation() {
               <h1 className="leading-none md:pl-8">Work</h1>
             </motion.div>
             <div className="text-3xl text-stone-950 absolute left-0 z-10 w-full ">
-              <Carousel slides={PROJECTS} options={OPTIONS} />
+              <Carousel projects={projects} options={OPTIONS} />
             </div>
           </div>
         </div>

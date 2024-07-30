@@ -36,7 +36,7 @@ export default function ContactInfo() {
             <a href="http://">Home</a>
           </li>
           <li className="text-h3-clamp hover:text-blue-500 font-bold">
-            <a href="http://">Work</a>
+            <a href="http://">Archive</a>
           </li>
           <li className="text-h3-clamp hover:text-blue-500 font-bold">
             <a href="http://">About</a>

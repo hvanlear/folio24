@@ -1,13 +1,14 @@
 import React from "react";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
+import { FullProjectInfo } from "@/src/utils/projectData";
 
-export interface Project {
-  image: string | StaticImageData;
-  title: string;
-  tags: string[];
+interface CarouselSlideProps {
+  project: FullProjectInfo;
 }
 
-const CarouselSlide: React.FC<Project> = ({ image, title, tags }) => {
+const CarouselSlide: React.FC<CarouselSlideProps> = ({ project }) => {
+  const { image, title, tags } = project;
+
   return (
     <div className="embla__slide">
       <div className="embla__slide__inner">
@@ -17,7 +18,7 @@ const CarouselSlide: React.FC<Project> = ({ image, title, tags }) => {
             alt={title}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             priority
-            className="embla__slide__img "
+            className="embla__slide__img"
           />
         </div>
         <h3 className="embla__slide__title">{title}</h3>

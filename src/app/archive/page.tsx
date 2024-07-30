@@ -5,9 +5,8 @@ import ContactInfoBasic from "@/src/components/Contact/ContactInfoBasic";
 import useCycleGradients from "@/src/hooks/useCycleGradients";
 import useWindowSize from "@/src/hooks/useWindowSize";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import { useMemo } from "react";
 
-export default function AboutPage() {
+export default function ArchivePage() {
   const { scrollYProgress } = useScroll();
   const [width, height] = useWindowSize();
 
@@ -28,12 +27,6 @@ export default function AboutPage() {
 
   const { gradient } = useCycleGradients();
 
-  // Calculate the top position based on screen height
-  // const containerTopPosition = useMemo(() => {
-  //   const topPercentage = 15;
-  //   return `${(topPercentage / 100) * height}px`;
-  // }, [height]);
-
   return (
     <>
       <main className="relative ">
@@ -42,7 +35,7 @@ export default function AboutPage() {
             containerClipPath="polygon(0 0%, 100% 0, 100% 24%, 0 98%)"
             gradientClipPath="polygon(0px 72%, 100% 0px, 100% 25%, 0px 97%)"
             gradientTop="18%"
-            tickerWords={["Traveler", "Student", "Husband", "Brother"]}
+            tickerWords={["Work", "Projects", "Jobs", "Gigs"]}
             gradient={gradient}
             isDark={true}
           />
@@ -64,9 +57,9 @@ export default function AboutPage() {
           >
             <h1
               id="heading-about"
-              className="leading-none text-30xl text-stone-950 font-bold tracking-tighter"
+              className="leading-none text-30xl tracking-tighter text-stone-950 font-bold "
             >
-              Hello!
+              Archive
             </h1>
           </motion.div>
           <section id="section-about-main" className=" h-full">
