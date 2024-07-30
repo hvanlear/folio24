@@ -33,6 +33,7 @@ module.exports = {
         "h2-clamp": "clamp(2rem, 4.5vw, 6rem)",
         "h3-clamp": "clamp(1.5rem, 2vw, 4rem)",
         "h4-clamp": "clamp(1rem, 2.5vw, 4rem)",
+        "h5-clamp": "clamp(1rem, 2.5vw, 1.3rem)",
         "small-clamp": "clamp(.8rem, 2vw, 1rem)",
         "ticker-clamp": "clamp(6rem, 4vw, 9.5rem)",
       },
