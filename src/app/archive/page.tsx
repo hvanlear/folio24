@@ -2,6 +2,9 @@
 
 import ClippedGradientTicker from "@/src/components/ui/ClippedGradientTicker/ClippedGradientTicker";
 import ContactInfoBasic from "@/src/components/Contact/ContactInfoBasic";
+import ArchiveSlat from "@/src/components/ui/ArchiveSlat";
+import { projects } from "@/src/utils/projectData";
+
 import useCycleGradients from "@/src/hooks/useCycleGradients";
 import useWindowSize from "@/src/hooks/useWindowSize";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
@@ -62,32 +65,17 @@ export default function ArchivePage() {
               Archive
             </h1>
           </motion.div>
-          <section id="section-about-main" className=" h-full">
+          <section id="section-about-main" className="w-full h-full">
             <div className="bg-slate-50 z-10 border-2 border-slate-600 rounded-tl-[5rem] rounded-tr-[5rem] w-full h-full flex flex-col justify-between">
               <div className="flex flex-col h-full items-center md:flex-row px-12">
-                <div className="">
-                  <p className="text-black">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Commodi quis repellat voluptatibus, iste nam, odit, eius
-                    voluptates soluta inventore atque repellendus tenetur
-                    deserunt accusantium qui. Laboriosam neque error eveniet
-                    hic. Lorem ipsum dolor sit amet consectetur, adipisicing
-                    elit. Ex libero consequatur hic a. Dolore odit dolorem quam,
-                    minima soluta, animi, ipsa eum accusantium nam rerum at
-                    molestias aut neque inventore?
-                  </p>
-                </div>
-                <div className="">
-                  <p className="text-black">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Commodi quis repellat voluptatibus, iste nam, odit, eius
-                    voluptates soluta inventore atque repellendus tenetur
-                    deserunt accusantium qui. Laboriosam neque error eveniet
-                    hic. Lorem ipsum dolor sit amet consectetur, adipisicing
-                    elit. Ex libero consequatur hic a. Dolore odit dolorem quam,
-                    minima soluta, animi, ipsa eum accusantium nam rerum at
-                    molestias aut neque inventore?
-                  </p>
+                <div className="space-y-2">
+                  {projects.map((project) => (
+                    <ArchiveSlat
+                      key={project.title}
+                      title={project.title}
+                      link={project.link}
+                    />
+                  ))}
                 </div>
               </div>
             </div>
