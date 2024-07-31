@@ -36,5 +36,19 @@ export const projects: FullProjectInfo[] = [
     tags: ["Vue", "JavaScript", "Tailwind CSS"],
     image: modelMac,
   },
+  {
+    title: "Project 2 Title",
+    link: "https://project2.com",
+    description: "A brief description of Project 2.",
+    tags: ["Vue", "JavaScript", "Tailwind CSS"],
+    image: modelMac,
+  },
+  {
+    title: "Project 2 Title",
+    link: "https://project2.com",
+    description: "A brief description of Project 2.",
+    tags: ["Vue", "JavaScript", "Tailwind CSS"],
+    image: modelMac,
+  },
   // Add more projects as needed
 ];
