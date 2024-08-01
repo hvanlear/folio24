@@ -73,7 +73,7 @@ export default function ArchivePage() {
                 <div className="w-full mb-8">
                   {projectTypes.map((type) => (
                     <div key={type}>
-                      <h2 className="text-small text-stone-950 font-bold px-6 mt-8 mb-4 uppercase font-serif">
+                      <h2 className="text-sm text-slate-600 mt-8 mb-4 uppercase font-serif">
                         {type}
                       </h2>
                       {projectsByType[type].map((project) => (

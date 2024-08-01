@@ -47,7 +47,7 @@ export default function ContactInfo() {
         </ul>
       </nav>
       <div className="flex flex-row gap-4  items-center">
-        <p className="hidden md:block text-sm text-gray-400 font-serif">
+        <p className="hidden md:block text-sm text-slate-300 font-serif">
           Elsewhere
         </p>
         <ul className="flex flex-row justify-between md:justify-normal gap-3 md:gap-5">
