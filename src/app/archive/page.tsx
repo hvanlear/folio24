@@ -3,7 +3,7 @@
 import ClippedGradientTicker from "@/src/components/ui/ClippedGradientTicker/ClippedGradientTicker";
 import ContactInfoBasic from "@/src/components/Contact/ContactInfoBasic";
 import ArchiveSlat from "@/src/components/ui/ArchiveSlat";
-import { projects } from "@/src/utils/projectData";
+import { getProjectsByType, ProjectType } from "@/src/utils/projectData";
 
 import useCycleGradients from "@/src/hooks/useCycleGradients";
 import useWindowSize from "@/src/hooks/useWindowSize";
@@ -12,6 +12,8 @@ import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 export default function ArchivePage() {
   const { scrollYProgress } = useScroll();
   const [width, height] = useWindowSize();
+  const projectsByType = getProjectsByType(["title", "link"]);
+  const projectTypes: ProjectType[] = ["design", "development"];
 
   const y = useTransform(scrollYProgress, [0, 1], [0, 200], {
     clamp: false,
@@ -68,13 +70,20 @@ export default function ArchivePage() {
           <section id="section-about-main" className="w-full h-full">
             <div className="bg-slate-50 z-10 border-2 border-slate-600 rounded-tl-[5rem] rounded-tr-[5rem] w-full h-full flex flex-col justify-between">
               <div className="flex flex-col h-full items-center md:flex-row px-12">
-                <div className="space-y-2">
-                  {projects.map((project) => (
-                    <ArchiveSlat
-                      key={project.title}
-                      title={project.title}
-                      link={project.link}
-                    />
+                <div className="w-full mb-8">
+                  {projectTypes.map((type) => (
+                    <div key={type}>
+                      <h2 className="text-small text-stone-950 font-bold px-6 mt-8 mb-4 uppercase font-serif">
+                        {type}
+                      </h2>
+                      {projectsByType[type].map((project) => (
+                        <ArchiveSlat
+                          key={project.title}
+                          title={project.title as string}
+                          link={project.link as string}
+                        />
+                      ))}
+                    </div>
                   ))}
                 </div>
               </div>
