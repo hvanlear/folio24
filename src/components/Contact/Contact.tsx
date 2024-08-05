@@ -1,7 +1,7 @@
 "use client";
 import React, { useMemo } from "react";
 import useWindowSize from "@/src/hooks/useWindowSize";
-import { motion, useTransform, useSpring } from "framer-motion";
+import { motion, useTransform } from "framer-motion";
 import { useScrollAnimation } from "@/src/hooks/useScrollAnimation";
 import ContactForm from "./ContactForm";
 import ContactInfo from "./ContactInfo";
@@ -12,9 +12,6 @@ interface ContactProps {
 
 export default function Contact({ contactClass }: ContactProps) {
   const [width] = useWindowSize();
-  const { ref, isVisible, growth } = useScrollAnimation("contact", {
-    maxGrowth: 400,
-  });
 
   const maxGrowth = useMemo(() => {
     if (width < 640) return 300;
@@ -23,25 +20,18 @@ export default function Contact({ contactClass }: ContactProps) {
     return 200;
   }, [width]);
 
+  const { ref, springGrowth } = useScrollAnimation(maxGrowth);
+
   const initialHeight = useMemo(() => {
     if (width < 640) return "30rem";
     if (width < 768) return "25rem";
-    return "20rem";
+    return "40rem";
   }, [width]);
-
-  const adjustedGrowth = useTransform(growth, (latest) =>
-    Math.min(latest, maxGrowth)
-  );
-
-  const springGrowth = useSpring(adjustedGrowth, {
-    stiffness: 60,
-    damping: 20,
-  });
 
   return (
     <motion.section
       ref={ref}
-      className="contact-container-animated relative z-50 overflow-hidden"
+      className={`contact-container-animated relative z-50 overflow-hidden ${contactClass}`}
       style={{
         height: useTransform(
           springGrowth,

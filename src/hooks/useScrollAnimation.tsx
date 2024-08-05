@@ -1,77 +1,36 @@
-// useScrollAnimation.ts
-"use client";
+import { useState, useEffect, useRef } from "react";
+import { useScroll, useTransform, useSpring } from "framer-motion";
 
-import { useEffect, useRef, useState } from "react";
-import { useScroll, useTransform, MotionValue } from "framer-motion";
-import { useLayout } from "../components/layout/LayoutContext";
-
-interface ScrollAnimationOptions {
-  threshold?: number;
-  maxGrowth?: number;
-}
-
-type SectionName = "hero" | "workSection" | "contact";
-
-const getSectionTop = (
-  sectionName: SectionName,
-  layoutInfo: LayoutInfo
-): number => {
-  switch (sectionName) {
-    case "hero":
-      return layoutInfo.heroTop;
-    case "workSection":
-      return layoutInfo.workSectionTop;
-    case "contact":
-      return layoutInfo.contactTop;
-  }
-};
-
-export const useScrollAnimation = (
-  sectionName: SectionName,
-  options: ScrollAnimationOptions = {}
-) => {
-  const { threshold = 0.1, maxGrowth = 200 } = options;
+export function useScrollAnimation(maxGrowth: number) {
+  const [sectionTop, setSectionTop] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
   const { scrollY } = useScroll();
-  const { layoutInfo, setLayoutInfo } = useLayout();
+  const [windowHeight, setWindowHeight] = useState(0);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-        if (entry.isIntersecting) {
-          setLayoutInfo((prev) => ({
-            ...prev,
-            [`${sectionName}Top`]:
-              entry.boundingClientRect.top + window.scrollY,
-            ...(sectionName === "hero"
-              ? { heroHeight: entry.boundingClientRect.height }
-              : {}),
-          }));
-        }
-      },
-      { threshold }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
+    const updateValues = () => {
       if (ref.current) {
-        observer.unobserve(ref.current);
+        const rect = ref.current.getBoundingClientRect();
+        setSectionTop(rect.top + window.scrollY);
       }
+      setWindowHeight(window.innerHeight);
     };
-  }, [sectionName, threshold, setLayoutInfo]);
 
-  const sectionTop = getSectionTop(sectionName, layoutInfo);
+    updateValues();
+    window.addEventListener("resize", updateValues);
+    return () => window.removeEventListener("resize", updateValues);
+  }, []);
 
   const growth = useTransform(
     scrollY,
-    [sectionTop - window.innerHeight, sectionTop + window.innerHeight],
+    [sectionTop - windowHeight, sectionTop + windowHeight],
     [0, maxGrowth]
   );
 
-  return { ref, isVisible, growth };
-};
+  const springGrowth = useSpring(growth, {
+    stiffness: 60,
+    damping: 20,
+  });
+
+  return { ref, springGrowth };
+}
