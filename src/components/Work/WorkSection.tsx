@@ -12,18 +12,35 @@ import { useScrollAnimation } from "@/src/hooks/useScrollAnimation";
 
 const OPTIONS: EmblaOptionsType = { loop: true };
 
+const calculateInitialY = (width: number) => {
+  if (width >= 2560) return -200; // for ultra-wide screens (e.g., 4K)
+  if (width >= 1920) return -350; // for XXL screens
+  if (width >= 1536) return -70; // for extra extra large screens
+  if (width >= 1280) return -250; // for extra large screens
+  if (width >= 1024) return -200; // for large screens
+  if (width >= 768) return -150; // for medium screens
+  if (width >= 640) return -100; // for small screens
+  return 0; // for extra small screens
+};
 export default function WorkAnimation() {
   const [width] = useWindowSize();
 
   const initialHeight = useMemo(() => {
-    if (width < 640) return "40rem";
-    if (width < 768) return "40rem";
-    return "50rem";
+    if (width >= 2560) return "100rem"; // Ultra-wide screens (e.g., 4K)
+    if (width >= 1920) return "95rem"; // XXL screens
+    if (width >= 1536) return "50rem"; // Extra extra large screens and above
+    if (width >= 1280) return "48rem"; // Extra large screens
+    if (width >= 1024) return "46rem"; // Large screens
+    if (width >= 768) return "44rem"; // Medium screens
+    if (width >= 640) return "42rem"; // Small screens
+    return "40rem"; // Extra small screens
   }, [width]);
 
   const maxGrowth = useMemo(() => {
-    return width <= 768 ? 300 : 500;
+    return width <= 768 ? 300 : 400;
   }, [width]);
+
+  const initialY = useMemo(() => calculateInitialY(width), [width]);
 
   const { ref, springGrowth } = useScrollAnimation(maxGrowth);
 
@@ -44,9 +61,12 @@ export default function WorkAnimation() {
           <motion.div
             className="text-30xl absolute text-stone-950 font-bold z-0"
             style={{
-              y: useTransform(springGrowth, [0, maxGrowth], [0, -maxGrowth], {
-                clamp: true,
-              }),
+              y: useTransform(
+                springGrowth,
+                [0, maxGrowth],
+                [initialY, initialY - maxGrowth],
+                { clamp: true }
+              ),
             }}
           >
             <h1 className="leading-none md:pl-8">Work</h1>
