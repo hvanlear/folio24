@@ -20,7 +20,7 @@ const calculateInitialY = (width: number) => {
   if (width >= 1024) return -200; // for large screens
   if (width >= 768) return -150; // for medium screens
   if (width >= 640) return -100; // for small screens
-  return 0; // for extra small screens
+  return 50; // for extra small screens
 };
 export default function WorkAnimation() {
   const [width] = useWindowSize();
@@ -32,8 +32,8 @@ export default function WorkAnimation() {
     if (width >= 1280) return "48rem"; // Extra large screens
     if (width >= 1024) return "46rem"; // Large screens
     if (width >= 768) return "44rem"; // Medium screens
-    if (width >= 640) return "42rem"; // Small screens
-    return "40rem"; // Extra small screens
+    if (width >= 640) return "24rem"; // Small screens
+    return "30rem"; // Extra small screens
   }, [width]);
 
   const maxGrowth = useMemo(() => {
@@ -69,9 +69,9 @@ export default function WorkAnimation() {
               ),
             }}
           >
-            <h1 className="leading-none md:pl-8">Work</h1>
+            <h1 className="leading-none px-8 md:pl-8">Work</h1>
           </motion.div>
-          <div className="text-3xl text-stone-950 absolute left-0 z-10 w-full ">
+          <div className="text-3xl text-stone-950 absolute px-8 left-0 z-10 w-full ">
             <Carousel projects={projects} options={OPTIONS} />
           </div>
         </div>

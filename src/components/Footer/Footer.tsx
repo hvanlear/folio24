@@ -16,7 +16,7 @@ export default function Footer() {
       */}
       <section
         id="section-ticker"
-        className=" bg-black  w-full overflow-hidden"
+        className=" bg-slate-950  w-full overflow-hidden"
       >
         <ClippedGradientTicker
           containerClipPath="polygon(0px 68%, 100% 0px, 100% 100%, 0px 100%)"
