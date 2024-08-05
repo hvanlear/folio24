@@ -7,15 +7,15 @@ type ArchiveSlatProps = Pick<FullProjectInfo, "title" | "link">;
 export default function ArchiveSlat({ title, link }: ArchiveSlatProps) {
   return (
     <Link href={link} passHref className="w-full">
-      <div className="archive-slat group cursor-pointer transition-all duration-300 ease-in-out hover:bg-slate-950">
+      <div className="archive-slat group cursor-pointer transition-all duration-300 ease-in-out hover:bg-stone-950">
         <div className="flex justify-between items-center relative py-4 px-2 ">
-          <span className="text-2xl font-medium text-stone-950 group-hover:text-white group-hover:translate-x-1 transition-all duration-300">
+          <span className="text-2xl group-hover:font-bold text-stone-950 group-hover:text-slate-50 group-hover:translate-x-1 transition-all duration-300">
             {title}
           </span>
-          <span className="text-2xl font-medium text-stone-950 group-hover:text-white group-hover:translate-x-1 transition-all duration-300">
+          <span className="text-sm group-hover:font-bold text-stone-950 group-hover:text-slate-50 group-hover:-translate-x-1 transition-all duration-300">
             Full Case
           </span>
-          <div className="absolute inset-x-0 -top-px h-px bg-gray-200 scale-x-100 "></div>
+          <div className="absolute inset-x-0 -top-px h-px bg-stone-200 scale-x-100 group-hover:scale-x-0"></div>
         </div>
       </div>
     </Link>

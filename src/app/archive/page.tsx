@@ -45,56 +45,56 @@ export default function ArchivePage() {
             isDark={true}
           />
         </section>
-
-        {/* Inner container for both heading and about section */}
-        {/* Inner container for both heading and about section */}
-        <div
-          id="container-inner-about "
-          className=" w-full flex items-center flex-col h-[50rem]"
-        >
-          {/* Animated Header */}
-          <motion.div
-            className="-z-10 pl-4 w-full"
-            style={{ y: springY }}
-            initial={{ y: -100, opacity: 0 }}
-            animate={{ y: 30, opacity: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+        <div className="flex w-full justify-center">
+          {/* Inner container for both heading and about section */}
+          {/* Inner container for both heading and about section */}
+          <div
+            id="container-inner-about "
+            className=" w-full 3xl:w-[55%] flex items-center flex-col 2xl:h-[89vh] h-[50rem]"
           >
-            <h1
-              id="heading-about"
-              className="leading-none text-30xl tracking-tighter text-stone-950 font-bold "
+            {/* Animated Header */}
+            <motion.div
+              className="-z-10 pl-4 w-full"
+              style={{ y: springY }}
+              initial={{ y: -100, opacity: 0 }}
+              animate={{ y: 30, opacity: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              Archive
-            </h1>
-          </motion.div>
-          <section id="section-about-main" className="w-full h-full">
-            <div className="bg-slate-50 z-10 border-2 border-slate-600 rounded-tl-[5rem] rounded-tr-[5rem] w-full h-full flex flex-col justify-between">
-              <div className="flex flex-col h-full items-center md:flex-row px-12">
-                <div className="w-full mb-8">
-                  {projectTypes.map((type) => (
-                    <div key={type}>
-                      <h2 className="text-sm text-slate-600 mt-8 mb-4 uppercase font-serif">
-                        {type}
-                      </h2>
-                      {projectsByType[type].map((project) => (
-                        <ArchiveSlat
-                          key={project.title}
-                          title={project.title as string}
-                          link={project.link as string}
-                        />
-                      ))}
-                    </div>
-                  ))}
+              <h1
+                id="heading-about"
+                className="leading-none text-30xl tracking-tighter text-stone-950 font-bold "
+              >
+                Archive
+              </h1>
+            </motion.div>
+            <section id="section-about-main" className="w-full h-full">
+              <div className="bg-slate-50 z-10 border-2 border-slate-600 rounded-tl-[5rem] rounded-tr-[5rem] w-full h-full flex flex-col justify-between">
+                <div className="flex flex-col h-full 3xl:items-start 3xl:pt-8 items-center md:flex-row px-12">
+                  <div className="w-full mb-8">
+                    {projectTypes.map((type) => (
+                      <div key={type}>
+                        <h2 className="text-sm text-slate-600 mt-8 mb-4 uppercase font-serif">
+                          {type}
+                        </h2>
+                        {projectsByType[type].map((project) => (
+                          <ArchiveSlat
+                            key={project.title}
+                            title={project.title as string}
+                            link={project.link as string}
+                          />
+                        ))}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
+            </section>
+            {/* footer */}
+            <div className="bg-slate-50 container-footer border-x-2 border-slate-600 px-12 py-6 w-full">
+              <ContactInfoBasic />
             </div>
-          </section>
-          {/* footer */}
-          <div className="bg-slate-50 container-footer border-x-2 border-slate-600 px-12 py-6 w-full">
-            <ContactInfoBasic />
           </div>
         </div>
-
         {/* background */}
         <div className="bg-slate-50 top-0 absolute w-full -z-20 min-h-[100vh]" />
       </main>

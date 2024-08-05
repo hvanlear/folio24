@@ -53,7 +53,7 @@ export default function Contact({ contactClass }: ContactProps) {
     >
       <div
         ref={containerRef}
-        className="h-full  rounded-tl-[5rem] rounded-tr-[5rem] bg-black relative"
+        className="h-full  rounded-tl-[5rem] rounded-tr-[5rem] bg-stone-950 relative"
       >
         <motion.div
           className="contact-container_inner-animated absolute bottom-0 left-0 right-0"
@@ -62,7 +62,7 @@ export default function Contact({ contactClass }: ContactProps) {
             y: useTransform(springGrowth, (latest) => `-${latest}px`),
           }}
         >
-          <div className="flex flex-col gap-4 md:gap-44 md:flex-row z-10 p-8 sm:p-12 md:p-20  w-full ">
+          <div className="flex flex-col gap-4 md:justify-between md:flex-row z-10 p-8 sm:p-12 md:p-20  w-full ">
             <ContactForm />
             <ContactInfo />
           </div>

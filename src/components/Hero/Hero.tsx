@@ -31,7 +31,7 @@ export default function Hero() {
       </style>
       <section
         id="section-ticker"
-        className=" bg-black w-full overflow-hidden z-0"
+        className=" bg-stone-950 w-full overflow-hidden z-0"
       >
         <ClippedGradientTicker
           containerClipPath="polygon(0 0%, 100% 0, 100% 25%, 0 98%)"
@@ -47,7 +47,7 @@ export default function Hero() {
         />
       </section>
       <section id="section-welcome">
-        <div className="grid-container grid lg:grid-cols-8   bg-black">
+        <div className="grid-container grid lg:grid-cols-8   bg-stone-950">
           <div
             id=" container-welcome-welcome"
             className="row-start-1  col-start-2 col-end-6 flex justify-center 3xl:row-start-2 mt-10"

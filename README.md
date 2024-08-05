@@ -19,6 +19,7 @@
 - [ ] Site
 
   - [ ] Page transitions
+  - [ ] Page template
 
 - [ ] Hero
 
@@ -68,6 +69,17 @@
     - [ ] Weather and Time
     - [x] Contact links
     - [x] Right side Copyright + Email
+
+- [ ] Archive Page
+
+  - [x] Create Basic Slat
+    - [ ] Image Slat
+  - [ ] Responsive / Final Positioning
+
+- [ ] Contact Page
+
+  - [x] Create Page
+  - [ ] Integrate form
 
 ### Upcoming
 

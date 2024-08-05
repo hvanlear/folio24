@@ -18,7 +18,7 @@ export default function ContactInfoBasic() {
             className="text-h2-clamp font-bold leading-none"
             style={{
               WebkitTextFillColor: "white",
-              WebkitTextStroke: "2px black",
+              WebkitTextStroke: "2px #0c0a09",
             }}
           >
             Hunter Van Lear
@@ -30,22 +30,25 @@ export default function ContactInfoBasic() {
         <div className=" flex flex-col-reverse md:flex-row gap-2 md:gap-4 h-full md:justify-between items-center md:items-center">
           <div className="flex flex-row items-center">
             <span>
-              <emailInfo.icon size={20} color="black" stroke={2} />
+              <emailInfo.icon size={20} color="#78716c" stroke={1} />
             </span>
-            <h5 className="text-stone-600 pl-2 text-h5-clamp font-bold leading-none">
+            <h5 className="text-stone-500  pl-2 text-h5-clamp font-medium leading-none">
               {emailInfo.value}
             </h5>
           </div>
-          <ul className="flex flex-row justify-between md:justify-normal gap-5">
+          <ul className="flex flex-row items-center justify-between md:justify-normal gap-5">
+            <p className="hidden md:block text-sm text-stone-500 font-serif">
+              Elsewhere
+            </p>
             {socialContacts.map((contact, index) => (
               <li key={index}>
                 <a
                   href={contact.link}
-                  className="text-stone-600 text-3xl hover:text-blue-500 font-bold"
+                  className="text-stone-500  text-3xl hover:text-blue-500 font-medium"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <contact.icon size={35} color="currentColor" stroke={2} />
+                  <contact.icon size={30} color="currentColor" stroke={1} />
                 </a>
               </li>
             ))}
