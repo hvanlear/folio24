@@ -1,8 +1,11 @@
+// LayoutContext.tsx
 "use client";
+
 import React, { createContext, useState, useContext, ReactNode } from "react";
 
 interface LayoutInfo {
   heroHeight: number;
+  heroTop: number;
   workSectionTop: number;
   contactTop: number;
 }
@@ -19,6 +22,7 @@ export const LayoutProvider: React.FC<{ children: ReactNode }> = ({
 }) => {
   const [layoutInfo, setLayoutInfo] = useState<LayoutInfo>({
     heroHeight: 0,
+    heroTop: 0,
     workSectionTop: 0,
     contactTop: 0,
   });

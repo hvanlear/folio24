@@ -1,3 +1,4 @@
+// useScrollAnimation.ts
 "use client";
 
 import { useEffect, useRef, useState } from "react";
@@ -9,14 +10,30 @@ interface ScrollAnimationOptions {
   maxGrowth?: number;
 }
 
+type SectionName = "hero" | "workSection" | "contact";
+
+const getSectionTop = (
+  sectionName: SectionName,
+  layoutInfo: LayoutInfo
+): number => {
+  switch (sectionName) {
+    case "hero":
+      return layoutInfo.heroTop;
+    case "workSection":
+      return layoutInfo.workSectionTop;
+    case "contact":
+      return layoutInfo.contactTop;
+  }
+};
+
 export const useScrollAnimation = (
-  sectionName: "hero" | "workSection" | "contact",
+  sectionName: SectionName,
   options: ScrollAnimationOptions = {}
 ) => {
   const { threshold = 0.1, maxGrowth = 200 } = options;
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const { scrollYProgress } = useScroll();
+  const { scrollY } = useScroll();
   const { layoutInfo, setLayoutInfo } = useLayout();
 
   useEffect(() => {
@@ -48,7 +65,13 @@ export const useScrollAnimation = (
     };
   }, [sectionName, threshold, setLayoutInfo]);
 
-  const growth = useTransform(scrollYProgress, [0, 1], [0, maxGrowth]);
+  const sectionTop = getSectionTop(sectionName, layoutInfo);
 
-  return { ref, isVisible, growth, scrollYProgress, layoutInfo };
+  const growth = useTransform(
+    scrollY,
+    [sectionTop - window.innerHeight, sectionTop + window.innerHeight],
+    [0, maxGrowth]
+  );
+
+  return { ref, isVisible, growth };
 };
