@@ -17,10 +17,10 @@ export default function Contact({ contactClass }: ContactProps) {
 
   // Define responsive growth values
   const maxGrowth = useMemo(() => {
-    if (width < 640) return 400; // For very small screens
-    if (width < 768) return 500; // For small screens
+    if (width < 640) return 300; // For very small screens
+    if (width < 768) return 400; // For small screens
     if (width < 1024) return 400; // For medium screens
-    return 300; // For large screens
+    return 200; // For large screens
   }, [width]);
 
   const growth = useTransform(scrollYProgress, [0, 1], [0, maxGrowth], {

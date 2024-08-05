@@ -34,8 +34,8 @@ export default function WorkAnimation() {
   // Calculate initial height based on screen size
   const initialHeight = useMemo(() => {
     if (width < 640) return "40rem";
-    if (width < 768) return "25rem";
-    return "50rem";
+    if (width < 768) return "40rem";
+    return "70rem";
   }, [width]);
 
   return (

@@ -47,7 +47,7 @@ export default function ContactPage() {
           {/* Inner container for both heading and about section */}
           <div
             id="container-inner-about "
-            className=" w-full 4xl:w-[55%] flex items-center flex-col 2xl:h-[89vh] h-[50rem]"
+            className=" w-full 3xl:w-[55%] flex items-center flex-col 2xl:h-[89vh] h-[50rem]"
           >
             {/* Animated Header */}
             <motion.div

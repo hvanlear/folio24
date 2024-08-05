@@ -20,6 +20,8 @@
 
   - [ ] Page transitions
   - [ ] Page template
+    - [ ] Contact/About/Archive template
+    - [ ] Contact Form / Contact Form Light
 
 - [ ] Hero
 
