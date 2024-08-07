@@ -1,5 +1,3 @@
-// src/components/ui/Carousel/Carousel.tsx
-
 import React from "react";
 import { EmblaOptionsType } from "embla-carousel";
 import {

@@ -12,7 +12,7 @@ import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 export default function ArchivePage() {
   const { scrollYProgress } = useScroll();
   const [width, height] = useWindowSize();
-  const projectsByType = getProjectsByType(["title", "link"]);
+  const projectsByType = getProjectsByType(["title", "slug"]);
   const projectTypes: ProjectType[] = ["design", "development"];
 
   const y = useTransform(scrollYProgress, [0, 1], [0, 200], {
@@ -68,7 +68,7 @@ export default function ArchivePage() {
               </h1>
             </motion.div>
             <section id="section-about-main" className="w-full h-full">
-              <div className="bg-slate-50 z-10 border-2 border-slate-600 rounded-tl-[5rem] rounded-tr-[5rem] w-full h-full flex flex-col justify-between">
+              <div className="bg-slate-50 z-10 border-x-2 border-t-2 border-slate-600 rounded-tl-[5rem] rounded-tr-[5rem] w-full h-full flex flex-col justify-between">
                 <div className="flex flex-col h-full 3xl:items-start 3xl:pt-8 items-center md:flex-row px-12">
                   <div className="w-full mb-8">
                     {projectTypes.map((type) => (
@@ -80,7 +80,7 @@ export default function ArchivePage() {
                           <ArchiveSlat
                             key={project.title}
                             title={project.title as string}
-                            link={project.link as string}
+                            slug={project.slug as string}
                           />
                         ))}
                       </div>
@@ -90,7 +90,7 @@ export default function ArchivePage() {
               </div>
             </section>
             {/* footer */}
-            <div className="bg-slate-50 container-footer border-x-2 border-slate-600 px-12 py-6 w-full">
+            <div className="w-full">
               <ContactInfoBasic />
             </div>
           </div>

@@ -2,8 +2,12 @@
 
 import { socialContactData } from "@/src/utils/contactData";
 import { emailContactData } from "@/src/utils/contactData";
+import dynamic from "next/dynamic";
+// import NavLinks from "../Nav/NavLinks";
 
-import NavLinks from "../Nav/NavLinks";
+const NavLinks = dynamic(() => import("@/src/components/Nav/NavLinks"), {
+  ssr: false,
+});
 
 export default function ContactInfoBasic() {
   const emailInfo = emailContactData();
@@ -11,7 +15,7 @@ export default function ContactInfoBasic() {
 
   return (
     <>
-      <div className="flex flex-col gap-4  ">
+      <div className="flex flex-col gap-4 bg-slate-50 container-footer border-t-2 border-slate-600 px-6 py-6 ">
         {/* Top  Row */}
         <div className=" flex flex-col md:flex-row gap-4 h-full md:justify-between items-center md:items-end ">
           <h1

@@ -1,10 +1,8 @@
-import { motion } from "framer-motion";
-import Link from "next/link";
+// NavLinks.tsx
+"use client";
 
-type NavItem = {
-  name: string;
-  path: string;
-};
+import { motion } from "framer-motion";
+import NavLinksBase from "./NavLinksBase";
 
 type NavLinksProps = {
   isFullScreen: boolean;
@@ -16,43 +14,14 @@ const menuItemVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
-const navItems: NavItem[] = [
-  { name: "Home", path: "/" },
-  { name: "Archive", path: "/archive" },
-  { name: "About", path: "/about" },
-  { name: "Contact", path: "/contact" },
-];
-
 export default function NavLinks({ isFullScreen, onClose }: NavLinksProps) {
+  if (!isFullScreen) {
+    return <NavLinksBase isFullScreen={isFullScreen} onClose={onClose} />;
+  }
+
   return (
-    <ul
-      className={`${
-        isFullScreen
-          ? "flex flex-col"
-          : "flex flex-row items-center gap-3 md:gap-5 "
-      }`}
-    >
-      {navItems.map((item) => (
-        <motion.li
-          key={item.name}
-          className={isFullScreen ? "mb-9" : ""}
-          variants={isFullScreen ? menuItemVariants : {}}
-        >
-          <Link
-            href={item.path}
-            className={`
-              ${
-                isFullScreen
-                  ? "text-h1.5-clamp leading-none hover:text-blue-500 text-stone-950"
-                  : "text-h3-clamp leading-none hover:text-blue-500 text-stone-950"
-              } font-bold
-            `}
-            onClick={isFullScreen ? onClose : undefined}
-          >
-            {item.name}
-          </Link>
-        </motion.li>
-      ))}
-    </ul>
+    <motion.div>
+      <NavLinksBase isFullScreen={isFullScreen} onClose={onClose} />
+    </motion.div>
   );
 }

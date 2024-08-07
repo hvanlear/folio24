@@ -69,7 +69,7 @@ export default function AboutPage() {
               </h1>
             </motion.div>
             <section id="section-about-main" className=" h-full">
-              <div className="bg-slate-50 z-10 border-2 border-slate-600 rounded-tl-[5rem] rounded-tr-[5rem] w-full h-full flex flex-col justify-between">
+              <div className="bg-slate-50 z-10 border-x-2 border-t-2 border-slate-600 rounded-tl-[5rem] rounded-tr-[5rem] w-full h-full flex flex-col justify-between">
                 <div className="flex flex-col h-full 3xl:items-start 3xl:pt-8 items-center md:flex-row px-12">
                   <div className="">
                     <p className="text-black">
@@ -99,7 +99,7 @@ export default function AboutPage() {
               </div>
             </section>
             {/* footer */}
-            <div className="bg-slate-50 container-footer border-x-2 border-slate-600 px-12 py-6 w-full">
+            <div className="w-full">
               <ContactInfoBasic />
             </div>
           </div>

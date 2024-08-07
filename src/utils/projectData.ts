@@ -13,40 +13,45 @@ export interface FullProjectInfo {
   tags: string[];
   image: StaticImageData;
   description: string;
+  slug: string;
 }
 
 export const projects: FullProjectInfo[] = [
   {
     type: "design",
-    title: "Project 1 Title",
+    title: "BPMN Modeler",
     link: "https://project1.com",
     description: "A brief description of Project 1.",
     tags: ["React", "TypeScript", "Next.js"],
     image: modelMac,
+    slug: "modeler",
   },
   {
     type: "design",
-    title: "Project 2 Title",
+    title: "Consumer Bank Account Opening",
     link: "https://project2.com",
     description: "A brief description of Project 2.",
     tags: ["Vue", "JavaScript", "Tailwind CSS"],
     image: modelMac,
+    slug: "banking",
   },
   {
     type: "development",
-    title: "Project 3 Title",
+    title: "Stephen King REST API",
     link: "https://project3.com",
     description: "A brief description of Project 3.",
     tags: ["React Native", "TypeScript"],
     image: modelMac,
+    slug: "skapi",
   },
   {
-    type: "development",
-    title: "Project 4 Title",
+    type: "design",
+    title: "ProcessMaker Design System",
     link: "https://project4.com",
     description: "A brief description of Project 4.",
     tags: ["Node.js", "Express", "MongoDB"],
     image: modelMac,
+    slug: "pmdesginsystem",
   },
   // Add more projects as needed
 ];
@@ -121,7 +126,7 @@ export function getProjects(
  * @returns An object with project types as keys and arrays of projects as values
  */
 export function getProjectsByType(
-  fields: (keyof FullProjectInfo)[] = ["title", "link"]
+  fields: (keyof FullProjectInfo)[] = ["title", "slug"]
 ): Record<ProjectType, Partial<FullProjectInfo>[]> {
   const projectTypes: ProjectType[] = ["design", "development"];
 
