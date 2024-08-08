@@ -1,14 +1,27 @@
-// src/utils/projectData.ts
-
+import {
+  IconBrandGithub,
+  IconBrandDribbble,
+  IconExternalLink,
+  IconProps,
+} from "@tabler/icons-react";
 import { StaticImageData } from "next/image";
-// Import your project images
+//Project Images
 import modelMac from "@/src/assets/images/projects/modelMac.png";
 
 export type ProjectType = "design" | "development" | "other";
 
+export interface ProjectLink {
+  url: string;
+  icon: React.ComponentType<IconProps>;
+}
+
 export interface FullProjectInfo {
   title: string;
-  link: string;
+  links: {
+    live?: ProjectLink;
+    github?: ProjectLink;
+    dribbble?: ProjectLink;
+  };
   type: ProjectType;
   tags: string[];
   image: StaticImageData;
@@ -20,7 +33,17 @@ export const projects: FullProjectInfo[] = [
   {
     type: "design",
     title: "BPMN Modeler",
-    link: "https://project1.com",
+    links: {
+      live: { url: "https://project1.com", icon: IconExternalLink },
+      github: {
+        url: "https://github.com/user/project1",
+        icon: IconBrandGithub,
+      },
+      dribbble: {
+        url: "https://dribbble.com/shots/project1",
+        icon: IconBrandDribbble,
+      },
+    },
     description: "A brief description of Project 1.",
     tags: ["React", "TypeScript", "Next.js"],
     image: modelMac,
@@ -29,7 +52,17 @@ export const projects: FullProjectInfo[] = [
   {
     type: "design",
     title: "Consumer Bank Account Opening",
-    link: "https://project2.com",
+    links: {
+      live: { url: "https://project1.com", icon: IconExternalLink },
+      github: {
+        url: "https://github.com/user/project1",
+        icon: IconBrandGithub,
+      },
+      dribbble: {
+        url: "https://dribbble.com/shots/project1",
+        icon: IconBrandDribbble,
+      },
+    },
     description: "A brief description of Project 2.",
     tags: ["Vue", "JavaScript", "Tailwind CSS"],
     image: modelMac,
@@ -38,7 +71,17 @@ export const projects: FullProjectInfo[] = [
   {
     type: "development",
     title: "Stephen King REST API",
-    link: "https://project3.com",
+    links: {
+      live: { url: "https://project1.com", icon: IconExternalLink },
+      github: {
+        url: "https://github.com/user/project1",
+        icon: IconBrandGithub,
+      },
+      dribbble: {
+        url: "https://dribbble.com/shots/project1",
+        icon: IconBrandDribbble,
+      },
+    },
     description: "A brief description of Project 3.",
     tags: ["React Native", "TypeScript"],
     image: modelMac,
@@ -47,13 +90,22 @@ export const projects: FullProjectInfo[] = [
   {
     type: "design",
     title: "ProcessMaker Design System",
-    link: "https://project4.com",
+    links: {
+      live: { url: "https://project1.com", icon: IconExternalLink },
+      github: {
+        url: "https://github.com/user/project1",
+        icon: IconBrandGithub,
+      },
+      dribbble: {
+        url: "https://dribbble.com/shots/project1",
+        icon: IconBrandDribbble,
+      },
+    },
     description: "A brief description of Project 4.",
     tags: ["Node.js", "Express", "MongoDB"],
     image: modelMac,
     slug: "pmdesginsystem",
   },
-  // Add more projects as needed
 ];
 
 type ProjectFields = keyof FullProjectInfo;
