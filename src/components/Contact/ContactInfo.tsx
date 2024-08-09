@@ -19,7 +19,7 @@ export default function ContactInfo() {
   const socialContacts = socialContactData();
   return (
     <div className="flex flex-col gap-4 md:items-start items-center justify-center">
-      <div className="flex flex-row justify-end items-center w-full">
+      <div className="flex flex-row justify-center md:justify-end items-center w-full">
         <h1
           className="text-h2-clamp font-bold leading-none"
           style={{
@@ -31,7 +31,7 @@ export default function ContactInfo() {
         </h1>
       </div>
 
-      <nav className="flex flex-row gap-4 justify-end items-center w-full">
+      <nav className="flex flex-row gap-4 justify-center md:justify-end items-center w-full">
         <ul className=" flex flex-row  gap-3 md:gap-5">
           <li className="text-h3-clamp hover:text-blue-500 font-bold">
             <a href="/">Home</a>
@@ -48,11 +48,11 @@ export default function ContactInfo() {
         </ul>
       </nav>
 
-      <div className="flex flex-row gap-4 justify-end items-center w-full">
+      <div className="flex flex-row gap-4 justify-center md:justify-end items-center w-full">
         <p className="hidden md:block text-sm text-stone-300 font-serif">
           Elsewhere
         </p>
-        <ul className="flex flex-row justify-between md:justify-normal gap-3 md:gap-5">
+        <ul className="flex flex-row justify-center md:justify-normal gap-3 md:gap-5">
           {socialContacts.map((contact, index) => (
             <li key={index}>
               <a

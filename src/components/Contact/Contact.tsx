@@ -16,14 +16,14 @@ export default function Contact({ contactClass }: ContactProps) {
   const maxGrowth = useMemo(() => {
     if (width < 640) return 300;
     if (width < 768) return 400;
-    if (width < 1024) return 400;
+    if (width < 1024) return 500;
     return 200;
   }, [width]);
 
   const { ref, springGrowth } = useScrollAnimation(maxGrowth);
 
   const initialHeight = useMemo(() => {
-    if (width < 640) return "30rem";
+    if (width < 640) return "45rem";
     if (width < 768) return "25rem";
     return "40rem";
   }, [width]);

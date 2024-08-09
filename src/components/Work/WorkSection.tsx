@@ -20,7 +20,7 @@ const calculateInitialY = (width: number) => {
   if (width >= 1024) return -200; // for large screens
   if (width >= 768) return -150; // for medium screens
   if (width >= 640) return -100; // for small screens
-  return 50; // for extra small screens
+  return -20; // for extra small screens
 };
 export default function WorkAnimation() {
   const [width] = useWindowSize();
@@ -71,7 +71,7 @@ export default function WorkAnimation() {
           >
             <h1 className="leading-none px-8 md:pl-8">Work</h1>
           </motion.div>
-          <div className="text-3xl text-stone-950 absolute  left-0 z-10 w-full ">
+          <div className="text-3xl text-stone-950 absolute px-8 left-0 z-10 w-full ">
             <Carousel projects={projects} options={OPTIONS} />
           </div>
         </div>
