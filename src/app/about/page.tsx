@@ -54,7 +54,7 @@ export default function AboutPage() {
           {/* Inner container for both heading and about section */}
           <div
             id="container-inner-about "
-            className=" w-full 3xl:w-[55%] flex items-center flex-col 2xl:h-[89vh] h-[50rem]"
+            className=" w-full 3xl:w-[55%] flex items-center flex-col 2xl:h-[89vh] min-h-[50rem]"
           >
             {/* Animated Header */}
             <motion.div
@@ -73,8 +73,11 @@ export default function AboutPage() {
             </motion.div>
             <section id="section-about-main" className=" h-full">
               <div className="bg-slate-50 z-10 border-x-2 border-t-2 border-slate-600 rounded-tl-[5rem] rounded-tr-[5rem] w-full h-full flex flex-col justify-between">
-                <div className="flex flex-col h-full items-center md:flex-row  p-24">
-                  <div className="w-full md:w-1/2 flex items-center">
+                <div className="flex flex-col-reverse gap-8 h-full items-center md:flex-row p-12 md:p-24">
+                  <div className="w-full md:w-1/2 flex flex-col  gap-8">
+                    <h2 className="text-stone-950 text-3xl">
+                      My name is Hunter Van Lear
+                    </h2>
                     <p className="text-stone-950 text-2xl">
                       I am a developer and designer who enjoys crafting
                       intuitive experiences for technical products. With the
