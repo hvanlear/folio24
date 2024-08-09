@@ -41,6 +41,7 @@ export default function ClippedGradientTicker({
           right: 0,
           height: "100%",
           zIndex: 9,
+          transition: "all 0.05s linear",
         }}
       ></div>
       <div>
