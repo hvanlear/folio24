@@ -6,7 +6,11 @@ import {
 } from "@tabler/icons-react";
 import { StaticImageData } from "next/image";
 //Project Images
-import modelMac from "@/src/assets/images/projects/modelMac.png";
+import modelMac from "@/public/images/projects/modelMac.png";
+import skCover from "@/public/images/projects/skCover.png";
+import nfCover from "@/public/images/projects/nfCover.jpg";
+import DesignSystem from "@/public/images/projects/DesignSystem.png";
+import bankingCover from "@/public/images/projects/bankingCover.jpg";
 
 export type ProjectType = "design" | "development" | "other";
 
@@ -31,21 +35,19 @@ export interface FullProjectInfo {
 
 export const projects: FullProjectInfo[] = [
   {
+    //DESIGN PROJECTS
     type: "design",
     title: "BPMN Modeler",
     links: {
       live: { url: "https://project1.com", icon: IconExternalLink },
-      github: {
-        url: "https://github.com/user/project1",
-        icon: IconBrandGithub,
-      },
       dribbble: {
         url: "https://dribbble.com/shots/project1",
         icon: IconBrandDribbble,
       },
     },
-    description: "A brief description of Project 1.",
-    tags: ["React", "TypeScript", "Next.js"],
+    description:
+      "Redesigned and optimized a web-based canvas tool for intuitive process modeling and creation, enhancing user experience and productivity.",
+    tags: ["UI Design", "Product Design", "Figma"],
     image: modelMac,
     slug: "modeler",
   },
@@ -53,58 +55,70 @@ export const projects: FullProjectInfo[] = [
     type: "design",
     title: "Consumer Bank Account Opening",
     links: {
-      live: { url: "https://project1.com", icon: IconExternalLink },
-      github: {
-        url: "https://github.com/user/project1",
-        icon: IconBrandGithub,
-      },
       dribbble: {
         url: "https://dribbble.com/shots/project1",
         icon: IconBrandDribbble,
       },
     },
-    description: "A brief description of Project 2.",
-    tags: ["Vue", "JavaScript", "Tailwind CSS"],
-    image: modelMac,
+    description:
+      "Reimagined and redesigned the user experience for a consumer bank account opening web application",
+    tags: ["HTML / CSS", "UX Engineering", "UI Design", "Fintech"],
+    image: bankingCover,
     slug: "banking",
-  },
-  {
-    type: "development",
-    title: "Stephen King REST API",
-    links: {
-      live: { url: "https://project1.com", icon: IconExternalLink },
-      github: {
-        url: "https://github.com/user/project1",
-        icon: IconBrandGithub,
-      },
-      dribbble: {
-        url: "https://dribbble.com/shots/project1",
-        icon: IconBrandDribbble,
-      },
-    },
-    description: "A brief description of Project 3.",
-    tags: ["React Native", "TypeScript"],
-    image: modelMac,
-    slug: "skapi",
   },
   {
     type: "design",
     title: "ProcessMaker Design System",
     links: {
-      live: { url: "https://project1.com", icon: IconExternalLink },
-      github: {
-        url: "https://github.com/user/project1",
-        icon: IconBrandGithub,
-      },
       dribbble: {
         url: "https://dribbble.com/shots/project1",
         icon: IconBrandDribbble,
       },
     },
-    description: "A brief description of Project 4.",
-    tags: ["Node.js", "Express", "MongoDB"],
-    image: modelMac,
+    description:
+      "Developed a comprehensive Figma Design System for a large SaaS platform.",
+    tags: ["Figma", "Design Systems"],
+    image: DesignSystem,
     slug: "pmdesginsystem",
+  },
+  //DEV PROJECTS
+  {
+    type: "development",
+    title: "Stephen King REST API",
+    links: {
+      live: {
+        url: "https://stephen-king-api.onrender.com/",
+        icon: IconExternalLink,
+      },
+      github: {
+        url: "https://github.com/hvanlear/Stephen-King-API",
+        icon: IconBrandGithub,
+      },
+    },
+    description:
+      "A RESTful API built from the collected works of the horror master.",
+    tags: ["Python", "Node", "Postgres"],
+    image: skCover,
+    slug: "skapi",
+  },
+  {
+    type: "development",
+    title: "News Fight",
+    links: {
+      live: {
+        url: "https://stephen-king-api.onrender.com/",
+        icon: IconExternalLink,
+      },
+      github: {
+        url: "https://github.com/hvanlear/Stephen-King-API",
+        icon: IconBrandGithub,
+      },
+    },
+    description:
+      "A RESTful API built from the collected works of the horror master.",
+    tags: ["Python + Flask", "Javascript", "Postgres", "Sentiment Analysis"],
+    image: nfCover,
+    slug: "newsfight",
   },
 ];
 

@@ -10,7 +10,7 @@ export default function WelcomeLinks() {
         <span className="text-3xl">Resume</span>
       </ButtonUnderline>
       <ButtonUnderline href="#contact">
-        <span className="text-3xl">Resume</span>
+        <span className="text-3xl">Contact</span>
       </ButtonUnderline>
     </div>
   );

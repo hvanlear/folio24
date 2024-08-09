@@ -36,7 +36,7 @@ const contactData: ContactInfo[] = [
   {
     type: "social",
     value: "GitHub",
-    link: "https://github.com/yourusername",
+    link: "https://github.com/hvanlear",
     icon: IconBrandGithub,
   },
   {

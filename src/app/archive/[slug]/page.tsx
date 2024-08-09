@@ -32,7 +32,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
   return (
     <div className="text-slate-950">
       <article className="bg-slate-50">
-        <div className="container-project_heading flex flex-col gap-4 bg-slate-300 p-24">
+        <div className="container-project_heading flex flex-col gap-4 bg-slate-300 p-12 md:p-24">
           <h1 className="text-h2-clamp leading-none">
             {project.title || "Untitled Project"}
           </h1>

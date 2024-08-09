@@ -36,7 +36,7 @@ const Carousel: React.FC<PropType> = ({ projects = [], options }) => {
           <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
         </div>
       </div>
-      <div className="embla__viewport 3xl:px-24 " ref={emblaRef}>
+      <div className="embla__viewport 3xl:px-24 px-10" ref={emblaRef}>
         <div className="embla__container">
           {projects.map((project, index) => (
             <CarouselSlide key={index} project={project} />
