@@ -24,13 +24,13 @@ const contactData: ContactInfo[] = [
   {
     type: "social",
     value: "LinkedIn",
-    link: "https://www.linkedin.com/in/yourprofile",
+    link: "https://www.linkedin.com/in/hunter-van-lear/",
     icon: IconBrandLinkedin,
   },
   {
     type: "social",
     value: "Instagram",
-    link: "https://www.instagram.com/yourprofile",
+    link: "https://www.instagram.com/hunter_v_l/",
     icon: IconBrandInstagram,
   },
   {
@@ -42,7 +42,7 @@ const contactData: ContactInfo[] = [
   {
     type: "social",
     value: "Dribbble",
-    link: "https://github.com/yourusername",
+    link: "https://dribbble.com/huntervl",
     icon: IconBrandDribbble,
   },
 ];

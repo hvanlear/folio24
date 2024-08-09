@@ -34,16 +34,16 @@ export default function ContactInfo() {
       <nav className="flex flex-row gap-4 justify-end items-center w-full">
         <ul className=" flex flex-row  gap-3 md:gap-5">
           <li className="text-h3-clamp hover:text-blue-500 font-bold">
-            <a href="http://">Home</a>
+            <a href="/">Home</a>
           </li>
           <li className="text-h3-clamp hover:text-blue-500 font-bold">
-            <a href="http://">Archive</a>
+            <a href="/archive">Archive</a>
           </li>
           <li className="text-h3-clamp hover:text-blue-500 font-bold">
-            <a href="http://">About</a>
+            <a href="/about">About</a>
           </li>
           <li className="text-h3-clamp hover:text-blue-500 font-bold">
-            <a href="http://">Contact</a>
+            <a href="/contact">Contact</a>
           </li>
         </ul>
       </nav>

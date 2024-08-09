@@ -9,13 +9,15 @@ const FSMContactLinks: React.FC = () => {
   return (
     <>
       <div className="fsmContactLinks">
-        <h3 className="text-black text-small-clamp font-serif">CONTACT</h3>
+        <h3 className="text-stone-700 text-small-clamp font-serif">
+          ELSEWHERE
+        </h3>
         <ul className="flex flex-row gap-3 sm:gap-5 md:gap-16 lg:gap-32">
           {socialContacts.map((contact, index) => (
             <motion.li key={index} variants={menuItemVariants}>
               <a
                 href={contact.link}
-                className="text-black text-h4-clamp hover:text-blue-500 font-bold"
+                className="text-stone-950 text-h4-clamp hover:text-blue-500 font-bold"
                 target="_blank"
                 rel="noopener noreferrer"
               >

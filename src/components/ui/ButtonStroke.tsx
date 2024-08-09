@@ -18,6 +18,7 @@ const Button = styled.a`
 
 const TextSpan = styled.span`
   position: relative;
+  padding-bottom: 8px;
 `;
 
 const ButtonStroke = styled.svg`
@@ -25,7 +26,7 @@ const ButtonStroke = styled.svg`
   bottom: 0;
   left: 50%;
   transform: translateX(-50%); // Center align the SVG
-  stroke: yellow;
+  stroke: rgba(0, 255, 174, 0.572);
   stroke-width: 4;
   stroke-dasharray: 650; // Define the total length of the path
   stroke-dashoffset: 650; // Start with the path fully hidden
@@ -53,7 +54,7 @@ const ButtonUnderline = ({
   }, [children]); // Update on children change
 
   return (
-    <Button href={href}>
+    <Button target="_blank" rel="noopener noreferrer" href={href}>
       <TextSpan ref={textRef}>
         {children}
         <ButtonStroke

@@ -15,7 +15,7 @@ export default function ContactInfoBasic() {
 
   return (
     <>
-      <div className="flex flex-col gap-4 bg-slate-50 container-footer border-t-2 border-slate-600 px-6 py-6 ">
+      <div className="flex flex-col gap-4 bg-stone-50 container-footer border-t-2 border-x-2 border-stone-600 px-6 py-6 ">
         {/* Top  Row */}
         <div className=" flex flex-col md:flex-row gap-4 h-full md:justify-between items-center md:items-end ">
           <h1

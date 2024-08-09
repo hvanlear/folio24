@@ -75,7 +75,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                 alt={project.title || "Project image"}
                 width={1100}
                 height={900}
-                className="rounded-lg"
+                className="rounded-lg shadow-md"
               />
             )}
           </div>

@@ -6,10 +6,10 @@ export default function WelcomeLinks() {
       id="container-welcome-links"
       className="flex flex-row space-x-8 ml-4 mt-8"
     >
-      <ButtonUnderline href="#resume">
+      <ButtonUnderline href="/docs/resume.pdf">
         <span className="text-3xl">Resume</span>
       </ButtonUnderline>
-      <ButtonUnderline href="#contact">
+      <ButtonUnderline href="/contact">
         <span className="text-3xl">Contact</span>
       </ButtonUnderline>
     </div>

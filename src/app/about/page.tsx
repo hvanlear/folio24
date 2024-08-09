@@ -5,6 +5,9 @@ import ContactInfoBasic from "@/src/components/Contact/ContactInfoBasic";
 import useCycleGradients from "@/src/hooks/useCycleGradients";
 import useWindowSize from "@/src/hooks/useWindowSize";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import Image from "next/image";
+
+import Me from "@/public/images/misc/Me.jpeg";
 
 export default function AboutPage() {
   const { scrollYProgress } = useScroll();
@@ -70,30 +73,26 @@ export default function AboutPage() {
             </motion.div>
             <section id="section-about-main" className=" h-full">
               <div className="bg-slate-50 z-10 border-x-2 border-t-2 border-slate-600 rounded-tl-[5rem] rounded-tr-[5rem] w-full h-full flex flex-col justify-between">
-                <div className="flex flex-col h-full 3xl:items-start 3xl:pt-8 items-center md:flex-row px-12">
-                  <div className="">
-                    <p className="text-black">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Commodi quis repellat voluptatibus, iste nam, odit, eius
-                      voluptates soluta inventore atque repellendus tenetur
-                      deserunt accusantium qui. Laboriosam neque error eveniet
-                      hic. Lorem ipsum dolor sit amet consectetur, adipisicing
-                      elit. Ex libero consequatur hic a. Dolore odit dolorem
-                      quam, minima soluta, animi, ipsa eum accusantium nam rerum
-                      at molestias aut neque inventore?
+                <div className="flex flex-col h-full items-center md:flex-row  p-24">
+                  <div className="w-full md:w-1/2 flex items-center">
+                    <p className="text-stone-950 text-2xl">
+                      I am a developer and designer who enjoys crafting
+                      intuitive experiences for technical products. With the
+                      ability to operate across the full spectrum of feature
+                      design and development, I am uniquely positioned to
+                      translate technical intricacies into seamless user
+                      journeys and coordinate with a broad spectrum of teams to
+                      achieve success.
                     </p>
                   </div>
-                  <div className="">
-                    <p className="text-black">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Commodi quis repellat voluptatibus, iste nam, odit, eius
-                      voluptates soluta inventore atque repellendus tenetur
-                      deserunt accusantium qui. Laboriosam neque error eveniet
-                      hic. Lorem ipsum dolor sit amet consectetur, adipisicing
-                      elit. Ex libero consequatur hic a. Dolore odit dolorem
-                      quam, minima soluta, animi, ipsa eum accusantium nam rerum
-                      at molestias aut neque inventore?
-                    </p>
+                  <div className="w-full md:w-1/2 flex justify-end">
+                    <Image
+                      src={Me}
+                      alt={"A pic of me"}
+                      width={600}
+                      height={400}
+                      className="rounded-lg object-cover shadow-md"
+                    />
                   </div>
                 </div>
               </div>
@@ -105,7 +104,7 @@ export default function AboutPage() {
           </div>
         </div>
         {/* background */}
-        <div className="bg-slate-50 top-0 absolute w-full -z-20 min-h-[100vh]" />
+        <div className="bg-stone-50 top-0 absolute w-full -z-20 min-h-[100vh]" />
       </main>
     </>
   );
