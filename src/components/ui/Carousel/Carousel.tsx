@@ -37,7 +37,7 @@ const Carousel: React.FC<PropType> = ({ projects = [], options }) => {
         </div>
       </div>
       <div className="embla__viewport 3xl:px-24 px-10" ref={emblaRef}>
-        <div className="embla__container">
+        <div className="embla__container gap-5 md:gap-2">
           {projects.map((project, index) => (
             <CarouselSlide key={index} project={project} />
           ))}

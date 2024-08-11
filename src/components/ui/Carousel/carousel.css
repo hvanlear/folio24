@@ -101,10 +101,7 @@
   .embla__slide {
     min-width: 0;
     flex: 0 0 var(--slide-size);
-    padding-left: var(--slide-spacing);
-    margin-left: 1rem;
-    margin-right: 1rem;
-    margin-bottom: 2rem;
+   
    
     width: calc(25% - 1.5em);
     border-radius: 20px;

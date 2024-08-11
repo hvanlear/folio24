@@ -13,7 +13,7 @@ const CarouselSlide: React.FC<CarouselSlideProps> = ({ project }) => {
   return (
     <Link href={`/archive/${slug}`} className="embla__slide">
       <div className="embla__slide__inner">
-        <div className="embla__slide__img-container shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] ">
+        <div className="embla__slide__img-container shadow-lg ">
           <Image
             src={image}
             alt={title}

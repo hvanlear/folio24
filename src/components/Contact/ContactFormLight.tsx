@@ -94,6 +94,7 @@ export default function ContactForm() {
               <TextArea
                 id="message"
                 placeholder="Say hello!"
+                className="bg-stone-200"
                 rows={5}
                 cols={50}
                 value={message}
@@ -109,6 +110,7 @@ export default function ContactForm() {
               <Input
                 id="name"
                 placeholder="Your Name"
+                className="bg-stone-200"
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -121,6 +123,7 @@ export default function ContactForm() {
               <Input
                 id="email"
                 placeholder="Your Email"
+                className="bg-stone-200"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
