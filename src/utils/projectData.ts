@@ -41,7 +41,7 @@ export const projects: FullProjectInfo[] = [
     links: {
       live: { url: "https://project1.com", icon: IconExternalLink },
       dribbble: {
-        url: "https://dribbble.com/shots/project1",
+        url: "https://dribbble.com/shots/22347402-BPMN-Modeler",
         icon: IconBrandDribbble,
       },
     },
@@ -56,7 +56,7 @@ export const projects: FullProjectInfo[] = [
     title: "Consumer Bank Account Opening",
     links: {
       dribbble: {
-        url: "https://dribbble.com/shots/project1",
+        url: "https://dribbble.com/shots/22772371-Consumer-Bank-Account-Opening",
         icon: IconBrandDribbble,
       },
     },
@@ -71,7 +71,7 @@ export const projects: FullProjectInfo[] = [
     title: "ProcessMaker Design System",
     links: {
       dribbble: {
-        url: "https://dribbble.com/shots/project1",
+        url: "https://dribbble.com/shots/22613815-BPMN-Canvas-UI-Kit",
         icon: IconBrandDribbble,
       },
     },
@@ -105,12 +105,12 @@ export const projects: FullProjectInfo[] = [
     type: "development",
     title: "News Fight",
     links: {
-      live: {
-        url: "https://stephen-king-api.onrender.com/",
-        icon: IconExternalLink,
-      },
+      // live: {
+      //   url: "https://stephen-king-api.onrender.com/",
+      //   icon: IconExternalLink,
+      // },
       github: {
-        url: "https://github.com/hvanlear/Stephen-King-API",
+        url: "https://github.com/hvanlear/NewsFight",
         icon: IconBrandGithub,
       },
     },
