@@ -65,8 +65,8 @@ export default function ContactPage() {
               </h1>
             </motion.div>
             <section id="section-about-main" className="w-full h-full">
-              <div className="bg-slate-50 z-10 border-x-2 border-t-2 border-slate-600 rounded-tl-[5rem] rounded-tr-[5rem] w-full h-full flex flex-col justify-between">
-                <div className="flex flex-col h-full 3xl:items-start 3xl:pt-8 items-center md:flex-row px-12">
+              <div className="bg-stone-50 z-10 border-x-2 border-t-2 border-stone-600 rounded-tl-[5rem] rounded-tr-[5rem] w-full h-full flex flex-col justify-between">
+                <div className="flex flex-col h-full 3xl:items-start 3xl:pt-8 items-center md:flex-row md:px-12 px-6">
                   <div className="w-full flex justify-center my-8">
                     <ContactFormLight />
                   </div>
@@ -80,7 +80,7 @@ export default function ContactPage() {
           </div>
         </div>
         {/* background */}
-        <div className="bg-slate-50 top-0 absolute w-full -z-20 min-h-[100vh]" />
+        <div className="bg-stone-50 top-0 absolute w-full -z-20 min-h-[100vh]" />
       </main>
     </>
   );

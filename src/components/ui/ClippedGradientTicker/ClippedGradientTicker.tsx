@@ -20,7 +20,7 @@ export default function ClippedGradientTicker({
   baseVelocity = 0.5,
   isDark = false,
 }: ClippedGradientTickerProps) {
-  const bgColor = isDark ? "bg-black" : "bg-white";
+  const bgColor = isDark ? "bg-stone-950" : "bg-white";
   const gridClass = isDark
     ? "dark:bg-grid-small-black/[0.2] bg-grid-small-white/[0.5]"
     : "dark:bg-grid-small-white/[0.2] bg-grid-small-black/[0.2]";

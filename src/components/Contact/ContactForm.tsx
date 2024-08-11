@@ -52,11 +52,11 @@ export default function ContactForm() {
       id="contact-container"
       className=" relative z-10  w-full sm:w-3/4 lg:w-1/2 max-w-5xl rounded-3xl shadow-input  dark:bg-black"
     >
-      <div className="flex flex-col items-center md:items-start w-full">
-        <h2 className="font-bold text-h2-clamp md:text-4xl sm:text-5xl text-neutral-50 dark:text-neutral-200 text-center md:text-left">
+      <div className="flex flex-col items-start w-full">
+        <h2 className="font-bold text-h2-clamp md:text-4xl sm:text-5xl text-neutral-50 dark:text-neutral-200  md:text-left">
           Drop me a line!
         </h2>
-        <div className="mt-4 text-xl w-full text-center md:text-left">
+        <div className="mt-4 text-xl w-full  md:text-left">
           Delivered straight to
           <span className="font-bold"> hvanlear@gmail.com</span>
         </div>

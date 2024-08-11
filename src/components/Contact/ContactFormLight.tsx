@@ -52,11 +52,11 @@ export default function ContactForm() {
       id="contact-container"
       className=" relative z-10  w-full sm:w-3/4 lg:w-1/2 max-w-5xl  dark:bg-black"
     >
-      <div className="flex flex-col items-center md:items-start w-full">
-        <h2 className="font-bold text-h2-clamp md:text-4xl sm:text-5xl text-slate-950 dark:text-neutral-200 text-center md:text-left">
+      <div className="flex flex-col items-start w-full">
+        <h2 className="font-bold text-h2-clamp md:text-4xl sm:text-5xl text-stone-950 dark:text-neutral-200 text-center md:text-left">
           Drop me a line!
         </h2>
-        <div className="mt-4 text-slate-950 text-xl w-full text-center md:text-left">
+        <div className="mt-4 text-stone-950 text-xl w-full md:text-left">
           Delivered straight to
           <span className="font-bold"> hvanlear@gmail.com</span>
         </div>
@@ -64,10 +64,10 @@ export default function ContactForm() {
       <div className="bg-neutral-300 my-8 h-[1px] w-full" />
       {isSubmitted ? (
         <div className="p-4">
-          <h2 className="font-bold text-3xl text-slate-950 dark:text-neutral-200">
+          <h2 className="font-bold text-3xl text-stone-950 dark:text-neutral-200">
             Message Sent!
           </h2>
-          <p className="text-slate-500 mb-4">
+          <p className="text-stone-500 mb-4">
             Someone will be in touch shortly.
           </p>
           <Button
@@ -88,7 +88,7 @@ export default function ContactForm() {
           />
           <div className="flex flex-col  space-y-2 md:space-y-0 md:space-x-2 mb-4">
             <LabelInputContainer className="mb-4">
-              <Label className="text-slate-600" htmlFor="message">
+              <Label className="text-stone-600" htmlFor="message">
                 Message
               </Label>
               <TextArea
@@ -104,7 +104,7 @@ export default function ContactForm() {
           </div>
           <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
             <LabelInputContainer className="mb-4">
-              <Label className="text-slate-600" htmlFor="name">
+              <Label className="text-stone-600" htmlFor="name">
                 Name
               </Label>
               <Input
@@ -117,7 +117,7 @@ export default function ContactForm() {
               />
             </LabelInputContainer>
             <LabelInputContainer className="mb-4">
-              <Label className="text-slate-600" htmlFor="email">
+              <Label className="text-stone-600" htmlFor="email">
                 Email
               </Label>
               <Input
@@ -131,7 +131,7 @@ export default function ContactForm() {
             </LabelInputContainer>
           </div>
           <button
-            className="w-1/4 bg-gradient-to-br relative group/btn block bg-slate-950  text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
+            className="w-1/3 bg-gradient-to-br relative group/btn block bg-stone-950  text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
             type="submit"
           >
             Send &rarr;

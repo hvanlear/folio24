@@ -4,13 +4,13 @@ export default function WelcomeLinks() {
   return (
     <div
       id="container-welcome-links"
-      className="flex flex-row space-x-8 ml-4 mt-8"
+      className="flex flex-row space-x-8 md:ml-4 mt-8"
     >
       <ButtonUnderline href="/docs/resume.pdf">
-        <span className="text-3xl">Resume</span>
+        <span className="text-h3-clamp">Resume</span>
       </ButtonUnderline>
       <ButtonUnderline href="/contact">
-        <span className="text-3xl">Contact</span>
+        <span className="text-h3-clamp">Contact</span>
       </ButtonUnderline>
     </div>
   );

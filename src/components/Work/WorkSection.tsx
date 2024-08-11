@@ -17,8 +17,8 @@ const calculateInitialY = (width: number) => {
   if (width >= 1920) return -350; // for XXL screens
   if (width >= 1536) return -70; // for extra extra large screens
   if (width >= 1280) return -250; // for extra large screens
-  if (width >= 1024) return -200; // for large screens
-  if (width >= 768) return -150; // for medium screens
+  if (width >= 1024) return -100; // for large screens
+  if (width >= 768) return -100; // for medium screens
   if (width >= 640) return -100; // for small screens
   return -20; // for extra small screens
 };
