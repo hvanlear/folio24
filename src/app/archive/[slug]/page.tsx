@@ -30,9 +30,9 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       : null;
 
   return (
-    <div className="text-slate-950">
-      <article className="bg-slate-50">
-        <div className="container-project_heading flex flex-col gap-4 bg-slate-300 p-12 md:p-24">
+    <div className="text-stone-950 relative">
+      <article className="bg-stone-50">
+        <div className="container-project_heading flex flex-col gap-4 bg-stone-300 p-12 md:p-24">
           <h1 className="text-h2-clamp leading-none">
             {project.title || "Untitled Project"}
           </h1>
@@ -67,8 +67,8 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               "No links available."}
           </div>
         </div>
-        <div className="container-project_body py-24">
-          <div className="container-image flex w-full justify-center">
+        <div className="container-project_body py-24 px-12 md:px-24">
+          <div className="container-image flex w-full justify-center pb-24">
             {project.image && (
               <Image
                 src={project.image}
@@ -82,7 +82,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           {CustomComponent && <CustomComponent />}
         </div>
       </article>
-      <div className="w-full">
+      <div className="w-full ">
         <ContactInfoBasic />
       </div>
     </div>

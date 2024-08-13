@@ -71,32 +71,79 @@ export default function AboutPage() {
                 Hello!
               </h1>
             </motion.div>
-            <section id="section-about-main" className=" h-full">
-              <div className="bg-slate-50 z-10 border-x-2 border-t-2 border-slate-600 rounded-tl-[5rem] rounded-tr-[5rem] w-full h-full flex flex-col justify-between">
-                <div className="flex flex-col-reverse gap-8 h-full items-center md:flex-row p-12 md:p-24">
-                  <div className="w-full md:w-1/2 flex flex-col  gap-8">
-                    <h2 className="text-stone-950 text-3xl">
-                      My name is Hunter Van Lear
-                    </h2>
-                    <p className="text-stone-950 text-2xl">
-                      I am a developer and designer who enjoys crafting
-                      intuitive experiences for technical products. With the
-                      ability to operate across the full spectrum of feature
-                      design and development, I am uniquely positioned to
-                      translate technical intricacies into seamless user
-                      journeys and coordinate with a broad spectrum of teams to
-                      achieve success.
-                    </p>
+            <section id="section-about-main" className="">
+              <div className="bg-slate-50 z-10 border-x-2 border-t-2 border-slate-600 rounded-tl-[5rem] rounded-tr-[5rem] w-full  flex flex-col justify-between">
+                <div className="md:p-24 p-12">
+                  <div className="flex flex-col-reverse gap-8 h-full items-center md:flex-row ">
+                    <div className="w-full md:w-1/2 flex flex-col  gap-8">
+                      <h2 className="text-stone-950 text-3xl">
+                        My name is Hunter Van Lear
+                      </h2>
+                      <p className="text-stone-950 text-2xl">
+                        I am a developer and designer from Raleigh, North
+                        Carolina. I currently work as a freelancer for local
+                        businesses, helping them improve their digital presence
+                        through web development, detail-oriented interface
+                        design, and infrastructure support.{" "}
+                      </p>
+                    </div>
+
+                    <div className="md:w-1/2  flex justify-center">
+                      <Image
+                        src={Me}
+                        alt={"A pic of me"}
+                        width={400}
+                        height={200}
+                        className="rounded-lg object-cover shadow-md"
+                      />
+                    </div>
                   </div>
-                  <div className="w-full md:w-1/2 flex justify-end">
-                    <Image
-                      src={Me}
-                      alt={"A pic of me"}
-                      width={600}
-                      height={400}
-                      className="rounded-lg object-cover shadow-md"
-                    />
-                  </div>
+                  <h2 className="text-stone-950 text-3xl mb-4">Services:</h2>
+                  <ul className="text-stone-950 flex flex-col md:flex-row gap-8">
+                    <li>
+                      <h3 className="mb-4">Web Development</h3>
+                      <p className="text-sm">
+                        I'm a versatile full-stack developer with experience in
+                        both front-end and back-end technologies. My expertise
+                        includes building custom APIs and web applications using
+                        modern JavaScript frameworks and libraries. I'm
+                        proficient in React for creating dynamic user
+                        interfaces, Node.js for server-side development, and
+                        Tailwind CSS for efficient styling. My approach ensures
+                        responsive, cross-browser compatible websites that
+                        deliver optimal performance across all devices.
+                      </p>
+                    </li>
+                    <li>
+                      <h3 className="mb-4">UI/UX Design</h3>
+                      <p className="text-sm">
+                        My design skills encompass the entire feature design
+                        lifecycle, from initial concept to final implementation.
+                        I&apos;ve created and maintained comprehensive design
+                        systems, ensuring consistency and efficiency across
+                        projects. Proficient in industry-standard tools like
+                        Figma and Adobe Creative Suite, I craft intuitive and
+                        visually appealing interfaces. My focus is on
+                        translating user needs into designs that enhance user
+                        experience and drive engagement.
+                      </p>
+                    </li>
+                    <li>
+                      <h3 className="mb-4">IT Infrastructure & Support</h3>
+                      <p className="text-sm">
+                        My experience with complex IT systems has honed my
+                        ability to thrive under pressure. I excel in
+                        troubleshooting intricate technical issues and
+                        maintaining system stability in critical situations. My
+                        diverse skill set spans network configurations, server
+                        management, and security protocols, allowing me to adapt
+                        quickly to new challenges. Whether diagnosing obscure
+                        software conflicts or optimizing infrastructure, I
+                        provide consistent, high-quality support in demanding
+                        technical environments.
+                      </p>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </section>
