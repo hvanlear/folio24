@@ -73,7 +73,7 @@ export default function AboutPage() {
             </motion.div>
             <section id="section-about-main" className="">
               <div className="bg-slate-50 z-10 border-x-2 border-t-2 border-slate-600 rounded-tl-[5rem] rounded-tr-[5rem] w-full  flex flex-col justify-between">
-                <div className="md:p-24 p-12">
+                <div className="md:p-24 p-12 flex flex-col gap-8 ">
                   <div className="flex flex-col-reverse gap-8 h-full items-center md:flex-row ">
                     <div className="w-full md:w-1/2 flex flex-col  gap-8">
                       <h2 className="text-stone-950 text-3xl">
@@ -88,7 +88,7 @@ export default function AboutPage() {
                       </p>
                     </div>
 
-                    <div className="md:w-1/2  flex justify-center">
+                    <div className="md:w-1/2 flex justify-center">
                       <Image
                         src={Me}
                         alt={"A pic of me"}
@@ -98,20 +98,21 @@ export default function AboutPage() {
                       />
                     </div>
                   </div>
-                  <h2 className="text-stone-950 text-3xl mb-4">Services:</h2>
+                  <h2 className="text-stone-950 text-3xl ">Services:</h2>
                   <ul className="text-stone-950 flex flex-col md:flex-row gap-8">
                     <li>
                       <h3 className="mb-4">Web Development</h3>
                       <p className="text-sm">
-                        I'm a versatile full-stack developer with experience in
-                        both front-end and back-end technologies. My expertise
-                        includes building custom APIs and web applications using
-                        modern JavaScript frameworks and libraries. I'm
-                        proficient in React for creating dynamic user
-                        interfaces, Node.js for server-side development, and
-                        Tailwind CSS for efficient styling. My approach ensures
-                        responsive, cross-browser compatible websites that
-                        deliver optimal performance across all devices.
+                        I&apos;m a versatile full-stack developer with
+                        experience in both front-end and back-end technologies.
+                        My expertise includes building custom APIs and web
+                        applications using modern JavaScript frameworks and
+                        libraries. I&apos;m proficient in React for creating
+                        dynamic user interfaces, Node.js for server-side
+                        development, and Tailwind CSS for efficient styling. My
+                        approach ensures responsive, cross-browser compatible
+                        websites that deliver optimal performance across all
+                        devices.
                       </p>
                     </li>
                     <li>
