@@ -29,12 +29,17 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       ? projectMapping[project.slug as keyof typeof projectMapping]
       : null;
 
+  const bgColor = "bg-stone-950";
+  const gridClass = "dark:bg-grid-small-black/[0.2] bg-grid-small-white/[0.5]";
+
   return (
     <div className="text-stone-950 relative">
       <article className="bg-stone-50">
-        <div className="bg-stone-300 flex justify-center">
+        <div
+          className={`${bgColor} ${gridClass} text-white flex justify-center`}
+        >
           <div className="container-project_heading w-full 3xl:w-1/2">
-            <div className="container-project_heading_inner p-12 md:p-24 flex flex-col gap-4">
+            <div className="container-project_heading_inner p-12 md:p-24 flex flex-col gap-6">
               <h1 className="text-h2-clamp leading-none">
                 {project.title || "Untitled Project"}
               </h1>
@@ -42,7 +47,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                 {project.tags?.map((tag) => (
                   <span
                     key={tag}
-                    className="tag border border-black rounded-full px-3 py-1 text-xs font-normal leading-tight inline-block"
+                    className="tag border border-white rounded-full px-3 py-1 text-xs font-normal leading-tight inline-block"
                   >
                     {tag}
                   </span>

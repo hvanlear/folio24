@@ -79,16 +79,27 @@ export default function Skapi() {
           challenges={challenges}
         />
       </div>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-12">
         <h2 className="text-h2-clamp font-bold">Approach & Discovery</h2>
-        <p className="md:text-2xl text-lg"></p>
-        <Image
-          src={chart}
-          alt={"Project image"}
-          width={500}
-          height={300}
-          className=" h-full max-w-full"
-        />
+        <p className="md:text-2xl text-lg">
+          As a Stephen King enthusiast, I approached this project by identifying
+          key online resources: Wikipedia for bibliographic data and Fandom
+          wikis for character information. My plan was to create a centralized
+          database that could capture both publication details and character
+          relationships across King&apos;s works. This approach revealed the
+          potential for a unique tool that could offer new insights into the
+          interconnectedness of King&apos;s universe, serving fans, researchers,
+          and developers alike.
+        </p>
+        <div className="w-full flex justify-center">
+          <Image
+            src={chart}
+            alt={"Project image"}
+            width={500}
+            height={300}
+            className=" h-full max-w-full"
+          />
+        </div>
       </div>
     </div>
   );
