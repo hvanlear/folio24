@@ -20,6 +20,9 @@ module.exports = {
       backgroundColor: {
         "black-2": "#212529",
       },
+      color: {
+        "custom-green-1": "rgba(0, 255, 174, 0.572)",
+      },
       padding: {
         "96": "24rem",
         "120": "30rem",

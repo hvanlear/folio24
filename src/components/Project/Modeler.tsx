@@ -16,7 +16,7 @@ export default function Modeler() {
           complex codebase with potential performance pitfalls. Our challenge
           was to transform these usability hurdles into a seamless, efficient
           user experience while navigating technical constraints and time
-          pressures
+          pressures.
         </p>
       </div>
       <div className="flex flex-col md:flex-row gap-12">

@@ -1,5 +1,4 @@
 import dynamic from "next/dynamic";
-import DesignSystem from "../components/Project/DesignSystem";
 
 const projectMapping = {
   modeler: dynamic(() => import("@/src/components/Project/Modeler"), {
