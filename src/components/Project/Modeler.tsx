@@ -7,7 +7,7 @@ export default function Modeler() {
     <div className="flex flex-col gap-24">
       <div className="flex flex-col gap-4">
         <h2 className="text-h2-clamp font-bold">The Challenge</h2>
-        <p className="text-2xl">
+        <p className="md:text-2xl text-lg">
           Our team faced the daunting task of overhauling our web-based BPMN
           modeling canvas tool. Users struggled with a cumbersome interface,
           limited maneuverability, and poor screen utilization. The inflexible
@@ -47,17 +47,7 @@ export default function Modeler() {
       </div>
       <div className="flex flex-col gap-4">
         <h2 className="text-h2-clamp font-bold">Approach & Discovery</h2>
-        <p className="text-2xl">
-          Our team faced the daunting task of overhauling our web-based BPMN
-          modeling canvas tool. Users struggled with a cumbersome interface,
-          limited maneuverability, and poor screen utilization. The inflexible
-          menu structure hindered feature integration and scalability.
-          Compounding these issues were a tight development timeline and a
-          complex codebase with potential performance pitfalls. Our challenge
-          was to transform these usability hurdles into a seamless, efficient
-          user experience while navigating technical constraints and time
-          pressures
-        </p>
+        <p className="md:text-2xl text-lg"></p>
       </div>
     </div>
   );

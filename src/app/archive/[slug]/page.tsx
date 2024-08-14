@@ -75,7 +75,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         </div>
         <div className="flex justify-center">
           <div className="container-project_body w-full 3xl:w-1/2">
-            <div className="container-project_body_inner py-24 px-12 md:px-24">
+            <div className="container-project_body_inner py-24 px-6 md:px-24">
               <div className="container-image flex w-full justify-center pb-24">
                 {project.image && (
                   <Image
