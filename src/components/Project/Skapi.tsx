@@ -13,7 +13,6 @@ import {
 import ChallengeSection from "./Parts/ChallengeSection";
 
 import chart from "@/public/images/projects/skapi/skapi_chart.svg";
-import after from "@/public/images/projects/modeler/modelerAfter.png";
 
 interface InfoCardProps {
   icon: Icon;

@@ -82,25 +82,7 @@ export const projects: FullProjectInfo[] = [
     slug: "pmdesginsystem",
   },
   //DEV PROJECTS
-  {
-    type: "development",
-    title: "Stephen King REST API",
-    links: {
-      live: {
-        url: "https://stephen-king-api.onrender.com/",
-        icon: IconExternalLink,
-      },
-      github: {
-        url: "https://github.com/hvanlear/Stephen-King-API",
-        icon: IconBrandGithub,
-      },
-    },
-    description:
-      "A RESTful API built from the collected works of the horror master.",
-    tags: ["Python", "Node", "Postgres"],
-    image: skCover,
-    slug: "skapi",
-  },
+
   {
     type: "development",
     title: "News Fight",
@@ -119,6 +101,25 @@ export const projects: FullProjectInfo[] = [
     tags: ["Python + Flask", "Javascript", "Postgres", "Sentiment Analysis"],
     image: nfCover,
     slug: "newsfight",
+  },
+  {
+    type: "development",
+    title: "Stephen King REST API",
+    links: {
+      live: {
+        url: "https://stephen-king-api.onrender.com/",
+        icon: IconExternalLink,
+      },
+      github: {
+        url: "https://github.com/hvanlear/Stephen-King-API",
+        icon: IconBrandGithub,
+      },
+    },
+    description:
+      "A RESTful API built from the collected works of the horror master.",
+    tags: ["Python", "Node", "Postgres"],
+    image: skCover,
+    slug: "skapi",
   },
 ];
 
