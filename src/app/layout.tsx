@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
 import "./globals.css";
 import ClientLayout from "../components/layout/ClientLayout";
+import React from "react";
 
 const figtree = Figtree({ subsets: ["latin"] });
 
