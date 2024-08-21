@@ -1,7 +1,7 @@
 // LayoutContext.tsx
 "use client";
 
-import React, { createContext, useState, useContext, ReactNode } from "react";
+import React, { createContext, useState, ReactNode } from "react";
 
 interface LayoutInfo {
   heroHeight: number;
@@ -18,13 +18,13 @@ interface LayoutContextType {
 const LayoutContext = createContext<LayoutContextType | undefined>(undefined);
 
 export const LayoutProvider: React.FC<{ children: ReactNode }> = ({
-  children,
-}) => {
+                                                                    children
+                                                                  }) => {
   const [layoutInfo, setLayoutInfo] = useState<LayoutInfo>({
     heroHeight: 0,
     heroTop: 0,
     workSectionTop: 0,
-    contactTop: 0,
+    contactTop: 0
   });
 
   return (
@@ -34,10 +34,4 @@ export const LayoutProvider: React.FC<{ children: ReactNode }> = ({
   );
 };
 
-export const useLayout = () => {
-  const context = useContext(LayoutContext);
-  if (context === undefined) {
-    throw new Error("useLayout must be used within a LayoutProvider");
-  }
-  return context;
-};
+

@@ -1,8 +1,18 @@
 import Image from "next/image";
 import before from "@/public/images/projects/modeler/modelerBefore.png";
 import after from "@/public/images/projects/modeler/modelerAfter.png";
+import ChallengeSection from "./Parts/ChallengeSection";
+
+import {
+  IconArrowBackUp,
+  IconAdjustments,
+  IconDatabase
+
+} from "@tabler/icons-react";
 
 export default function Modeler() {
+
+
   return (
     <div className="flex flex-col gap-24">
       <div className="flex flex-col gap-4">
@@ -47,7 +57,9 @@ export default function Modeler() {
       </div>
       <div className="flex flex-col gap-4">
         <h2 className="text-h2-clamp font-bold">Approach & Discovery</h2>
-        <p className="md:text-2xl text-lg"></p>
+        <p className="md:text-2xl text-lg">Implemented user-centric design solutions while carefully balancing
+          development constraints and codebase complexities. Focused on creating an intuitive, efficient interface that
+          improved user workflow and accommodated future feature expansions.</p>
       </div>
     </div>
   );
