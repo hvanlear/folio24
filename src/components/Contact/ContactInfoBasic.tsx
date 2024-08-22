@@ -1,9 +1,13 @@
 //USED BASIC FOOTER FOR light pages
 
+import localFont from "next/font/local";
+import dynamic from "next/dynamic";
+
 import { socialContactData } from "@/src/utils/contactData";
 import { emailContactData } from "@/src/utils/contactData";
-import dynamic from "next/dynamic";
 // import NavLinks from "../Nav/NavLinks";
+
+const graphik = localFont({ src: "../../../public/fonts/Graphik-Bold.woff2" });
 
 const NavLinks = dynamic(() => import("@/src/components/Nav/NavLinks"), {
   ssr: false,
@@ -19,7 +23,7 @@ export default function ContactInfoBasic() {
         {/* Top  Row */}
         <div className=" flex flex-col md:flex-row gap-4 h-full md:justify-between items-center md:items-end ">
           <h1
-            className="text-h2-clamp font-bold leading-none"
+            className={`${graphik.className} text-h2-clamp leading-none`}
             style={{
               WebkitTextFillColor: "white",
               WebkitTextStroke: "2px #0c0a09",

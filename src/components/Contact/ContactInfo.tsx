@@ -1,6 +1,10 @@
 // TODO - COMBINE Both contact infos and move into footer directory
 // Add New version of <NavLinks/> to replace the current inner site nav
 
+import localFont from "next/font/local";
+
+const graphik = localFont({ src: "../../../public/fonts/Graphik-Bold.woff2" });
+
 import { socialContactData } from "@/src/utils/contactData";
 
 //Utilizing contact icons:
@@ -21,7 +25,7 @@ export default function ContactInfo() {
     <div className="flex flex-col gap-4 md:items-start items-center justify-center">
       <div className="flex flex-row justify-center md:justify-end items-center w-full">
         <h1
-          className="text-h2-clamp font-bold leading-none"
+          className={`${graphik.className} text-h2-clamp leading-none`}
           style={{
             WebkitTextFillColor: "black",
             WebkitTextStroke: "1px white",
