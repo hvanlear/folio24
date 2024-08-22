@@ -1,8 +1,14 @@
+import Image from "next/image";
 import {
   IconArrowBackUp,
   IconAdjustments,
   IconDatabase,
 } from "@tabler/icons-react";
+
+import colors from "@/public/images/projects/design_system/colors.png";
+import typeface from "@/public/images/projects/design_system/typeface.png";
+import icons from "@/public/images/projects/design_system/icons.png";
+import grid from "@/public/images/projects/design_system/grid.png";
 
 import ChallengeSection from "./Parts/ChallengeSection";
 
@@ -30,7 +36,6 @@ export default function DesignSystem() {
 
   return (
     <div className="flex flex-col gap-24">
-      π
       <div className="flex flex-col gap-4">
         <ChallengeSection
           overview="Developed a comprehensive foundational design system in Figma for a SaaS company,
@@ -43,16 +48,53 @@ export default function DesignSystem() {
         <p className="md:text-2xl text-lg">
           Implemented Atomic Design principles. Worked backwards from existing
           UI to ensure consistency with current product. Collaborated with
-          product and development teams to align with live implementation
+          product and development teams to align with live implementation.
         </p>
-        <div className="w-full flex justify-center">
-          {/* <Image
-            src={chart}
-            alt={"Project image"}
-            width={500}
-            height={300}
-            className=" h-full max-w-full"
-          /> */}
+        <div className="flex flex-col md:flex-row gap-12">
+          <div className="container-project_media">
+            <Image
+              src={colors}
+              alt={"Project image"}
+              width={600}
+              height={400}
+              className="rounded-lg shadow-md h-full max-w-full"
+            />
+          </div>
+          <div className="container-project_media">
+            <Image
+              src={typeface}
+              alt={"Project image"}
+              width={600}
+              height={400}
+              className="rounded-lg shadow-md max-w-full"
+            />
+            <h2 className="text-sm font-bold text-stone-500 mt-2 ">
+              Mock of the new UI maxamizing canvas space.
+            </h2>
+          </div>
+        </div>
+        <div className="flex flex-col md:flex-row gap-12">
+          <div className="container-project_media">
+            <Image
+              src={icons}
+              alt={"Project image"}
+              width={600}
+              height={400}
+              className="rounded-lg shadow-md h-full max-w-full"
+            />
+          </div>
+          <div className="container-project_media">
+            <Image
+              src={grid}
+              alt={"Project image"}
+              width={600}
+              height={400}
+              className="rounded-lg shadow-md max-w-full"
+            />
+            {/* <h2 className="text-sm font-bold text-stone-500 mt-2 ">
+              Mock of the new UI maxamizing canvas space.
+            </h2> */}
+          </div>
         </div>
       </div>
     </div>

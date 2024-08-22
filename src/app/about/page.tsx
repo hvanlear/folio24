@@ -79,7 +79,7 @@ export default function AboutPage() {
                       <h2 className="text-stone-950 text-3xl">
                         My name is Hunter Van Lear
                       </h2>
-                      <p className="text-stone-950 text-2xl">
+                      <p className="text-stone-950 text-xl md:text-2xl">
                         I am a developer and designer from Raleigh, North
                         Carolina. I currently work as a freelancer for local
                         businesses, helping them improve their digital presence

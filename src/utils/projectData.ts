@@ -2,7 +2,7 @@ import {
   IconBrandGithub,
   IconBrandDribbble,
   IconExternalLink,
-  IconProps
+  IconProps,
 } from "@tabler/icons-react";
 import { StaticImageData } from "next/image";
 //Project Images
@@ -42,14 +42,14 @@ export const projects: FullProjectInfo[] = [
       live: { url: "https://project1.com", icon: IconExternalLink },
       dribbble: {
         url: "https://dribbble.com/shots/22347402-BPMN-Modeler",
-        icon: IconBrandDribbble
-      }
+        icon: IconBrandDribbble,
+      },
     },
     description:
       "Redesigned and optimized a web-based canvas tool for intuitive process modeling and creation, enhancing user experience and productivity.",
     tags: ["UI Design", "Product Design", "Figma"],
     image: modelMac,
-    slug: "modeler"
+    slug: "modeler",
   },
   {
     type: "design",
@@ -57,14 +57,14 @@ export const projects: FullProjectInfo[] = [
     links: {
       dribbble: {
         url: "https://dribbble.com/shots/22772371-Consumer-Bank-Account-Opening",
-        icon: IconBrandDribbble
-      }
+        icon: IconBrandDribbble,
+      },
     },
     description:
       "Reimagined and redesigned the user experience for a consumer bank account opening web application",
     tags: ["HTML / CSS", "UX Engineering", "UI Design", "Fintech"],
     image: bankingCover,
-    slug: "banking"
+    slug: "banking",
   },
   {
     type: "design",
@@ -72,55 +72,55 @@ export const projects: FullProjectInfo[] = [
     links: {
       dribbble: {
         url: "https://dribbble.com/shots/22613815-BPMN-Canvas-UI-Kit",
-        icon: IconBrandDribbble
-      }
+        icon: IconBrandDribbble,
+      },
     },
     description:
       "Developed a comprehensive Figma Design System for a large SaaS platform.",
     tags: ["Figma", "Design Systems"],
     image: DesignSystem,
-    slug: "pmdesginsystem"
+    slug: "pmdesginsystem",
   },
   //DEV PROJECTS
 
-  {
-    type: "development",
-    title: "News Fight",
-    links: {
-      // live: {
-      //   url: "https://stephen-king-api.onrender.com/",
-      //   icon: IconExternalLink,
-      // },
-      github: {
-        url: "https://github.com/hvanlear/NewsFight",
-        icon: IconBrandGithub
-      }
-    },
-    description:
-      "A python app used compare sentiment analysis scores between two news sources. ",
-    tags: ["Python + Flask", "Javascript", "Postgres", "Sentiment Analysis"],
-    image: nfCover,
-    slug: "newsfight"
-  },
+  // {
+  //   type: "development",
+  //   title: "News Fight",
+  //   links: {
+  //     live: {
+  //       url: "https://stephen-king-api.onrender.com/",
+  //       icon: IconExternalLink,
+  //     },
+  //     github: {
+  //       url: "https://github.com/hvanlear/NewsFight",
+  //       icon: IconBrandGithub
+  //     }
+  //   },
+  //   description:
+  //     "A python app used compare sentiment analysis scores between two news sources. ",
+  //   tags: ["Python + Flask", "Javascript", "Postgres", "Sentiment Analysis"],
+  //   image: nfCover,
+  //   slug: "newsfight"
+  // },
   {
     type: "development",
     title: "Stephen King REST API",
     links: {
       live: {
         url: "https://stephen-king-api.onrender.com/",
-        icon: IconExternalLink
+        icon: IconExternalLink,
       },
       github: {
         url: "https://github.com/hvanlear/Stephen-King-API",
-        icon: IconBrandGithub
-      }
+        icon: IconBrandGithub,
+      },
     },
     description:
       "A RESTful API built from the collected works of the horror master.",
     tags: ["Python", "Node", "Postgres"],
     image: skCover,
-    slug: "skapi"
-  }
+    slug: "skapi",
+  },
 ];
 
 type ProjectFields = keyof FullProjectInfo;

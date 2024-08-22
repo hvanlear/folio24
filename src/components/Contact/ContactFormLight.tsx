@@ -1,9 +1,5 @@
 "use client";
 
-import localFont from "next/font/local";
-
-const graphik = localFont({ src: "../../../public/fonts/Graphik-Bold.woff2" });
-
 import React, { useRef, useState } from "react";
 import { Label } from "../ui/Label";
 import Button from "../ui/Button";

@@ -130,7 +130,7 @@ export default function Modeler() {
           </h2>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row gap-12">
+      <div className="flex flex-col md:flex-row gap-12 justify-center">
         <div className="container-project_media">
           <Image
             src={mock1}
@@ -139,6 +139,9 @@ export default function Modeler() {
             height={400}
             className="rounded-lg shadow-md h-full max-w-full"
           />
+          <h2 className="text-sm font-bold text-stone-500 mt-2 ">
+            Scaled wireframe of older modeling canvas UI
+          </h2>
         </div>
         <div className="container-project_media">
           <Image
@@ -149,7 +152,8 @@ export default function Modeler() {
             className="rounded-lg shadow-md h-full max-w-full"
           />
           <h2 className="text-sm font-bold text-stone-500 mt-2 ">
-            Mock of the new UI maxamizing canvas space.
+            Same wireframe with a majority of un-needed UI elements staged,
+            maximizing canvas space.
           </h2>
         </div>
       </div>
