@@ -39,7 +39,7 @@ export const projects: FullProjectInfo[] = [
     type: "design",
     title: "BPMN Modeler",
     links: {
-      live: { url: "https://project1.com", icon: IconExternalLink },
+      // live: { url: "https://project1.com", icon: IconExternalLink },
       dribbble: {
         url: "https://dribbble.com/shots/22347402-BPMN-Modeler",
         icon: IconBrandDribbble,
