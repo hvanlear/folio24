@@ -46,10 +46,10 @@ export default function ArchivePage() {
           />
         </section>
         <div className="flex w-full justify-center">
-          {/* Inner container for both heading and about section */}
-          {/* Inner container for both heading and about section */}
+          {/* Inner container for both heading and archive section */}
+          {/* Inner container for both heading and archive section */}
           <div
-            id="container-inner-about "
+            id="container-inner-archive "
             className=" w-full 3xl:w-[55%] flex items-center flex-col 2xl:h-[89vh] h-[50rem]"
           >
             {/* Animated Header */}
@@ -61,13 +61,13 @@ export default function ArchivePage() {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <h1
-                id="heading-about"
+                id="heading-archive"
                 className="leading-none text-30xl tracking-tighter text-stone-950 font-bold "
               >
                 Archive
               </h1>
             </motion.div>
-            <section id="section-about-main" className="w-full h-full">
+            <section id="section-archive-main" className="w-full h-full">
               <div className="bg-stone-50 z-10 border-x-2 border-t-2 border-stone-600 rounded-tl-[5rem] rounded-tr-[5rem] w-full h-full flex flex-col justify-between">
                 <div className="flex flex-col h-full 3xl:items-start 3xl:pt-8 items-center md:flex-row px-12">
                   <div className="w-full mb-8">
