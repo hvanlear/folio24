@@ -25,7 +25,7 @@ export default function ContactInfo() {
     <div className="flex flex-col gap-4 md:items-start items-center justify-center">
       <div className="flex flex-row justify-center md:justify-end items-center w-full">
         <h1
-          className={`${graphik.className} text-h2-clamp leading-none`}
+          className={`${graphik.className} text-h2-clamp leading-none whitespace-nowrap`}
           style={{
             WebkitTextFillColor: "black",
             WebkitTextStroke: "1px white",
