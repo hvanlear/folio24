@@ -70,7 +70,7 @@ export default function Modeler() {
             alt={"Project image"}
             width={800}
             height={600}
-            className="rounded-lg shadow-md max-w-full"
+            className="rounded-lg shadow-md h-full max-w-full"
           />
         </div>
         <div className="container-project_media">

@@ -52,7 +52,7 @@ export default function Hero() {
             id=" container-welcome-welcome"
             className="row-start-1  col-start-2 col-end-6 flex justify-center 3xl:row-start-2 mt-10"
           >
-            <div id="welcome" className="flex items-center 3xl:items-start">
+            <div id="welcome" className="flex items-center">
               <h3 className="text-h2-clamp leading-snug mr-4">
                 Welcome! I&apos;m
               </h3>
@@ -61,7 +61,7 @@ export default function Hero() {
           </div>
           <div
             id="container-welcome-name"
-            className="row-start-2 col-start-4 col-end-6 flex flex-col  3xl:justify-center 3xl:row-start-3 mt-4"
+            className="row-start-2 col-start-4 col-end-6 flex flex-col  3xl:justify-center 3xl:row-start-3 3xl:mb-24 mt-4 md:mt-0"
           >
             <h1 className="text-h1-clamp mt-0 mb-0 leading-none tracking-tighter ">
               Hunter

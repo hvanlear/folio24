@@ -36,7 +36,7 @@ export default function DesignSystem() {
 
   return (
     <div className="flex flex-col gap-24">
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-12">
         <ChallengeSection
           overview="Developed a comprehensive foundational design system in Figma for a SaaS company,
          establishing a unified visual language and streamlining the design-to-development process."

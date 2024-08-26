@@ -49,7 +49,7 @@ const ChallengeSection: React.FC<ChallengeSectionProps> = ({
 
   return (
     <div className="flex flex-col gap-12">
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-12">
         <h2 className="text-h2-clamp font-bold">The Challenge</h2>
         <p className="md:text-2xl text-lg">{overview}</p>
       </div>
