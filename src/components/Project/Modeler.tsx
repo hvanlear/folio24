@@ -48,8 +48,8 @@ function TabContent({
   children: React.ReactNode;
 }): JSX.Element {
   return (
-    <div className=" w-full h-full rounded-2xl p-8 text-stone-900 border-2 bg-white border-stone-900 overflow-hidden">
-      <p className="text-xl md:text-xl font-bold">{title}</p>
+    <div className=" w-full h-full rounded-2xl p-0 lg:p-8 text-stone-900 lg:border-2 lg:bg-white lg:border-stone-900 overflow-hidden">
+      <p className="text-xl lg:text-xl font-bold">{title}</p>
       {children}
     </div>
   );
@@ -61,7 +61,7 @@ const tabs: Tab[] = [
     value: "control",
     content: (
       <TabContent title="Control Rail">
-        <div className="flex flex-row justify-center items-center">
+        <div className="flex flex-col lg:flex-row justify-center items-center">
           <Image
             src={menu_control}
             alt="control rail"
@@ -81,8 +81,8 @@ const tabs: Tab[] = [
     value: "explorer",
     content: (
       <TabContent title="Explorer Rail">
-        <div className="flex flex-row justify-center items-center  ">
-          <div className="flex flex-row shadow-lg mt-4 items-center gap-12 rounded-xl">
+        <div className="flex flex-col lg:flex-row justify-center items-center  ">
+          <div className="flex flex-col lg:flex-row shadow-lg mt-4 items-center gap-12 rounded-xl">
             <Image
               src={menu_explorer}
               alt="explorer rail"
@@ -260,8 +260,15 @@ export default function Modeler(): JSX.Element {
 
       <div className="flex flex-col gap-12">
         <h3 className="text-h3-clamp font-bold">Menu structure re-design</h3>
-        <div className="h-[20rem] md:h-[40rem] [perspective:1000px]  flex flex-col w-full items-start justify-start">
+        <div className="hidden lg:block h-[20rem] lg:h-[40rem] [perspective:1000px]  w-full items-start justify-start">
           <Tabs tabs={tabs} />
+        </div>
+        <div className="lg:hidden space-y-8">
+          {tabs.map((tab) => (
+            <div key={tab.value} className="">
+              <div className="">{tab.content}</div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
