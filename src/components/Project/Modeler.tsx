@@ -19,6 +19,7 @@ import mock2 from "@/public/images/projects/modeler/whiteSpaceMock-2.png";
 import menu_control from "@/public/images/projects/modeler/menu_control.png";
 import menu_explorer from "@/public/images/projects/modeler/menu_explorer.png";
 import menu_explorer2 from "@/public/images/projects/modeler/menu_explorer_zoom.png";
+import menu_crown from "@/public/images/projects/modeler/menu_crown.png";
 
 // Define types
 type Challenge = {
@@ -61,16 +62,21 @@ const tabs: Tab[] = [
     value: "control",
     content: (
       <TabContent title="Control Rail">
-        <div className="flex flex-col lg:flex-row lg:justify-center lg:items-center">
-          <Image
-            src={menu_control}
-            alt="control rail"
-            width="1000"
-            height="1000"
-            className=" inset-x-0  rounded-xl lg:shadow-lg mt-4 h-full"
-          />
-          <p className="text-lg mt-4  lg:mx-auto">
-            This is the custom content for the Product tab.
+        <div className="flex flex-col lg:flex-row  lg:items-center gap-8">
+          <div className="w-[75%] rounded-xl lg:shadow-lg mt-4 p-8">
+            <Image
+              src={menu_control}
+              alt="control rail"
+              width="2000"
+              height="2000"
+              className=" inset-x-0"
+            />
+          </div>
+          <p className="text-lg mt-4  max-w-[30%]">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+            quam distinctio dolore quae, obcaecati alias voluptatem placeat!
+            Praesentium delectus eveniet, nisi, inventore aliquid possimus animi
+            hic architecto voluptatum, a minima?.
           </p>
         </div>
       </TabContent>
@@ -81,8 +87,8 @@ const tabs: Tab[] = [
     value: "explorer",
     content: (
       <TabContent title="Explorer Rail">
-        <div className="flex flex-col lg:flex-row lg:justify-center lg:items-center  ">
-          <div className="flex flex-col lg:flex-row lg:shadow-lg mt-4 lg:items-center gap-12 rounded-xl">
+        <div className="flex flex-col h-full lg:flex-row  lg:items-center  gap-8">
+          <div className="flex w-[75%] flex-col lg:flex-row lg:shadow-lg mt-4 lg:items-center lg:justify-center gap-12 rounded-xl">
             <Image
               src={menu_explorer}
               alt="explorer rail"
@@ -98,46 +104,38 @@ const tabs: Tab[] = [
               className=" "
             />
           </div>
-          <p className="text-lg mt-4  lg:mx-auto">
-            This is the custom content for the Product tab.
+          <p className="text-lg mt-4  max-w-[30%]">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+            quam distinctio dolore quae, obcaecati alias voluptatem placeat!
+            Praesentium delectus eveniet, nisi, inventore aliquid possimus animi
+            hic architecto voluptatum, a minima?.
           </p>
         </div>
       </TabContent>
     ),
   },
   {
-    title: "Playground",
-    value: "playground",
+    title: "Crown Rail",
+    value: "crown",
     content: (
-      <TabContent title="Playground">
-        <p className="text-lg mt-4">
-          Custom content for the Playground tab goes here.
-        </p>
-        {/* Add more custom content here */}
-      </TabContent>
-    ),
-  },
-  {
-    title: "Content",
-    value: "content",
-    content: (
-      <TabContent title="Content">
-        <p className="text-lg mt-4">
-          This tab showcases custom Content-related information.
-        </p>
-        {/* Add more custom content here */}
-      </TabContent>
-    ),
-  },
-  {
-    title: "Random",
-    value: "random",
-    content: (
-      <TabContent title="Random">
-        <p className="text-lg mt-4">
-          Random custom content can be placed in this tab.
-        </p>
-        {/* Add more custom content here */}
+      <TabContent title="Crown Rail">
+        <div className="flex flex-col h-full lg:flex-row lg:justify-center lg:items-center gap-8">
+          <div className="w-[75%] rounded-xl lg:shadow-lg mt-4 p-8">
+            <Image
+              src={menu_crown}
+              alt="control rail"
+              width="2000"
+              height="2000"
+              className=" inset-x-0"
+            />
+          </div>
+          <p className="text-lg mt-4 max-w-[30%]">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+            quam distinctio dolore quae, obcaecati alias voluptatem placeat!
+            Praesentium delectus eveniet, nisi, inventore aliquid possimus animi
+            hic architecto voluptatum, a minima?.
+          </p>
+        </div>
       </TabContent>
     ),
   },
