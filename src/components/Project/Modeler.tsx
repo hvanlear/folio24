@@ -61,15 +61,15 @@ const tabs: Tab[] = [
     value: "control",
     content: (
       <TabContent title="Control Rail">
-        <div className="flex flex-col lg:flex-row justify-center items-center">
+        <div className="flex flex-col lg:flex-row lg:justify-center lg:items-center">
           <Image
             src={menu_control}
             alt="control rail"
             width="1000"
             height="1000"
-            className=" inset-x-0  rounded-xl shadow-lg mt-4 h-full"
+            className=" inset-x-0  rounded-xl lg:shadow-lg mt-4 h-full"
           />
-          <p className="text-lg mt-4  mx-auto">
+          <p className="text-lg mt-4  lg:mx-auto">
             This is the custom content for the Product tab.
           </p>
         </div>
@@ -81,8 +81,8 @@ const tabs: Tab[] = [
     value: "explorer",
     content: (
       <TabContent title="Explorer Rail">
-        <div className="flex flex-col lg:flex-row justify-center items-center  ">
-          <div className="flex flex-col lg:flex-row shadow-lg mt-4 items-center gap-12 rounded-xl">
+        <div className="flex flex-col lg:flex-row lg:justify-center lg:items-center  ">
+          <div className="flex flex-col lg:flex-row lg:shadow-lg mt-4 lg:items-center gap-12 rounded-xl">
             <Image
               src={menu_explorer}
               alt="explorer rail"
@@ -98,7 +98,7 @@ const tabs: Tab[] = [
               className=" "
             />
           </div>
-          <p className="text-lg mt-4  mx-auto">
+          <p className="text-lg mt-4  lg:mx-auto">
             This is the custom content for the Product tab.
           </p>
         </div>
