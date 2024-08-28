@@ -63,7 +63,7 @@ const tabs: Tab[] = [
     content: (
       <TabContent title="Control Rail">
         <div className="flex flex-col lg:flex-row  lg:items-center gap-8">
-          <div className="w-[75%] rounded-xl lg:shadow-lg mt-4 p-8">
+          <div className="lg:max-w-[75%] rounded-xl lg:shadow-lg mt-4 lg:p-8">
             <Image
               src={menu_control}
               alt="control rail"
@@ -72,7 +72,7 @@ const tabs: Tab[] = [
               className=" inset-x-0"
             />
           </div>
-          <p className="text-lg mt-4  max-w-[30%]">
+          <p className="text-lg mt-4  lg:max-w-[30%]">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
             quam distinctio dolore quae, obcaecati alias voluptatem placeat!
             Praesentium delectus eveniet, nisi, inventore aliquid possimus animi
@@ -88,7 +88,7 @@ const tabs: Tab[] = [
     content: (
       <TabContent title="Explorer Rail">
         <div className="flex flex-col h-full lg:flex-row  lg:items-center  gap-8">
-          <div className="flex w-[75%] flex-col lg:flex-row lg:shadow-lg mt-4 lg:items-center lg:justify-center gap-12 rounded-xl">
+          <div className="flex lg:max-w-[75%] flex-col lg:flex-row lg:shadow-lg mt-4 items-center lg:justify-center gap-12 rounded-xl">
             <Image
               src={menu_explorer}
               alt="explorer rail"
@@ -104,7 +104,7 @@ const tabs: Tab[] = [
               className=" "
             />
           </div>
-          <p className="text-lg mt-4  max-w-[30%]">
+          <p className="text-lg mt-4  lg:max-w-[30%]">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
             quam distinctio dolore quae, obcaecati alias voluptatem placeat!
             Praesentium delectus eveniet, nisi, inventore aliquid possimus animi
@@ -120,7 +120,7 @@ const tabs: Tab[] = [
     content: (
       <TabContent title="Crown Rail">
         <div className="flex flex-col h-full lg:flex-row lg:justify-center lg:items-center gap-8">
-          <div className="w-[75%] rounded-xl lg:shadow-lg mt-4 p-8">
+          <div className="lg:max-w-[75%] rounded-xl lg:shadow-lg mt-4 lg:p-8">
             <Image
               src={menu_crown}
               alt="control rail"
@@ -129,7 +129,7 @@ const tabs: Tab[] = [
               className=" inset-x-0"
             />
           </div>
-          <p className="text-lg mt-4 max-w-[30%]">
+          <p className="text-lg mt-4 lg:max-w-[30%]">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
             quam distinctio dolore quae, obcaecati alias voluptatem placeat!
             Praesentium delectus eveniet, nisi, inventore aliquid possimus animi
