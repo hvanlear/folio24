@@ -114,52 +114,6 @@ export default function DesignSystem() {
             </h2>
           </div>
         </div>
-        {/* <div className="flex flex-col md:flex-row gap-12">
-          <div className="container-project_media">
-            <Image
-              src={colors}
-              alt={"Project image"}
-              width={600}
-              height={400}
-              className="rounded-lg shadow-md h-full max-w-full"
-            />
-          </div>
-          <div className="container-project_media">
-            <Image
-              src={typeface}
-              alt={"Project image"}
-              width={600}
-              height={400}
-              className="rounded-lg shadow-md max-w-full"
-            />
-            <h2 className="text-sm font-bold text-stone-500 mt-2 ">
-              Mock of the new UI maxamizing canvas space.
-            </h2>
-          </div>
-        </div>
-        <div className="flex flex-col md:flex-row gap-12">
-          <div className="container-project_media">
-            <Image
-              src={icons}
-              alt={"Project image"}
-              width={600}
-              height={300}
-              className="rounded-lg shadow-md  max-w-full"
-            />
-          </div>
-          <div className="container-project_media">
-            <Image
-              src={grid}
-              alt={"Project image"}
-              width={600}
-              height={400}
-              className="rounded-lg shadow-md max-h-full  max-w-full"
-            />
-            <h2 className="text-sm font-bold text-stone-500 mt-2 ">
-              Mock of the new UI maxamizing canvas space.
-            </h2>
-          </div>
-        </div> */}
       </div>
     </div>
   );

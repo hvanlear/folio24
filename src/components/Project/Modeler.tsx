@@ -16,6 +16,9 @@ import whiteSpace1 from "@/public/images/projects/modeler/model-whitespace-1.png
 import whiteSpace2 from "@/public/images/projects/modeler/model-whitespace-2.png";
 import mock1 from "@/public/images/projects/modeler/whiteSpaceMock-1.png";
 import mock2 from "@/public/images/projects/modeler/whiteSpaceMock-2.png";
+import menu_control from "@/public/images/projects/modeler/menu_control.png";
+import menu_explorer from "@/public/images/projects/modeler/menu_explorer.png";
+import menu_explorer2 from "@/public/images/projects/modeler/menu_explorer_zoom.png";
 
 // Define types
 type Challenge = {
@@ -45,7 +48,7 @@ function TabContent({
   children: React.ReactNode;
 }): JSX.Element {
   return (
-    <div className=" w-full h-full rounded-2xl p-8 text-stone-900 border-2 bg-white border-stone-900">
+    <div className=" w-full h-full rounded-2xl p-8 text-stone-900 border-2 bg-white border-stone-900 overflow-hidden">
       <p className="text-xl md:text-xl font-bold">{title}</p>
       {children}
     </div>
@@ -54,17 +57,17 @@ function TabContent({
 
 const tabs: Tab[] = [
   {
-    title: "Product",
-    value: "product",
+    title: "Control Rail",
+    value: "control",
     content: (
-      <TabContent title="Product">
+      <TabContent title="Control Rail">
         <div className="flex flex-row justify-center items-center">
           <Image
-            src={before}
-            alt="dummy image"
-            width="800"
-            height="600"
-            className=" inset-x-0  rounded-xl shadow-lg mt-4"
+            src={menu_control}
+            alt="control rail"
+            width="1000"
+            height="1000"
+            className=" inset-x-0  rounded-xl shadow-lg mt-4 h-full"
           />
           <p className="text-lg mt-4  mx-auto">
             This is the custom content for the Product tab.
@@ -74,12 +77,31 @@ const tabs: Tab[] = [
     ),
   },
   {
-    title: "Services",
-    value: "services",
+    title: "Explorer Rail",
+    value: "explorer",
     content: (
-      <TabContent title="Services">
-        <p className="text-lg mt-4">the custom content for the Services tab.</p>
-        {/* Add more custom content here */}
+      <TabContent title="Explorer Rail">
+        <div className="flex flex-row justify-center items-center  ">
+          <div className="flex flex-row shadow-lg mt-4 items-center gap-12 rounded-xl">
+            <Image
+              src={menu_explorer}
+              alt="explorer rail"
+              width="500"
+              height="400"
+              className=" inset-x-0 h-full"
+            />
+            <Image
+              src={menu_explorer2}
+              alt="explorer rail"
+              width="200"
+              height="100"
+              className=" "
+            />
+          </div>
+          <p className="text-lg mt-4  mx-auto">
+            This is the custom content for the Product tab.
+          </p>
+        </div>
       </TabContent>
     ),
   },
