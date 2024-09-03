@@ -20,6 +20,10 @@ import menu_control from "@/public/images/projects/modeler/menu_control.png";
 import menu_explorer from "@/public/images/projects/modeler/menu_explorer.png";
 import menu_explorer2 from "@/public/images/projects/modeler/menu_explorer_zoom.png";
 import menu_crown from "@/public/images/projects/modeler/menu_crown.png";
+import outcome_default from "@/public/images/projects/modeler/outcome_default.png";
+import outcome_cntrl from "@/public/images/projects/modeler/outcome_cntrl.png";
+import outcome_expl from "@/public/images/projects/modeler/outcome_expl.png";
+import outcome_crown from "@/public/images/projects/modeler/outcome_crown.png";
 
 // Define types
 type Challenge = {
@@ -88,6 +92,7 @@ const tabs: Tab[] = [
               </li>
             </ul>
           </div>
+          <hr className="bg-black  block lg:hidden" />
         </div>
       </TabContent>
     ),
@@ -128,6 +133,7 @@ const tabs: Tab[] = [
               </li>
             </ul>
           </div>
+          <hr className="bg-black  block lg:hidden" />
         </div>
       </TabContent>
     ),
@@ -164,6 +170,7 @@ const tabs: Tab[] = [
               </li>
             </ul>
           </div>
+          <hr className="bg-black  block lg:hidden" />
         </div>
       </TabContent>
     ),
@@ -242,6 +249,7 @@ export default function Modeler(): JSX.Element {
           />
         </div>
       </div>
+
       <div className="flex flex-col gap-12">
         <h2 className="text-h2-clamp font-bold leading-none">
           Approach & Discovery
@@ -303,6 +311,42 @@ export default function Modeler(): JSX.Element {
               <div className="">{tab.content}</div>
             </div>
           ))}
+        </div>
+      </div>
+      {/* // margin top added to account for tabs at larger screens  */}
+      <div className="flex flex-col gap-12 lg:mt-24">
+        <h2 className="text-h2-clamp font-bold leading-none">Outcome </h2>
+        <p className="md:text-2xl text-lg">
+          The redesigned BPMN modeling tool features a larger canvas, simplified
+          menus, and improved navigation. Users can now create complex diagrams
+          more efficiently, with easier access to advanced features. The new
+          interface has received positive feedback from both new and experienced
+          users.
+        </p>
+        <div className="flex flex-col md:flex-row gap-12 justify-center">
+          <ImageSection
+            src={outcome_default}
+            alt="outcome shot 1"
+            description="Usable canvas space and visual clutter was reduced by a significant amount."
+          />
+          <ImageSection
+            src={outcome_cntrl}
+            alt="outcome shot 2"
+            description="Smart staging of menu items and modern patterns increased usability across the board."
+          />
+        </div>
+
+        <div className="flex flex-col md:flex-row gap-12 justify-center">
+          <ImageSection
+            src={outcome_expl}
+            alt="outcome shot 3"
+            description="Strategically designed menus allowed for customizability and future expansion."
+          />
+          <ImageSection
+            src={outcome_crown}
+            alt="outcome shot 4"
+            description="Context-aware alignment tools and a modern visual refresh, enhancing functionality and user experience when working with selected canvas items."
+          />
         </div>
       </div>
     </div>
