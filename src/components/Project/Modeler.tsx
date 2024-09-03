@@ -50,7 +50,7 @@ function TabContent({
 }): JSX.Element {
   return (
     <div className=" w-full h-full rounded-2xl p-0 lg:p-8 text-stone-900 lg:border-2 lg:bg-white lg:border-stone-900 overflow-hidden">
-      <p className="text-xl lg:text-xl font-bold">{title}</p>
+      <p className="text-2xl lg:text-2xl font-bold">{title}</p>
       {children}
     </div>
   );
@@ -72,12 +72,22 @@ const tabs: Tab[] = [
               className=" inset-x-0"
             />
           </div>
-          <p className="text-lg mt-4  lg:max-w-[30%]">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
-            quam distinctio dolore quae, obcaecati alias voluptatem placeat!
-            Praesentium delectus eveniet, nisi, inventore aliquid possimus animi
-            hic architecto voluptatum, a minima?.
-          </p>
+          <div className="flex flex-col text-lg  lg:max-w-[30%]">
+            <h4 className="md:text-xl text-lg font-bold">Design Breakdown</h4>
+            <ul className="mt-2">
+              <li className="relative pl-4 mb-2  font-medium text-gray-800 flex items-start before:content-[''] before:absolute before:mt-3 before:left-0 before:w-2 before:h-2 before:border before:border-blue-500 before:rounded-full">
+                Implemented a modern drag-and-drop primary menu.
+              </li>
+              <li className="relative pl-4 mb-2  font-medium text-gray-800 flex items-start before:content-[''] before:absolute before:mt-3 before:left-0 before:w-2 before:h-2 before:border before:border-blue-500 before:rounded-full">
+                Prioritized frequently used BPMN actions for quick access and
+                intuitive workflow creation.
+              </li>
+              <li className="relative pl-4 mb-2  font-medium text-gray-800 flex items-start before:content-[''] before:absolute before:mt-3 before:left-0 before:w-2 before:h-2 before:border before:border-blue-500 before:rounded-full">
+                Organized less common tools in a collapsible side menu,
+                balancing accessibility with a clean interface.
+              </li>
+            </ul>
+          </div>
         </div>
       </TabContent>
     ),
@@ -104,12 +114,20 @@ const tabs: Tab[] = [
               className=" "
             />
           </div>
-          <p className="text-lg mt-4  lg:max-w-[30%]">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
-            quam distinctio dolore quae, obcaecati alias voluptatem placeat!
-            Praesentium delectus eveniet, nisi, inventore aliquid possimus animi
-            hic architecto voluptatum, a minima?.
-          </p>
+          <div className="flex flex-col text-lg  lg:max-w-[30%]">
+            <h4 className="md:text-xl text-lg font-bold">Design Breakdown</h4>
+            <ul className="mt-2">
+              <li className="relative pl-4 mb-2  font-medium text-gray-800 flex items-start before:content-[''] before:absolute before:mt-3 before:left-0 before:w-2 before:h-2 before:border before:border-blue-500 before:rounded-full">
+                Comprehensive item repository with search functionality
+              </li>
+              <li className="relative pl-4 mb-2  font-medium text-gray-800 flex items-start before:content-[''] before:absolute before:mt-3 before:left-0 before:w-2 before:h-2 before:border before:border-blue-500 before:rounded-full">
+                Customizable pinning feature for personalized Control Rail
+              </li>
+              <li className="relative pl-4 mb-2  font-medium text-gray-800 flex items-start before:content-[''] before:absolute before:mt-3 before:left-0 before:w-2 before:h-2 before:border before:border-blue-500 before:rounded-full">
+                Expandable architecture for future connectors and features .
+              </li>
+            </ul>
+          </div>
         </div>
       </TabContent>
     ),
@@ -129,12 +147,23 @@ const tabs: Tab[] = [
               className=" inset-x-0"
             />
           </div>
-          <p className="text-lg mt-4 lg:max-w-[30%]">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
-            quam distinctio dolore quae, obcaecati alias voluptatem placeat!
-            Praesentium delectus eveniet, nisi, inventore aliquid possimus animi
-            hic architecto voluptatum, a minima?.
-          </p>
+          <div className="flex flex-col text-lg  lg:max-w-[30%]">
+            <h4 className="md:text-xl text-lg font-bold">Design Breakdown</h4>
+            <ul className="mt-2">
+              <li className="relative pl-4 mb-2  font-medium text-gray-800 flex items-start before:content-[''] before:absolute before:mt-3 before:left-0 before:w-2 before:h-2 before:border before:border-blue-500 before:rounded-full">
+                Integrated smart alignment features that dynamically appear when
+                multiple canvas items are selected.
+              </li>
+              <li className="relative pl-4 mb-2  font-medium text-gray-800 flex items-start before:content-[''] before:absolute before:mt-3 before:left-0 before:w-2 before:h-2 before:border before:border-blue-500 before:rounded-full">
+                Contextual display ensures tools are only visible when relevant,
+                reducing interface clutter.
+              </li>
+              <li className="relative pl-4 mb-2  font-medium text-gray-800 flex items-start before:content-[''] before:absolute before:mt-3 before:left-0 before:w-2 before:h-2 before:border before:border-blue-500 before:rounded-full">
+                Visual upgrade provides a more modern and intuitive user
+                experience.
+              </li>
+            </ul>
+          </div>
         </div>
       </TabContent>
     ),
@@ -258,6 +287,13 @@ export default function Modeler(): JSX.Element {
 
       <div className="flex flex-col gap-12">
         <h3 className="text-h3-clamp font-bold">Menu structure re-design</h3>
+        <p className="md:text-2xl text-lg">
+          My redesign strategy focused on optimizing workspace and enhancing
+          user efficiency through innovative menu structures. By leveraging user
+          insights and market research, I crafted intuitive layouts that
+          maximize canvas space, provide easy access to essential features, and
+          accommodate future expansions.
+        </p>
         <div className="hidden lg:block h-[20rem] lg:h-[40rem] [perspective:1000px]  w-full items-start justify-start">
           <Tabs tabs={tabs} />
         </div>
