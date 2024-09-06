@@ -41,14 +41,17 @@ export default function Hero() {
           gradient={gradient}
         />
       </section>
-      <section id="section-welcome">
+      <section id="section-welcome w-full">
         <div className="grid-container md:grid lg:grid-cols-8 flex flex-col items-center   bg-stone-950">
           <div
             id=" container-welcome-welcome"
             className="row-start-1  col-start-2 col-end-6 flex justify-center 3xl:row-start-2 mt-10"
           >
-            <div id="welcome" className="flex items-end md:items-center mb-2">
-              <h3 className="text-h2-clamp leading-snug  mr-5">
+            <div
+              id="welcome"
+              className="flex  items-center md:items-center 3xl:justify-center mb-4 overflow-visible w-full"
+            >
+              <h3 className="text-h2-clamp leading-snug mr-3 md:mr-5">
                 Welcome! I&apos;m
               </h3>
               <SvgArrow style="vertical" />
