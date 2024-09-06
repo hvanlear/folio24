@@ -47,8 +47,8 @@ export default function Hero() {
             id=" container-welcome-welcome"
             className="row-start-1  col-start-2 col-end-6 flex justify-center 3xl:row-start-2 mt-10"
           >
-            <div id="welcome" className="flex items-end md:items-center">
-              <h3 className="text-h2-clamp leading-snug mr-2 ">
+            <div id="welcome" className="flex items-end md:items-center mb-2">
+              <h3 className="text-h2-clamp leading-snug  mr-5">
                 Welcome! I&apos;m
               </h3>
               <SvgArrow style="vertical" />
@@ -56,7 +56,7 @@ export default function Hero() {
           </div>
           <div
             id="container-welcome-name"
-            className="row-start-2 col-start-3 col-end-6 flex flex-col  3xl:justify-center 3xl:row-start-3 3xl:mb-24 md:mt-0"
+            className="row-start-2 col-start-3 col-end-6 flex flex-col 3xl:col-start-4 3xl:row-start-3 3xl:mb-24 md:mt-0"
           >
             <h1 className="text-h1-clamp mt-0 mb-0 leading-none  ">Hunter</h1>
             <WelcomeLinks />
