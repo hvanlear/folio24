@@ -17,16 +17,11 @@ export default function Hero() {
       <style>
         {`
           .grid-container {
-            display: grid;
             grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
             height: 100vh
           }
 
-          @media (min-width: 1800px) {
-            .grid-container {
-              grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-            }
-          }
+
         `}
       </style>
       <section
@@ -47,22 +42,21 @@ export default function Hero() {
         />
       </section>
       <section id="section-welcome">
-        <div className="grid-container grid lg:grid-cols-8   bg-stone-950">
+        <div className="grid-container md:grid lg:grid-cols-8 flex flex-col items-center   bg-stone-950">
           <div
             id=" container-welcome-welcome"
             className="row-start-1  col-start-2 col-end-6 flex justify-center 3xl:row-start-2 mt-10"
           >
             <div id="welcome" className="flex items-end md:items-center">
-              <h3 className="text-h2-clamp leading-snug mr-4 ">
+              <h3 className="text-h2-clamp leading-snug mr-2 ">
                 Welcome! I&apos;m
               </h3>
               <SvgArrow style="vertical" />
             </div>
-            <div className="container-svg h-full flex items-end"></div>
           </div>
           <div
             id="container-welcome-name"
-            className="row-start-2 col-start-4 col-end-6 flex flex-col  3xl:justify-center 3xl:row-start-3 3xl:mb-24 md:mt-0"
+            className="row-start-2 col-start-3 col-end-6 flex flex-col  3xl:justify-center 3xl:row-start-3 3xl:mb-24 md:mt-0"
           >
             <h1 className="text-h1-clamp mt-0 mb-0 leading-none  ">Hunter</h1>
             <WelcomeLinks />
