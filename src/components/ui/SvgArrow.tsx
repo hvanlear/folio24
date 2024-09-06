@@ -14,49 +14,46 @@ const draw: Variants = {
   }),
 };
 
-interface FlexibleArrowSvgProps {
-  style?: "vertical" | "curved";
-}
-
 // Hook for getting window size
 const useWindowSize = () => {
   const [windowSize, setWindowSize] = useState({
-    width: typeof window !== "undefined" ? window.innerWidth : 0,
-    height: typeof window !== "undefined" ? window.innerHeight : 0,
+    width: 0,
+    height: 0,
   });
 
   useEffect(() => {
-    const handleResize = () => {
+    function handleResize() {
       setWindowSize({
         width: window.innerWidth,
         height: window.innerHeight,
       });
-    };
+    }
 
     window.addEventListener("resize", handleResize);
+    handleResize();
+
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return windowSize;
 };
 
-const VerticalArrow: React.FC = () => {
+const VerticalArrowSvg: React.FC = () => {
   const { width: windowWidth } = useWindowSize();
 
-  // Define base dimensions and maximum width
+  // Define base dimensions and width limits
   const baseWidth = 50;
   const baseHeight = 75;
   const maxWidth = 100;
+  const minWidth = 30;
 
   // Calculate the SVG dimensions based on screen size
-  let scaleFactor = windowWidth / 1500;
-  let width = baseWidth * scaleFactor;
-  const height = baseHeight * scaleFactor;
+  let scaleFactor = Math.min(Math.max(windowWidth / 1500, 0.6), 2);
+  let width = Math.min(Math.max(baseWidth * scaleFactor, minWidth), maxWidth);
+  const height = (baseHeight / baseWidth) * width;
 
-  // Cap the width at maxWidth
-  if (width > maxWidth) {
-    scaleFactor = maxWidth / baseWidth;
-    width = maxWidth;
+  if (windowWidth === 0) {
+    return null; // Don't render if window width is not available yet
   }
 
   return (
@@ -123,105 +120,4 @@ const VerticalArrow: React.FC = () => {
   );
 };
 
-const CurvedArrow: React.FC = () => {
-  const { width: windowWidth } = useWindowSize();
-
-  // Define base dimensions and maximum width
-  const baseWidth = 247;
-  const baseHeight = 50;
-  const maxWidth = 200;
-
-  // Calculate the SVG dimensions based on screen size
-  let scaleFactor = windowWidth / 2000;
-  let width = baseWidth * scaleFactor;
-  const height = baseHeight * scaleFactor;
-
-  // Cap the width at maxWidth
-  if (width > maxWidth) {
-    scaleFactor = maxWidth / baseWidth;
-    width = maxWidth;
-  }
-
-  return (
-    <motion.svg
-      width={width}
-      height={height}
-      viewBox={`0 0 ${baseWidth} ${baseHeight}`}
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      initial="hidden"
-      animate="visible"
-    >
-      <motion.path
-        d="M18.6589 27.2045C37.122 13.7261 61.685 6.97269 84.2849 6.25544C106.885 5.53819 127.522 10.8571 145.748 18.4992C182.726 34.0149 210.267 60.2155 223 92"
-        stroke="url(#paint0_linear)"
-        strokeWidth="11.6414"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        variants={draw}
-        custom={0}
-      />
-      <motion.path
-        d="M227.261 102.403C213.329 96.0537 199.795 89.4635 186.658 82.6328"
-        stroke="url(#paint1_linear)"
-        strokeWidth="11.6414"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        variants={draw}
-        custom={1}
-      />
-      <motion.path
-        d="M229.859 99.8954C233.077 88.5133 236.106 77.3293 239.134 65.9996"
-        stroke="url(#paint2_linear)"
-        strokeWidth="11.6414"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        variants={draw}
-        custom={2}
-      />
-      <defs>
-        <linearGradient
-          id="paint0_linear"
-          x1="135.603"
-          y1="6.14681"
-          x2="135.683"
-          y2="92.0811"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#FBED96" />
-          <stop offset="1" stopColor="#ABECD6" />
-        </linearGradient>
-        <linearGradient
-          id="paint1_linear"
-          x1="209.288"
-          y1="88.4844"
-          x2="207.041"
-          y2="97.175"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#FBED96" />
-          <stop offset="1" stopColor="#ABECD6" />
-        </linearGradient>
-        <linearGradient
-          id="paint2_linear"
-          x1="234.497"
-          y1="67.286"
-          x2="242.564"
-          y2="96.3714"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#FBED96" />
-          <stop offset="1" stopColor="#ABECD6" />
-        </linearGradient>
-      </defs>
-    </motion.svg>
-  );
-};
-
-const FlexibleArrowSvg: React.FC<FlexibleArrowSvgProps> = ({
-  style = "curved",
-}) => {
-  return style === "vertical" ? <VerticalArrow /> : <CurvedArrow />;
-};
-
-export default FlexibleArrowSvg;
+export default VerticalArrowSvg;
