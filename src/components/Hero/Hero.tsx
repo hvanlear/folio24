@@ -55,7 +55,7 @@ export default function Hero() {
                 <h3 className="text-h2-clamp leading-snug mr-3 md:mr-5">
                   Welcome! I&apos;m
                 </h3>
-                <SvgArrow style="vertical" />
+                <SvgArrow />
               </div>
             </div>
             <div
