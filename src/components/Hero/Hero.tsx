@@ -42,27 +42,29 @@ export default function Hero() {
         />
       </section>
       <section id="section-welcome w-full">
-        <div className="grid-container md:grid lg:grid-cols-8 flex flex-col items-center   bg-stone-950">
-          <div
-            id=" container-welcome-welcome"
-            className="row-start-1  col-start-2 col-end-6 flex justify-center 3xl:row-start-2 mt-10"
-          >
+        <div className="grid-container  flex flex-col items-center   bg-stone-950">
+          <div className="grid-container-inner md:grid lg:grid-cols-8 3xl:mt-48">
             <div
-              id="welcome"
-              className="flex  items-center md:items-center 3xl:justify-center mb-4 overflow-visible w-full"
+              id=" container-welcome-welcome"
+              className="flex justify-normal md:row-start-1 col-start-2 col-end-6 3xl:row-start-2 mt-10"
             >
-              <h3 className="text-h2-clamp leading-snug mr-3 md:mr-5">
-                Welcome! I&apos;m
-              </h3>
-              <SvgArrow style="vertical" />
+              <div
+                id="welcome"
+                className="flex justify-normal items-center md:items-end lg:justify-center mb-4 overflow-visible w-full"
+              >
+                <h3 className="text-h2-clamp leading-snug mr-3 md:mr-5">
+                  Welcome! I&apos;m
+                </h3>
+                <SvgArrow style="vertical" />
+              </div>
             </div>
-          </div>
-          <div
-            id="container-welcome-name"
-            className="row-start-2 col-start-3 col-end-6 flex flex-col 3xl:col-start-4 3xl:row-start-3 3xl:mb-24 md:mt-0"
-          >
-            <h1 className="text-h1-clamp mt-0 mb-0 leading-none  ">Hunter</h1>
-            <WelcomeLinks />
+            <div
+              id="container-welcome-name"
+              className="row-start-2 col-start-3 col-end-6 flex flex-col 3xl:col-start-4 3xl:row-start-3 3xl:mb-24 md:mt-0"
+            >
+              <h1 className="text-h1-clamp mt-0 mb-0 leading-none  ">Hunter</h1>
+              <WelcomeLinks />
+            </div>
           </div>
         </div>
       </section>
