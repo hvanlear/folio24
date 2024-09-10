@@ -60,7 +60,7 @@ export default function Hero() {
             </div>
             <div
               id="container-welcome-name"
-              className="row-start-2 col-start-3 col-end-6 flex flex-col 3xl:col-start-4 3xl:row-start-3 3xl:mb-24 md:mt-0"
+              className="row-start-2 col-start-4 col-end-6 flex flex-col 3xl:col-start-4 3xl:row-start-3 3xl:mb-24 md:mt-0"
             >
               <h1 className="text-h1-clamp mt-0 mb-0 leading-none  ">Hunter</h1>
               <WelcomeLinks />
