@@ -11,6 +11,8 @@ import ChallengeSection from "./Parts/ChallengeSection";
 import before from "@/public/images/projects/banking/banking_before.png";
 import after from "@/public/images/projects/banking/Banking_after.png";
 
+import chart from "@/public/images/projects/banking/banking_chart.svg";
+
 export default function Skapi() {
   const challenges = [
     {
@@ -76,21 +78,23 @@ export default function Skapi() {
       <div className="flex flex-col gap-12">
         <h2 className="text-h2-clamp font-bold">Approach & Discovery</h2>
         <p className="md:text-2xl text-lg">
-          In tackling the redesign of the consumer bank account opening product,
-          we adopted a comprehensive approach that combined thorough research,
-          technical exploration, and innovative problem-solving. Our goal was to
-          modernize the user interface and streamline the account opening
-          process while working within the constraints of the existing BPMN
-          engine.
+          MY redesign of the bank account opening product centered on competitor
+          analysis and technical constraint evaluation. I studied industry
+          solutions to understand best practices, while leveraging browser
+          developer tools to identify customizable elements within the form
+          builder. By injecting CSS through the builder&apos;s embedded text
+          editor, I aimed to modernize the user interface and streamline the
+          account opening process, all while working within the confines of the
+          existing BPMN engine and Bootstrap 4 patterns.
         </p>
         <div className="w-full flex justify-center">
-          {/* <Image
+          <Image
             src={chart}
             alt={"Project image"}
-            width={500}
-            height={300}
+            width={600}
+            height={400}
             className=" h-full max-w-full"
-          /> */}
+          />
         </div>
       </div>
     </div>
