@@ -60,6 +60,26 @@ function TabContent({
   );
 }
 
+function ImageSection({
+  title,
+  src,
+  alt,
+  description,
+}: ImageSectionProps): JSX.Element {
+  return (
+    <div className="container-project_media">
+      <Image
+        src={src}
+        alt={alt}
+        width={800}
+        height={600}
+        className="rounded-lg shadow-md h-full max-w-full"
+      />
+      <h2 className="text-sm font-bold text-stone-500 mt-2">{description}</h2>
+    </div>
+  );
+}
+
 const tabs: Tab[] = [
   {
     title: "Control Rail",
@@ -203,26 +223,6 @@ const challenges: Challenge[] = [
       "Developed a flexible menu structure capable of accommodating current features and future expansions without cluttering the interface or complicating user workflows.",
   },
 ];
-
-function ImageSection({
-  title,
-  src,
-  alt,
-  description,
-}: ImageSectionProps): JSX.Element {
-  return (
-    <div className="container-project_media">
-      <Image
-        src={src}
-        alt={alt}
-        width={800}
-        height={600}
-        className="rounded-lg shadow-md h-full max-w-full"
-      />
-      <h2 className="text-sm font-bold text-stone-500 mt-2">{description}</h2>
-    </div>
-  );
-}
 
 export default function Modeler(): JSX.Element {
   return (
