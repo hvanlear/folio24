@@ -197,7 +197,7 @@ export default function Skapi() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-8 justify-center items-center">
           <div className="container-image-group-large flex flex-col gap-16">
             <div className="flex flex-col md:flex-row gap-8 ">
               <ImageSection
