@@ -4,6 +4,8 @@ import {
   IconCode,
   IconPlugConnected,
   IconShieldLock,
+  IconArrowDownRight,
+  IconThumbUp,
 } from "@tabler/icons-react";
 
 import ChallengeSection from "./Parts/ChallengeSection";
@@ -14,6 +16,10 @@ import after from "@/public/images/projects/banking/Banking_after.png";
 import chart from "@/public/images/projects/banking/banking_chart.svg";
 import builder from "@/public/images/projects/banking/builder.jpeg";
 import tools from "@/public/images/projects/banking/dev-tools.png";
+import r1 from "@/public/images/projects/banking/results1.png";
+import r2 from "@/public/images/projects/banking/results2.png";
+import r3 from "@/public/images/projects/banking/results3.png";
+import r4 from "@/public/images/projects/banking/results4.png";
 
 type ImageSectionProps = {
   title?: string;
@@ -35,7 +41,7 @@ function ImageSection({
         alt={alt}
         width={800}
         height={600}
-        className="rounded-lg shadow-md h-full max-w-full"
+        className="rounded-lg shadow-md "
       />
       <h2 className="text-sm font-bold text-stone-500 mt-2">{description}</h2>
     </div>
@@ -71,41 +77,27 @@ export default function Skapi() {
   ];
 
   return (
-    <div className="flex flex-col gap-24">
-      <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-16">
+      <div className="flex flex-col gap-8">
         <ChallengeSection
           overview="Lead the redesign of a consumer bank account opening product built within a BPMN engine. The primary objective was to modernize the user interface, enhancing the overall user experience while working within the constraints of the existing system."
           challenges={challenges}
         />
       </div>
-      <div className="flex flex-col md:flex-row gap-12">
-        <div className="container-project_media">
-          <h4 className="text-sm uppercase font-bold text-stone-500 mb-2">
-            • Before •
-          </h4>
-          <Image
-            src={before}
-            alt={"Project image"}
-            width={800}
-            height={600}
-            className="rounded-lg shadow-md h-[95%] max-w-full"
-          />
-        </div>
-        <div className="container-project_media">
-          <h4 className="text-sm uppercase font-bold text-stone-500 mb-2">
-            • After •
-          </h4>
-          <Image
-            src={after}
-            alt={"Project image"}
-            width={800}
-            height={600}
-            className="rounded-lg shadow-md max-w-full"
-          />
-        </div>
+      <div className="flex flex-col md:flex-row gap-8">
+        <ImageSection
+          src={before}
+          alt="outcome shot 1"
+          description="Usable canvas space and visual clutter was reduced by a significant amount."
+        />
+        <ImageSection
+          src={after}
+          alt="outcome shot 1"
+          description="Usable canvas space and visual clutter was reduced by a significant amount."
+        />
       </div>
-      <div className="flex flex-col gap-24">
-        <div className="container-approach-discovery flex flex-col gap-12">
+      <div className="flex flex-col gap-16">
+        <div className="container-approach-discovery flex flex-col gap-8">
           <h2 className="text-h2-clamp font-bold">Approach & Discovery</h2>
           <p className="md:text-2xl text-lg">
             My redesign of the bank account opening product centered on
@@ -133,7 +125,7 @@ export default function Skapi() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-8">
           <h3 className="text-h3-clamp font-bold">
             Tackling the Screen Builder
           </h3>
@@ -164,13 +156,81 @@ export default function Skapi() {
             <ImageSection
               src={builder}
               alt="outcome shot 1"
-              description="The ProcessMaker screen builder"
+              description="The ProcessMaker screen builder."
             />
             <ImageSection
               src={tools}
               alt="outcome shot 2"
-              description="Limitations in builder tool transparency required deep analysis via browser dev tools"
+              description="Limitations in builder tool transparency required deep analysis via browser dev tools."
             />
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-col gap-8">
+        <div className="container-approach-discovery flex flex-col gap-8">
+          <h2 className="text-h2-clamp font-bold">Results</h2>
+          <p className="md:text-2xl text-lg">
+            The redesign of the account opening process yielded significant
+            improvements in both efficiency and user satisfaction. The
+            streamlined workflow not only reduced the number of steps required
+            but also dramatically enhanced the overall user experience.
+          </p>
+          <div className="flex flex-col md:flex-row justify-around items-center p-6 bg-gray-100 rounded-lg">
+            <div className="flex flex-col items-center mb-4 md:mb-0">
+              <IconArrowDownRight
+                size={48}
+                stroke={1.5}
+                className="text-green-500 mb-2"
+              />
+              <p className="text-2xl font-bold">33% Reduction</p>
+              <p className="text-lg">in Account Opening Steps</p>
+              <p className="text-sm text-gray-600">From 6 steps to 4</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <IconThumbUp
+                size={48}
+                stroke={1.5}
+                className="text-blue-500 mb-2"
+              />
+              <p className="text-2xl font-bold">80% Increase</p>
+              <p className="text-lg">in User Satisfaction</p>
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col gap-8">
+          <div className="container-image-group-large flex flex-col gap-16">
+            <div className="flex flex-col md:flex-row gap-8 ">
+              <ImageSection
+                src={r1}
+                alt="outcome shot 1"
+                description="Usable canvas space and visual clutter was reduced by a significant amount."
+              />
+              <ImageSection
+                src={r2}
+                alt="outcome shot 2"
+                description="Smart staging of menu items and modern patterns increased usability across the board."
+              />
+            </div>
+            <div className="flex flex-col md:flex-row gap-8 ">
+              <ImageSection
+                src={r3}
+                alt="outcome shot 3"
+                description="Strategically designed menus allowed for customizability and future expansion."
+              />
+              <div className="container-project-media">
+                <Image
+                  src={r4}
+                  alt={"Project image"}
+                  width={600}
+                  height={400}
+                  className=" w-full rounded-lg shadow-md "
+                />
+                <h4 className="text-sm font-bold text-stone-500 mt-2">
+                  Identifying areas where we could streamline our user flow was
+                  crucial to making our solutions competitive in a tight market.
+                </h4>
+              </div>
+            </div>
           </div>
         </div>
       </div>
