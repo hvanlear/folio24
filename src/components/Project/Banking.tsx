@@ -173,9 +173,10 @@ export default function Skapi() {
             The redesign of the account opening process yielded significant
             improvements in both efficiency and user satisfaction. The
             streamlined workflow not only reduced the number of steps required
-            but also dramatically enhanced the overall user experience.
+            top open a bank account but also dramatically enhanced the overall
+            user experience.
           </p>
-          <div className="flex flex-col md:flex-row justify-around items-center p-6 bg-gray-100 rounded-lg">
+          <div className="flex flex-col md:flex-row justify-around items-center p-6 shadow-md bg-stone-50 rounded-lg">
             <div className="flex flex-col items-center mb-4 md:mb-0">
               <IconArrowDownRight
                 size={48}
@@ -183,8 +184,7 @@ export default function Skapi() {
                 className="text-green-500 mb-2"
               />
               <p className="text-2xl font-bold">33% Reduction</p>
-              <p className="text-lg">in Account Opening Steps</p>
-              <p className="text-sm text-gray-600">From 6 steps to 4</p>
+              <p className="text-lg">In time to completion</p>
             </div>
             <div className="flex flex-col items-center">
               <IconThumbUp
@@ -193,7 +193,7 @@ export default function Skapi() {
                 className="text-blue-500 mb-2"
               />
               <p className="text-2xl font-bold">80% Increase</p>
-              <p className="text-lg">in User Satisfaction</p>
+              <p className="text-lg">In User Satisfaction</p>
             </div>
           </div>
         </div>
@@ -203,33 +203,26 @@ export default function Skapi() {
               <ImageSection
                 src={r1}
                 alt="outcome shot 1"
-                description="Usable canvas space and visual clutter was reduced by a significant amount."
+                description="Account type selection: Complex CSS for modern alignment and interaction."
               />
               <ImageSection
                 src={r2}
                 alt="outcome shot 2"
-                description="Smart staging of menu items and modern patterns increased usability across the board."
+                description="Modern UX design practices were added like the ability to go back to specific sections of the process to edit information."
               />
             </div>
             <div className="flex flex-col md:flex-row gap-8 ">
               <ImageSection
                 src={r3}
-                alt="outcome shot 3"
-                description="Strategically designed menus allowed for customizability and future expansion."
+                alt="outcome shot 1"
+                description="Required BPMN interstitial screens were disguised as welcome and finish screens "
               />
-              <div className="container-project-media">
-                <Image
-                  src={r4}
-                  alt={"Project image"}
-                  width={600}
-                  height={400}
-                  className=" w-full rounded-lg shadow-md "
-                />
-                <h4 className="text-sm font-bold text-stone-500 mt-2">
-                  Identifying areas where we could streamline our user flow was
-                  crucial to making our solutions competitive in a tight market.
-                </h4>
-              </div>
+              <ImageSection
+                src={r4}
+                alt="outcome shot 2"
+                description="Customized vector art helped to lift the interface and make a
+                  very rigid process feel more approachable."
+              />
             </div>
           </div>
         </div>

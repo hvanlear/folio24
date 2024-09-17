@@ -255,16 +255,11 @@ export default function Modeler(): JSX.Element {
           Approach & Discovery
         </h2>
         <p className="md:text-2xl text-lg">
-          Our approach to redesigning the BPMN modeling tool was rooted in a
-          comprehensive understanding of user needs, industry trends, and design
-          innovation. We proceeded with a multi-faceted discovery process that
-          combined rigorous analysis of our existing platform with in-depth user
-          research and competitive benchmarking. This holistic strategy ensured
-          that our redesign would not only address current pain points but also
-          push the boundaries of what users could expect from a BPMN modeling
-          tool. By blending user-centric design principles with modern interface
-          concepts, we aimed to create a more intuitive, efficient, and powerful
-          modeling experience.
+          Our BPMN modeling tool redesign combined user research, competitive
+          analysis, and design innovation. We aimed to address existing pain
+          points while advancing the tool&apos;s capabilities. The result is a
+          more intuitive, efficient, and powerful modeling experience that meets
+          current needs and anticipates future trends in BPMN modeling.
         </p>
         <div className="flex flex-col md:flex-row gap-12 justify-center">
           <ImageSection
@@ -296,11 +291,10 @@ export default function Modeler(): JSX.Element {
       <div className="flex flex-col gap-12">
         <h3 className="text-h3-clamp font-bold">Menu structure re-design</h3>
         <p className="md:text-2xl text-lg">
-          My redesign strategy focused on optimizing workspace and enhancing
-          user efficiency through innovative menu structures. By leveraging user
-          insights and market research, I crafted intuitive layouts that
-          maximize canvas space, provide easy access to essential features, and
-          accommodate future expansions.
+          The redesign optimizes workspace and boosts user efficiency through
+          innovative menus. Based on user insights and market research, the new
+          layout maximizes canvas space, streamlines access to key features, and
+          allows for future expansions.
         </p>
         <div className="hidden lg:block h-[20rem] lg:h-[40rem] [perspective:1000px]  w-full items-start justify-start">
           <Tabs tabs={tabs} />
