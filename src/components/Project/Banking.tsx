@@ -109,7 +109,7 @@ export default function Skapi() {
             the account opening process, all while working within the confines
             of the existing BPMN engine and Bootstrap 4 patterns.
           </p>
-          <div className="w-full flex justify-center">
+          <div className="w-full flex justify-center md:mb-0 mb-4">
             <div className="container-project-media">
               <Image
                 src={chart}
@@ -173,7 +173,7 @@ export default function Skapi() {
             The redesign of the account opening process yielded significant
             improvements in both efficiency and user satisfaction. The
             streamlined workflow not only reduced the number of steps required
-            top open a bank account but also dramatically enhanced the overall
+            to open a bank account but also dramatically enhanced the overall
             user experience.
           </p>
           <div className="flex flex-col md:flex-row justify-around items-center p-6 shadow-md bg-stone-50 rounded-lg">
