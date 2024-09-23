@@ -333,13 +333,13 @@ export default function Modeler(): JSX.Element {
         <div className="flex flex-col md:flex-row gap-12 justify-center">
           <ImageSection
             src={outcome_expl}
-            alt="outcome shot 3"
-            description="Strategically designed menus allowed for customizability and future expansion."
+            alt="outcome shot 1"
+            description="Usable canvas space and visual clutter was reduced by a significant amount."
           />
           <ImageSection
             src={outcome_crown}
-            alt="outcome shot 4"
-            description="Context-aware alignment tools and a modern visual refresh, enhancing functionality and user experience when working with selected canvas items."
+            alt="outcome shot 2"
+            description="Smart staging of menu items and modern patterns increased usability across the board."
           />
         </div>
       </div>
