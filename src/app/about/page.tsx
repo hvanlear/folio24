@@ -68,7 +68,7 @@ export default function ArchivePage() {
               </h1>
             </motion.div>
             <section id="section-about-main" className="w-full h-full">
-              <div className="bg-stone-50 z-10 border-x-2 border-t-2 border-stone-600 rounded-tl-[5rem] rounded-tr-[5rem] w-full h-full flex flex-col justify-between">
+              <div className="bg-stone-50 z-10 border-x-2 border-t-2 border-stone-600 rounded-tl-[5rem] rounded-tr-[5rem] w-full h-full flex flex-col justify-center ">
                 <div className="md:p-24 p-12 flex flex-col gap-24  ">
                   <div className="container-about_intro flex flex-col-reverse gap-8 h-full items-center md:flex-row ">
                     <div className="w-full md:w-1/2 flex flex-col  gap-8">
