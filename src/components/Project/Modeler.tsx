@@ -299,6 +299,7 @@ export default function Modeler(): JSX.Element {
         <div className="hidden lg:block h-[20rem] lg:h-[40rem] [perspective:1000px]  w-full items-start justify-start">
           <Tabs tabs={tabs} />
         </div>
+        {/* Changes the tab structure to static elements at smaller screen sizes */}
         <div className="lg:hidden space-y-8">
           {tabs.map((tab) => (
             <div key={tab.value} className="">

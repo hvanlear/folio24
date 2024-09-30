@@ -48,7 +48,7 @@ function ImageSection({
   );
 }
 
-export default function Skapi() {
+export default function Banking() {
   const challenges = [
     {
       icon: IconForms,

@@ -72,7 +72,7 @@ export default function ArchivePage() {
                 <div className="md:p-24 p-12 flex flex-col gap-24  ">
                   <div className="container-about_intro flex flex-col-reverse gap-8 h-full items-center md:flex-row ">
                     <div className="w-full md:w-1/2 flex flex-col  gap-8">
-                      <h2 className="text-stone-950 text-3xl">
+                      <h2 className="text-stone-950 text-h2-clamp">
                         My name is Hunter Van Lear
                       </h2>
                       <p className="text-stone-950 text-xl md:text-2xl">

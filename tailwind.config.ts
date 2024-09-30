@@ -51,6 +51,9 @@ module.exports = {
       },
     },
   },
+  compilerOptions: {
+    forceConsistentCasingInFileNames: true,
+  },
   variants: {
     extend: {
       alignItems: ["responsive", "3xl"],

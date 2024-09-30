@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import {
   IconBook,
   IconBookmark,
@@ -9,10 +9,34 @@ import {
   IconCloudOff,
   IconSpider,
 } from "@tabler/icons-react";
-
 import ChallengeSection from "./Parts/ChallengeSection";
 
 import chart from "@/public/images/projects/skapi/skapi_chart.svg";
+import count from "@/public/images/projects/skapi/userCount.png";
+import country from "@/public/images/projects/skapi/userCountry.png";
+
+type ImageSectionProps = {
+  src: string | StaticImageData;
+  alt: string;
+  description: string;
+};
+
+const ImageSection: React.FC<ImageSectionProps> = ({
+  src,
+  alt,
+  description,
+}) => (
+  <div className="flex flex-col gap-2">
+    <Image
+      src={src}
+      alt={alt}
+      width={800}
+      height={600}
+      className="rounded-lg shadow-md"
+    />
+    <p className="text-sm font-bold text-stone-500">{description}</p>
+  </div>
+);
 
 interface InfoCardProps {
   icon: Icon;
@@ -25,8 +49,8 @@ const InfoCard: React.FC<InfoCardProps> = ({
   count,
   label,
 }) => (
-  <div className="flex flex-col items-center p-4  border-stone-950 border-2 rounded-lg ">
-    <IconComponent size={68} stroke={1.5} className="text-emerald-600 mb-2" />
+  <div className="flex flex-col items-center gap-2 p-4 border-stone-950 border-2 rounded-lg">
+    <IconComponent size={68} stroke={1.5} className="text-emerald-600" />
     <span className="text-5xl font-bold">{count}</span>
     <span className="text-xl text-gray-600 font-serif">{label}</span>
   </div>
@@ -42,7 +66,7 @@ const StephenKingInfographic: React.FC = () => (
   </div>
 );
 
-export default function Skapi() {
+const Skapi: React.FC = () => {
   const challenges = [
     {
       icon: IconCloudOff,
@@ -54,7 +78,7 @@ export default function Skapi() {
       icon: IconSpider,
       title: "Data Collection",
       description:
-        "Develope efficient web scraping techniques to gather data from multiple sources.",
+        "Develop efficient web scraping techniques to gather data from multiple sources.",
     },
     {
       icon: IconDatabase,
@@ -71,35 +95,57 @@ export default function Skapi() {
   ];
 
   return (
-    <div className="flex flex-col gap-24">
-      <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-16">
+      <section className="flex flex-col gap-8">
         <ChallengeSection
-          overview="As an avid Stephen King fan and a developer, I encountered a significant gap in the digital landscape: there was no comprehensive API available for accessing information about King's vast body of work. This absence presented both an opportunity to do something original on the internet as well as a number of challenges:"
+          overview="As an avid Stephen King fan, developer and enjoyer of structure JSON I noticed something missing from the internet: there was no comprehensive API available for accessing information about King's vast body of work. This absence presented both an opportunity to do something original as well as a number of challenges:"
           challenges={challenges}
         />
-      </div>
-      <div className="flex flex-col gap-12">
+      </section>
+
+      <section className="flex flex-col gap-8">
         <h2 className="text-h2-clamp font-bold">Approach & Discovery</h2>
         <p className="md:text-2xl text-lg">
-          As a Stephen King enthusiast, I approached this project by identifying
-          key online resources: Wikipedia for bibliographic data and Fandom
-          wikis for character information. My plan was to create a centralized
-          database that could capture both publication details and character
-          relationships across King&apos;s works. This approach revealed the
-          potential for a unique tool that could offer new insights into the
-          interconnectedness of King&apos;s universe, serving fans, researchers,
-          and developers alike.
+          I focused on two main sources for my data: Wikipedia for bibliographic
+          info and Fandom wikis for character details. My goal was to build a
+          database that combines publication data with character connections
+          across King&apos;s works. This approach could create a valuable
+          resource for fans, researchers, and developers, offering new ways to
+          explore the links within King&apos;s universe.
         </p>
-        <div className="w-full flex justify-center">
+        <div className="flex justify-center">
           <Image
             src={chart}
-            alt={"Project image"}
+            alt="Project image"
             width={500}
             height={300}
-            className=" h-full max-w-full"
+            className="h-full max-w-full"
           />
         </div>
-      </div>
+      </section>
+
+      <section className="flex flex-col gap-8">
+        <h2 className="text-h2-clamp font-bold">Results</h2>
+        <p className="md:text-2xl text-lg">
+          Understanding that this tool is aimed at a very specific audience, I
+          wasn&apos;s expecting too much in terms of people actually visiting my
+          site. But I some traffic! and from all over the world.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <ImageSection
+            src={count}
+            alt="outcome shot 1"
+            description="Monthly user counts have hovered steadily around 300."
+          />
+          <ImageSection
+            src={country}
+            alt="outcome shot 2"
+            description="King's work is ubiquitous"
+          />
+        </div>
+      </section>
     </div>
   );
-}
+};
+
+export default Skapi;
