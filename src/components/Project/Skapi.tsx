@@ -98,7 +98,7 @@ const Skapi: React.FC = () => {
     <div className="flex flex-col gap-16">
       <section className="flex flex-col gap-8">
         <ChallengeSection
-          overview="As an avid Stephen King fan, developer and enjoyer of structure JSON I noticed something missing from the internet: there was no comprehensive API available for accessing information about King's vast body of work. This absence presented both an opportunity to do something original as well as a number of challenges:"
+          overview="As an avid Stephen King fan, developer, and enjoyer of structure JSON I noticed something missing from the internet: there was no comprehensive API available for accessing information about King's vast body of work. This absence presented both an opportunity to do something original as well as a number of challenges:"
           challenges={challenges}
         />
       </section>
