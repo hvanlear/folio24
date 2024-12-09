@@ -6,7 +6,7 @@ export default function WelcomeLinks() {
       id="container-welcome-links"
       className="flex flex-row justify-normal space-x-8 ml-0 md:ml-4 mt-4 md:mt-8"
     >
-      <ButtonUnderline href="/docs/resume.pdf">
+      <ButtonUnderline href="/docs/Hunter-Van-Lear-Resume.pdf">
         <span className="text-h3-clamp font-bold">Resume</span>
       </ButtonUnderline>
       <ButtonUnderline href="/contact">
