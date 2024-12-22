@@ -131,7 +131,7 @@ interface GetProjectsOptions {
 }
 
 /**
- * Retrieves projects based on specified options.
+ * Retrieves projects based on specified options. Only retrieving for the two types
  *
  * @param options - The options for filtering and selecting project data.
  * @returns An array of projects with the specified fields.

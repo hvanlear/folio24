@@ -32,9 +32,9 @@ const ButtonStroke = styled.svg`
   stroke-dashoffset: 650; // Start with the path fully hidden
   transition: stroke-dashoffset 300ms ease-out; // Animation effect
 
-  ${Button}:hover & {
+  /* ${Button}:hover & {
     stroke-dashoffset: 0; // Animate the line on hover
-  }
+  } */
 `;
 
 const ButtonUnderline = ({
