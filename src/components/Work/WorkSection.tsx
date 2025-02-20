@@ -37,7 +37,7 @@ export default function WorkAnimation() {
   }, [width]);
 
   const maxGrowth = useMemo(() => {
-    return width <= 768 ? 300 : 400;
+    return width <= 768 ? 300 : 300;
   }, [width]);
 
   const initialY = useMemo(() => calculateInitialY(width), [width]);
