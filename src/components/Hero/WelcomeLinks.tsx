@@ -10,6 +10,7 @@ export default function WelcomeLinks() {
         <ul className="flex flex-row gap-8">
           <li>
             <a
+              target="_blank"
               className="text-h3-clamp font-bold hover:text-blue-500 "
               href="/docs/Hunter-Van-Lear-Resume.pdf"
             >

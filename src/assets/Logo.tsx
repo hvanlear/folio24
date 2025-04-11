@@ -9,6 +9,7 @@ export default function Logo() {
         viewBox="0 0 50 34"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        id="p-logo"
       >
         <rect width="49.065" height="33.3497" rx="4" />
         <path

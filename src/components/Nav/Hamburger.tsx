@@ -1,11 +1,23 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { hamburgerVariants } from "@/src/animations/pageTransitions";
+// import { hamburgerVariants } from "@/src/animations/pageTransitions";
 
 interface HamburgerProps {
   isOpen: boolean;
   toggleMenu: () => void;
 }
+
+export const hamburgerVariants = {
+  closed: (i: number) => ({
+    rotate: 0,
+    y: i * 5, // 0px for first line, 5px for second line
+  }),
+  open: (i: number) => ({
+    rotate: i === 0 ? 45 : -45,
+    y: i === 0 ? 6 : -4, // Y: 6px line #1 | -8px line #2
+    x: i === 0 ? 0 : 0, // X: 4px line #1 | -2px line #2
+  }),
+};
 
 export default function Hamburger({ isOpen, toggleMenu }: HamburgerProps) {
   return (

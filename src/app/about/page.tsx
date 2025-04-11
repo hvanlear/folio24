@@ -40,7 +40,7 @@ export default function ArchivePage() {
             containerClipPath="polygon(0 0%, 100% 0, 100% 24%, 0 98%)"
             gradientClipPath="polygon(0px 72%, 100% 0px, 100% 25%, 0px 97%)"
             gradientTop="18%"
-            tickerWords={["Husband", "Brother", "Traveler", "Nerd"]}
+            tickerWords={["Husband", "Brother", "Traveler", "Nerd", "Funcle"]}
             gradient={gradient}
             isDark={true}
           />
