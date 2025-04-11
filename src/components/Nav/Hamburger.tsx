@@ -21,7 +21,17 @@ export const hamburgerVariants = {
 
 export default function Hamburger({ isOpen, toggleMenu }: HamburgerProps) {
   return (
-    <button onClick={toggleMenu} className="z-3001 relative w-12 h-12">
+    <button
+      onClick={(e) => {
+        // Stop propagation to prevent any parent handlers from interfering
+        e.stopPropagation();
+        console.log("Button clicked, current state:", isOpen);
+        toggleMenu();
+        // Log the state after toggle is called
+        console.log("Toggle called, next render should show:", !isOpen);
+      }}
+      className="relative z-50 w-12 h-12"
+    >
       <svg viewBox="0 0 100 100" className="w-full h-full">
         <motion.circle
           cx="50"
@@ -30,8 +40,8 @@ export default function Hamburger({ isOpen, toggleMenu }: HamburgerProps) {
           fill="none"
           stroke="white"
           strokeWidth="4"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
+          initial={{ pathLength: 1 }}
+          animate={{ pathLength: isOpen ? 0 : 1 }}
           transition={{ duration: 0.5 }}
         />
         {[0, 1].map((i) => (
@@ -43,9 +53,11 @@ export default function Hamburger({ isOpen, toggleMenu }: HamburgerProps) {
             y2={i === 0 ? "45" : "55"}
             stroke="white"
             strokeWidth="4"
+            strokeLinecap="round"
             variants={hamburgerVariants}
             custom={i}
             animate={isOpen ? "open" : "closed"}
+            transition={{ duration: 0.3 }} // Added transition property
           />
         ))}
       </svg>
