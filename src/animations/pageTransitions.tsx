@@ -19,15 +19,14 @@ export const pageTransition = {
   duration: 0.6,
 };
 
-export const hamburgerVariants = {
+export const lineVariants = {
   closed: (i: number) => ({
     rotate: 0,
-    y: i * 5, // 0px for first line, 5px for second line
+    translateY: i === 0 ? -5 : 5, // First line up, second line down
   }),
   open: (i: number) => ({
     rotate: i === 0 ? 45 : -45,
-    y: i === 0 ? 6 : -4, // Y: 6px line #1 | -8px line #2
-    x: i === 0 ? 0 : 0, // X: 4px line #1 | -2px line #2
+    translateY: 0, // Both lines centered
   }),
 };
 
