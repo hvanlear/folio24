@@ -80,8 +80,8 @@ export default function TornEdge({ variant = "standard", top }: TornEdgeProps) {
   // torn edge and the clip-path clips everything below it.
   // Footer: shadow goes DOWN (positive dy) because the clip-path extends to
   // 100% below the torn edge, giving the shadow room to render.
-  const shadowDy = isStd ? -6 : 8;
-  const shadowBlur = isStd ? "2 4" : "2 6";
+  const shadowDy = isStd ? -3 : 4;
+  const shadowBlur = isStd ? "1 2" : "1 3";
 
   return (
     <svg
@@ -104,7 +104,7 @@ export default function TornEdge({ variant = "standard", top }: TornEdgeProps) {
             dy={shadowDy}
             stdDeviation={shadowBlur}
             floodColor="black"
-            floodOpacity="0.5"
+            floodOpacity="0.15"
           />
         </filter>
         <linearGradient id={gradId} x1="0%" y1="0%" x2="100%" y2="0%">
@@ -121,7 +121,7 @@ export default function TornEdge({ variant = "standard", top }: TornEdgeProps) {
         d={isStd ? STD_STROKE : FTR_STROKE}
         fill="none"
         stroke="black"
-        strokeWidth={2}
+        strokeWidth={0.5}
         vectorEffect="non-scaling-stroke"
       />
     </svg>

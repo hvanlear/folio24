@@ -106,6 +106,8 @@ export default function ZdogCube({
     illo.updateRenderGraph();
   }, []);
 
+  const renderAccum = useRef(0);
+
   useZdogManager((delta, gradColor) => {
     const illo = illoRef.current;
     const face = faceRef.current;
@@ -119,7 +121,11 @@ export default function ZdogCube({
       face.color = gradColor;
     }
 
-    illo.updateRenderGraph();
+    renderAccum.current += delta;
+    if (renderAccum.current >= 33) {
+      renderAccum.current = 0;
+      illo.updateRenderGraph();
+    }
   });
 
   return (

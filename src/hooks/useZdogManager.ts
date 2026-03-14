@@ -5,16 +5,22 @@ type UpdateCallback = (delta: number, gradColor: string) => void;
 const callbacks = new Set<UpdateCallback>();
 let rafId: number | null = null;
 let lastTime = 0;
+let cachedGradColor = "";
+let lastColorRead = 0;
+const COLOR_READ_INTERVAL = 200;
 
 function loop(time: number) {
   const delta = lastTime ? time - lastTime : 16;
   lastTime = time;
 
-  const gradColor = getComputedStyle(document.documentElement)
-    .getPropertyValue("--grad-start")
-    .trim();
+  if (time - lastColorRead > COLOR_READ_INTERVAL) {
+    cachedGradColor = getComputedStyle(document.documentElement)
+      .getPropertyValue("--grad-start")
+      .trim();
+    lastColorRead = time;
+  }
 
-  callbacks.forEach((cb) => cb(delta, gradColor));
+  callbacks.forEach((cb) => cb(delta, cachedGradColor));
   rafId = requestAnimationFrame(loop);
 }
 
