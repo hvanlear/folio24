@@ -9,9 +9,13 @@ interface ZdogCubeProps {
   velocityRef: MutableRefObject<number>;
 }
 
-const CSS_WIDTH = 59;
-const CSS_HEIGHT = 69;
-const CUBE_SIZE = 28;
+const CSS_WIDTH_SM = 32;
+const CSS_HEIGHT_SM = 38;
+const CUBE_SIZE_SM = 15;
+const CSS_WIDTH_LG = 59;
+const CSS_HEIGHT_LG = 69;
+const CUBE_SIZE_LG = 28;
+const BREAKPOINT = 768;
 const BASE_SPEED = 0.0008;
 const VELOCITY_MULTIPLIER = 0.0003;
 
@@ -23,6 +27,11 @@ export default function ZdogCube({
   const illoRef = useRef<Zdog.Illustration | null>(null);
   const faceRef = useRef<Zdog.Rect | null>(null);
 
+  const isSmall = typeof window !== "undefined" && window.innerWidth < BREAKPOINT;
+  const cssWidth = isSmall ? CSS_WIDTH_SM : CSS_WIDTH_LG;
+  const cssHeight = isSmall ? CSS_HEIGHT_SM : CSS_HEIGHT_LG;
+  const cubeSize = isSmall ? CUBE_SIZE_SM : CUBE_SIZE_LG;
+
   const strokeColor = isDark ? "white" : "#212529";
 
   useEffect(() => {
@@ -30,15 +39,15 @@ export default function ZdogCube({
     if (!canvas) return;
 
     const dpr = window.devicePixelRatio || 1;
-    canvas.width = CSS_WIDTH * dpr;
-    canvas.height = CSS_HEIGHT * dpr;
+    canvas.width = cssWidth * dpr;
+    canvas.height = cssHeight * dpr;
 
     const illo = new Zdog.Illustration({
       element: canvas,
       zoom: dpr,
     });
 
-    const h = CUBE_SIZE / 2;
+    const h = cubeSize / 2;
 
     // 8 vertices of the cube
     const v = [
@@ -78,8 +87,8 @@ export default function ZdogCube({
     // One filled face (right side) for the gradient color
     const face = new Zdog.Rect({
       addTo: illo,
-      width: CUBE_SIZE,
-      height: CUBE_SIZE,
+      width: cubeSize,
+      height: cubeSize,
       translate: { x: h, y: 0, z: 0 },
       rotate: { y: Zdog.TAU / 4 },
       stroke: false,
@@ -114,10 +123,10 @@ export default function ZdogCube({
   });
 
   return (
-    <span className="cube ml-10 mr-10 h-full flex items-center">
+    <span className="cube ml-4 mr-4 md:ml-10 md:mr-10 h-full flex items-center">
       <canvas
         ref={canvasRef}
-        style={{ width: CSS_WIDTH, height: CSS_HEIGHT }}
+        style={{ width: cssWidth, height: cssHeight }}
       />
     </span>
   );
