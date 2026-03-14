@@ -3,6 +3,8 @@
 import SvgArrow from "../ui/SvgArrow";
 import ClippedGradientTicker from "../ui/ClippedGradientTicker/ClippedGradientTicker";
 import WelcomeLinks from "./WelcomeLinks";
+import TimeDisplay from "./TimeDisplay";
+import WeatherDisplay from "./WeatherDisplay";
 
 export default function Hero() {
 
@@ -60,6 +62,10 @@ export default function Hero() {
             >
               <h1 className="text-h1-clamp mt-0 mb-0 leading-none  ">Hunter</h1>
               <WelcomeLinks />
+              <div className="flex items-center gap-6 mt-4">
+                <TimeDisplay />
+                <WeatherDisplay />
+              </div>
             </div>
           </div>
         </div>
