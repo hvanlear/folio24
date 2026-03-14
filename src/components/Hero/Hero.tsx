@@ -62,7 +62,7 @@ export default function Hero() {
             >
               <h1 className="text-h1-clamp mt-0 mb-0 leading-none  ">Hunter</h1>
               <WelcomeLinks />
-              <div className="flex items-center gap-6 mt-4">
+              <div className="flex items-start gap-6 mt-4">
                 <TimeDisplay />
                 <WeatherDisplay />
               </div>

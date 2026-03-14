@@ -48,11 +48,16 @@ export default function WeatherDisplay() {
   }
 
   return (
-    <div className="flex items-center gap-1">
-      <span className="text-xl">{emoji}</span>
-      <span className="text-sm font-semibold">
-        {temp !== null ? `${temp}\u00B0` : "--\u00B0"}
-      </span>
+    <div>
+      <div className="flex items-center gap-1 h-[1.75rem]">
+        <span className="text-xl leading-none">{emoji}</span>
+        <span className="text-sm font-semibold">
+          {temp !== null ? `${temp}\u00B0` : "--\u00B0"}
+        </span>
+      </div>
+      <div className="text-xs text-stone-400 uppercase tracking-wide mt-1">
+        Raleigh, NC
+      </div>
     </div>
   );
 }
