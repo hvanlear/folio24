@@ -1,26 +1,27 @@
 import React from "react";
 import Ticker from "./Ticker";
+import TornEdge from "./TornEdge";
 
 interface ClippedGradientTickerProps {
   containerClipPath: string;
-  gradientClipPath: string;
   gradientTop: string;
   tickerWords: string[];
   baseVelocity?: number;
   isDark?: boolean;
   containerHeight?: string;
   tickerAlign?: "center" | "end";
+  tornEdgeVariant?: "standard" | "footer";
 }
 
 export default function ClippedGradientTicker({
   containerClipPath,
-  gradientClipPath,
   gradientTop,
   tickerWords,
   baseVelocity = 0.5,
   isDark = false,
   containerHeight = "h-52",
   tickerAlign = "center",
+  tornEdgeVariant = "standard",
 }: ClippedGradientTickerProps) {
   const bgColor = isDark ? "bg-stone-950" : "bg-white";
   const gridClass = isDark
@@ -32,20 +33,7 @@ export default function ClippedGradientTicker({
       style={{ clipPath: containerClipPath }}
       className={`${bgColor} z-0 relative ${containerHeight} flex ${gridClass}`}
     >
-      <div
-        className="gradient-clip"
-        style={{
-          clipPath: gradientClipPath,
-          backgroundImage: "linear-gradient(90deg, var(--grad-start), var(--grad-end))",
-          position: "absolute",
-          left: 0,
-          top: gradientTop,
-          right: 0,
-          height: "100%",
-          zIndex: 9,
-          transition: "all 0.05s linear",
-        }}
-      ></div>
+      <TornEdge variant={tornEdgeVariant} top={gradientTop} />
       <div className={`w-full flex ${tickerAlign === "end" ? "h-auto mt-auto pb-4" : "h-full items-center"}`}>
         <Ticker
           baseVelocity={baseVelocity}

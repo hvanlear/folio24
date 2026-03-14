@@ -32,7 +32,6 @@ export default function ContactPage() {
         <section id="section-ticker" className="w-full overflow-hidden z-20">
           <ClippedGradientTicker
             containerClipPath="polygon(0 0%, 100% 0, 100% 24%, 0 98%)"
-            gradientClipPath="polygon(0px 72%, 100% 0px, 100% 25%, 0px 97%)"
             gradientTop="18%"
             tickerWords={["Connect", "Parlay", "Chat", "Colab"]}
             isDark={true}

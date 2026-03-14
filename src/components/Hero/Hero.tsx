@@ -29,7 +29,6 @@ export default function Hero() {
       >
         <ClippedGradientTicker
           containerClipPath="polygon(0 0%, 100% 0, 100% 25%, 0 98%)"
-          gradientClipPath="polygon(0px 72%, 100% 0px, 100% 25%, 0px 97%)"
           gradientTop="18%"
           tickerWords={[
             "UX Engineer",

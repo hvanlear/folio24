@@ -17,11 +17,11 @@ export default function Footer() {
       >
         <ClippedGradientTicker
           containerClipPath="polygon(0px 68%, 100% 0px, 100% 100%, 0px 100%)"
-          gradientClipPath="polygon( 0% 0%, 100% 0%, 100% 13%, -68% 129%)"
           gradientTop="-5%"
           tickerWords={["Thanks!", "Take Care", "👋", "Adios"]}
           containerHeight="h-64"
           tickerAlign="end"
+          tornEdgeVariant="footer"
         />
       </section>
     </>
