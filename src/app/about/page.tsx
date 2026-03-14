@@ -3,7 +3,6 @@
 import ClippedGradientTicker from "@/src/components/ui/ClippedGradientTicker/ClippedGradientTicker";
 import ContactInfoBasic from "@/src/components/Contact/ContactInfoBasic";
 
-import useCycleGradients from "@/src/hooks/useCycleGradients";
 import useWindowSize from "@/src/hooks/useWindowSize";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
@@ -30,8 +29,6 @@ export default function ArchivePage() {
     damping: 20,
   });
 
-  const { gradient } = useCycleGradients();
-
   return (
     <>
       <main className="relative ">
@@ -41,7 +38,6 @@ export default function ArchivePage() {
             gradientClipPath="polygon(0px 72%, 100% 0px, 100% 25%, 0px 97%)"
             gradientTop="18%"
             tickerWords={["Husband", "Brother", "Traveler", "Nerd", "Funcle"]}
-            gradient={gradient}
             isDark={true}
           />
         </section>

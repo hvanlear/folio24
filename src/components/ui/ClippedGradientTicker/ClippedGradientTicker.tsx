@@ -6,7 +6,6 @@ interface ClippedGradientTickerProps {
   gradientClipPath: string;
   gradientTop: string;
   tickerWords: string[];
-  gradient: string;
   baseVelocity?: number;
   isDark?: boolean;
 }
@@ -16,7 +15,6 @@ export default function ClippedGradientTicker({
   gradientClipPath,
   gradientTop,
   tickerWords,
-  gradient,
   baseVelocity = 0.5,
   isDark = false,
 }: ClippedGradientTickerProps) {
@@ -34,7 +32,7 @@ export default function ClippedGradientTicker({
         className="gradient-clip"
         style={{
           clipPath: gradientClipPath,
-          backgroundImage: gradient,
+          backgroundImage: "linear-gradient(90deg, var(--grad-start), var(--grad-end))",
           position: "absolute",
           left: 0,
           top: gradientTop,

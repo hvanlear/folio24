@@ -2,10 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+@property --grad-start {
+  syntax: '<color>';
+  initial-value: rgb(251, 237, 150);
+  inherits: true;
+}
+@property --grad-end {
+  syntax: '<color>';
+  initial-value: rgb(171, 236, 214);
+  inherits: true;
+}
+
+@keyframes cycle-gradient {
+  0%, 100% {
+    --grad-start: rgb(251, 237, 150);
+    --grad-end: rgb(171, 236, 214);
+  }
+  33.33% {
+    --grad-start: rgb(235, 187, 250);
+    --grad-end: rgb(168, 236, 234);
+  }
+  66.67% {
+    --grad-start: rgb(255, 182, 193);
+    --grad-end: rgb(250, 235, 215);
+  }
+}
+
 html {
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  animation: cycle-gradient 15s linear infinite;
 }
 
 ::-moz-selection {

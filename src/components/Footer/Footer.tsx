@@ -4,10 +4,7 @@
 "use client";
 import ClippedGradientTicker from "../ui/ClippedGradientTicker/ClippedGradientTicker";
 
-import useCycleGradients from "@/src/hooks/useCycleGradients";
-
 export default function Footer() {
-  const { gradient } = useCycleGradients();
 
   return (
     <>
@@ -23,7 +20,6 @@ export default function Footer() {
           gradientClipPath="polygon( 0% 0%, 100% 0%, 100% 13%, -68% 129%)"
           gradientTop="-5%"
           tickerWords={["Thanks!", "Take Care", "👋", "Adios"]}
-          gradient={gradient}
         />
       </section>
     </>

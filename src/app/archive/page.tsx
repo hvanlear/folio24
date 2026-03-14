@@ -5,7 +5,6 @@ import ContactInfoBasic from "@/src/components/Contact/ContactInfoBasic";
 import ArchiveSlat from "@/src/components/ui/ArchiveSlat";
 import { getProjectsByType, ProjectType } from "@/src/utils/projectData";
 
-import useCycleGradients from "@/src/hooks/useCycleGradients";
 import useWindowSize from "@/src/hooks/useWindowSize";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
@@ -30,8 +29,6 @@ export default function ArchivePage() {
     damping: 20,
   });
 
-  const { gradient } = useCycleGradients();
-
   return (
     <>
       <main className="relative ">
@@ -41,7 +38,6 @@ export default function ArchivePage() {
             gradientClipPath="polygon(0px 72%, 100% 0px, 100% 25%, 0px 97%)"
             gradientTop="18%"
             tickerWords={["Work", "Projects", "Jobs", "Gigs"]}
-            gradient={gradient}
             isDark={true}
           />
         </section>

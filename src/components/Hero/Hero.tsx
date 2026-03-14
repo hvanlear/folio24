@@ -1,13 +1,10 @@
 "use client";
 
-import useCycleGradients from "@/src/hooks/useCycleGradients";
 import SvgArrow from "../ui/SvgArrow";
 import ClippedGradientTicker from "../ui/ClippedGradientTicker/ClippedGradientTicker";
 import WelcomeLinks from "./WelcomeLinks";
 
 export default function Hero() {
-  //cycle gradients
-  const { gradient } = useCycleGradients();
 
   return (
     <>
@@ -38,7 +35,6 @@ export default function Hero() {
             "UI Designer",
             "User Advocate",
           ]}
-          gradient={gradient}
         />
       </section>
       <section id="section-welcome w-full">

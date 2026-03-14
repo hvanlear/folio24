@@ -4,7 +4,6 @@ import ClippedGradientTicker from "@/src/components/ui/ClippedGradientTicker/Cli
 import ContactInfoBasic from "@/src/components/Contact/ContactInfoBasic";
 import ContactFormLight from "@/src/components/Contact/ContactFormLight";
 
-import useCycleGradients from "@/src/hooks/useCycleGradients";
 import useWindowSize from "@/src/hooks/useWindowSize";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
@@ -27,8 +26,6 @@ export default function ContactPage() {
     damping: 20,
   });
 
-  const { gradient } = useCycleGradients();
-
   return (
     <>
       <main className="relative ">
@@ -38,7 +35,6 @@ export default function ContactPage() {
             gradientClipPath="polygon(0px 72%, 100% 0px, 100% 25%, 0px 97%)"
             gradientTop="18%"
             tickerWords={["Connect", "Parlay", "Chat", "Colab"]}
-            gradient={gradient}
             isDark={true}
           />
         </section>

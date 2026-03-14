@@ -1,19 +1,9 @@
-import useCycleGradients from "@/src/hooks/useCycleGradients";
-
 interface CubeProps {
   isDark?: boolean;
 }
 
 export function Cube({ isDark = false }: CubeProps) {
-  const { gradient } = useCycleGradients();
   const strokeColor = isDark ? "white" : "#212529";
-
-  // Extract colors from the gradient string
-  const colorMatches = gradient.match(/rgba?\([\d,\s]+\)/g);
-  const startColor =
-    colorMatches && colorMatches[0] ? colorMatches[0] : "rgba(0,0,0,0)";
-  const endColor =
-    colorMatches && colorMatches[1] ? colorMatches[1] : "rgba(0,0,0,0)";
 
   return (
     <span className="cube ml-10 mr-10 h-full flex items-center ">
@@ -70,8 +60,8 @@ export function Cube({ isDark = false }: CubeProps) {
             y2="137.859"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor={startColor} />
-            <stop offset="1" stopColor={endColor} />
+            <stop stopColor="var(--grad-start)" />
+            <stop offset="1" stopColor="var(--grad-end)" />
           </linearGradient>
         </defs>
       </svg>
