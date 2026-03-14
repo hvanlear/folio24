@@ -79,7 +79,7 @@ export default function ZdogCube({
     new Zdog.Shape({
       addTo: illo,
       path,
-      stroke: 1,
+      stroke: 0.3,
       color: strokeColor,
       closed: false,
     });
