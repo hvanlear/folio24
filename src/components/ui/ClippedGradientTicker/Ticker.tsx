@@ -31,6 +31,7 @@ const ParallaxContainer = styled.div`
 `;
 
 const Scroller = styled(motion.div)`
+  font-family: var(--font-playfair), Georgia, serif;
   font-size: clamp(2rem, 4.5vw, 6rem);
   display: flex;
   white-space: nowrap;

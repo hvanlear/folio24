@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
-import { Figtree } from "next/font/google";
+import { Figtree, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import ClientLayout from "../components/layout/ClientLayout";
 import React from "react";
 
 const figtree = Figtree({ subsets: ["latin"] });
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+});
 
 export const metadata: Metadata = {
   title: "Hunter Van Lear",
@@ -18,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={figtree.className}>
+      <body className={`${figtree.className} ${playfair.variable}`}>
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>

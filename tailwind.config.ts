@@ -42,6 +42,7 @@ module.exports = {
       },
       fontFamily: {
         serif: ["Georgia", "Cambria", '"Times New Roman"', "Times", "serif"],
+        playfair: ["var(--font-playfair)", "Georgia", "serif"],
       },
       lineHeight: {
         none: "0.7",
