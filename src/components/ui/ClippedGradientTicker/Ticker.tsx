@@ -1,6 +1,6 @@
 import React from "react";
 import { useRef } from "react";
-import { Cube } from "@/src/assets/Cube";
+import ZdogCube from "./ZdogCube";
 import styled from "styled-components";
 import {
   motion,
@@ -66,7 +66,9 @@ export default function Ticker({
   const x = useTransform(baseX, (v) => `${wrap(0, -25, v)}%`);
 
   const directionFactor = useRef<number>(1);
+  const velocityRef = useRef<number>(0);
   useAnimationFrame((t, delta) => {
+    velocityRef.current = Math.abs(velocityFactor.get());
     let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
 
     /**
@@ -92,7 +94,7 @@ export default function Ticker({
     return words.map((word, index) => (
       <React.Fragment key={index}>
         <ScrollerSpan $isDark={isDark}>
-          <Cube isDark={isDark} />
+          <ZdogCube isDark={isDark} velocityRef={velocityRef} />
           <span className="h-full flex items-center"> {word}</span>
         </ScrollerSpan>
       </React.Fragment>
