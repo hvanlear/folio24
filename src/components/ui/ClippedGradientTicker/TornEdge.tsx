@@ -56,7 +56,7 @@ function toD(pts: Point[], cmd: "M" | "L" = "M"): string {
 
 // Standard: polygon(0px 72%, 100% 0px, 100% 25%, 0px 97%) → viewBox 0 0 1440 400
 const STD_TOP = tornLine({ x: 0, y: 288 }, { x: 1440, y: 0 }, 65, 12, 42);
-const STD_BTM = tornLine({ x: 1440, y: 100 }, { x: 0, y: 388 }, 65, 10, 137);
+const STD_BTM = tornLine({ x: 1440, y: 75 }, { x: 0, y: 360 }, 65, 10, 137);
 const STD_FILL = `${toD(STD_TOP)} ${toD(STD_BTM, "L")} Z`;
 const STD_STROKE = toD(STD_TOP);
 
@@ -71,8 +71,14 @@ interface TornEdgeProps {
 }
 
 export default function TornEdge({ variant = "standard", top }: TornEdgeProps) {
-  const gradId = `torn-grad-${useId()}`;
+  const uid = useId();
+  const gradId = `torn-grad-${uid}`;
+  const shadowId = `torn-shadow-${uid}`;
   const isStd = variant === "standard";
+
+  // SVG-coordinate values calibrated per viewBox to produce ~6–8px CSS shadow
+  const shadowDy = isStd ? 15 : 22;
+  const shadowBlur = isStd ? "3 10" : "3 15";
 
   return (
     <svg
@@ -89,12 +95,25 @@ export default function TornEdge({ variant = "standard", top }: TornEdgeProps) {
       }}
     >
       <defs>
+        <filter id={shadowId}>
+          <feDropShadow
+            dx="0"
+            dy={shadowDy}
+            stdDeviation={shadowBlur}
+            floodColor="black"
+            floodOpacity="0.5"
+          />
+        </filter>
         <linearGradient id={gradId} x1="0%" y1="0%" x2="100%" y2="0%">
           <stop offset="0%" stopColor="var(--grad-start)" />
           <stop offset="100%" stopColor="var(--grad-end)" />
         </linearGradient>
       </defs>
-      <path d={isStd ? STD_FILL : FTR_FILL} fill={`url(#${gradId})`} />
+      <path
+        d={isStd ? STD_FILL : FTR_FILL}
+        fill={`url(#${gradId})`}
+        filter={`url(#${shadowId})`}
+      />
       <path
         d={isStd ? STD_STROKE : FTR_STROKE}
         fill="none"
