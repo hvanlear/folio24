@@ -12,35 +12,19 @@ import { useScrollAnimation } from "@/src/hooks/useScrollAnimation";
 
 const OPTIONS: EmblaOptionsType = { loop: true };
 
-const calculateInitialY = (width: number) => {
-  if (width >= 2560) return -200; // for ultra-wide screens (e.g., 4K)
-  if (width >= 1920) return -350; // for XXL screens
-  if (width >= 1536) return -70; // for extra extra large screens
-  if (width >= 1280) return -250; // for extra large screens
-  if (width >= 1024) return -100; // for large screens
-  if (width >= 768) return -100; // for medium screens
-  if (width >= 640) return -100; // for small screens
-  return -20; // for extra small screens
-};
 export default function WorkAnimation() {
-  const [width] = useWindowSize();
+  const [, height] = useWindowSize();
 
-  const initialHeight = useMemo(() => {
-    if (width >= 2560) return "100rem"; // Ultra-wide screens (e.g., 4K)
-    if (width >= 1920) return "95rem"; // XXL screens
-    if (width >= 1536) return "50rem"; // Extra extra large screens and above
-    if (width >= 1280) return "48rem"; // Extra large screens
-    if (width >= 1024) return "46rem"; // Large screens
-    if (width >= 768) return "44rem"; // Medium screens
-    if (width >= 640) return "24rem"; // Small screens
-    return "30rem"; // Extra small screens
-  }, [width]);
-
+  // All animation values scale with viewport height
   const maxGrowth = useMemo(() => {
-    return width <= 768 ? 300 : 300;
-  }, [width]);
+    if (!height) return 200;
+    return Math.round(height * 0.25);
+  }, [height]);
 
-  const initialY = useMemo(() => calculateInitialY(width), [width]);
+  const initialY = useMemo(() => {
+    if (!height) return -100;
+    return Math.round(-height * 0.15);
+  }, [height]);
 
   const { ref, springGrowth } = useScrollAnimation(maxGrowth);
 
@@ -51,12 +35,12 @@ export default function WorkAnimation() {
       style={{
         height: useTransform(
           springGrowth,
-          (latest) => `calc(${initialHeight} + ${latest}px)`
+          (latest) => `calc(85vh + ${latest}px)`
         ),
         marginTop: useTransform(springGrowth, (latest) => `-${latest}px`),
       }}
     >
-      <div className="h-full relative rounded-tl-[5rem] rounded-tr-[5rem] bg-white flex items-center">
+      <div className="h-full relative rounded-tl-[5rem] rounded-tr-[5rem] bg-white flex items-center overflow-hidden">
         <div className="h-full w-full flex items-center">
           <motion.div
             className="text-30xl absolute text-stone-950 font-bold z-0"
@@ -64,7 +48,7 @@ export default function WorkAnimation() {
               y: useTransform(
                 springGrowth,
                 [0, maxGrowth],
-                [initialY, initialY - maxGrowth],
+                [initialY, initialY - maxGrowth * 0.5],
                 { clamp: true }
               ),
             }}
