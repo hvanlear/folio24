@@ -13,7 +13,7 @@ import { useScrollAnimation } from "@/src/hooks/useScrollAnimation";
 const OPTIONS: EmblaOptionsType = { loop: true };
 
 export default function WorkAnimation() {
-  const [, height] = useWindowSize();
+  const [width, height] = useWindowSize();
 
   // All animation values scale with viewport height
   const maxGrowth = useMemo(() => {
@@ -35,15 +35,15 @@ export default function WorkAnimation() {
       style={{
         height: useTransform(
           springGrowth,
-          (latest) => `calc(85vh + ${latest}px)`
+          (latest) => `calc(${width < 768 ? "65vh" : "85vh"} + ${latest}px)`
         ),
         marginTop: useTransform(springGrowth, (latest) => `-${latest}px`),
       }}
     >
-      <div className="h-full relative rounded-tl-[5rem] rounded-tr-[5rem] bg-white flex items-center overflow-hidden">
+      <div className="h-full relative rounded-tl-[clamp(1.5rem,5vw,5rem)] rounded-tr-[clamp(1.5rem,5vw,5rem)] bg-white flex items-center overflow-hidden">
         <div className="h-full w-full flex items-center">
           <motion.div
-            className="text-30xl absolute text-stone-950 font-bold z-0"
+            className="absolute text-stone-950 font-bold z-0"
             style={{
               y: useTransform(
                 springGrowth,
@@ -53,7 +53,7 @@ export default function WorkAnimation() {
               ),
             }}
           >
-            <h1 className="leading-none px-8 md:pl-8">Work</h1>
+            <h1 className="leading-none px-8 md:pl-8 text-[clamp(7rem,25vw,20rem)]">Work</h1>
           </motion.div>
           <div className="text-3xl text-stone-950 absolute left-0 z-10 w-full ">
             <Carousel projects={projects} options={OPTIONS} />
