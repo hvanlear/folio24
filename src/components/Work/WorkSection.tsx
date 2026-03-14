@@ -22,9 +22,9 @@ export default function WorkAnimation() {
   }, [height]);
 
   const initialY = useMemo(() => {
-    if (!height) return -100;
-    return Math.round(-height * 0.15);
-  }, [height]);
+    if (!width) return -60;
+    return -Math.round(Math.max(60, Math.min(width * 0.05, 90)));
+  }, [width]);
 
   const { ref, springGrowth } = useScrollAnimation(maxGrowth);
 
@@ -35,7 +35,7 @@ export default function WorkAnimation() {
       style={{
         height: useTransform(
           springGrowth,
-          (latest) => `calc(${width < 768 ? "65vh" : "85vh"} + ${latest}px)`
+          (latest) => `calc(${width < 768 ? "65vh" : "min(85vh, 55rem)"} + ${latest}px)`
         ),
         marginTop: useTransform(springGrowth, (latest) => `-${latest}px`),
       }}
@@ -53,7 +53,7 @@ export default function WorkAnimation() {
               ),
             }}
           >
-            <h1 className="leading-none px-8 md:pl-8 text-[clamp(7rem,25vw,20rem)]">Work</h1>
+            <h1 className="leading-none px-8 md:pl-8 text-[clamp(10rem,40vw,25rem)]">Work</h1>
           </motion.div>
           <div className="text-3xl text-stone-950 absolute left-0 z-10 w-full ">
             <Carousel projects={projects} options={OPTIONS} />

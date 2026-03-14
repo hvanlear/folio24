@@ -11,22 +11,16 @@ interface ContactProps {
 }
 
 export default function Contact({ contactClass }: ContactProps) {
-  const [width] = useWindowSize();
+  const [width, height] = useWindowSize();
 
   const maxGrowth = useMemo(() => {
-    if (width < 640) return 300;
-    if (width < 768) return 400;
-    if (width < 1024) return 500;
-    return 200;
-  }, [width]);
+    if (!height) return 200;
+    return Math.round(height * 0.25);
+  }, [height]);
 
   const { ref, springGrowth } = useScrollAnimation(maxGrowth);
 
-  const initialHeight = useMemo(() => {
-    if (width < 640) return "45rem";
-    if (width < 768) return "25rem";
-    return "40rem";
-  }, [width]);
+  const initialHeight = width < 768 ? "65vh" : "min(85vh, 55rem)";
 
   return (
     <motion.section
@@ -40,7 +34,7 @@ export default function Contact({ contactClass }: ContactProps) {
         marginTop: useTransform(springGrowth, (latest) => `-${latest}px`),
       }}
     >
-      <div className="h-full rounded-tl-[5rem] rounded-tr-[5rem] bg-stone-950 relative">
+      <div className="h-full rounded-tl-[clamp(1.5rem,5vw,5rem)] rounded-tr-[clamp(1.5rem,5vw,5rem)] bg-stone-950 relative">
         <motion.div
           className="contact-container_inner-animated absolute bottom-0 left-0 right-0"
           style={{
