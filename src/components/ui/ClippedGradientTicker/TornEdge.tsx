@@ -76,9 +76,12 @@ export default function TornEdge({ variant = "standard", top }: TornEdgeProps) {
   const shadowId = `torn-shadow-${uid}`;
   const isStd = variant === "standard";
 
-  // SVG-coordinate values calibrated per viewBox to produce ~6–8px CSS shadow
-  const shadowDy = isStd ? 15 : 22;
-  const shadowBlur = isStd ? "3 10" : "3 15";
+  // Standard: shadow goes UP (negative dy) because the gradient is ABOVE the
+  // torn edge and the clip-path clips everything below it.
+  // Footer: shadow goes DOWN (positive dy) because the clip-path extends to
+  // 100% below the torn edge, giving the shadow room to render.
+  const shadowDy = isStd ? -6 : 8;
+  const shadowBlur = isStd ? "2 4" : "2 6";
 
   return (
     <svg
