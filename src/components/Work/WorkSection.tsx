@@ -3,55 +3,40 @@
 
 import "../ui/Carousel/carousel.css";
 import useWindowSize from "@/src/hooks/useWindowSize";
-import { useMemo } from "react";
-import { motion, useTransform } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { EmblaOptionsType } from "embla-carousel";
 import { projects } from "@/src/utils/projectData";
 import Carousel from "../ui/Carousel/Carousel";
-import { useScrollAnimation } from "@/src/hooks/useScrollAnimation";
 
 const OPTIONS: EmblaOptionsType = { loop: true };
 
 export default function WorkAnimation() {
-  const [width, height] = useWindowSize();
+  const [width] = useWindowSize();
+  const ref = useRef<HTMLElement>(null);
 
-  // All animation values scale with viewport height
-  const maxGrowth = useMemo(() => {
-    if (!height) return 200;
-    return Math.round(height * 0.25);
-  }, [height]);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
 
-  const initialY = useMemo(() => {
-    if (!width) return -60;
-    return -Math.round(Math.max(60, Math.min(width * 0.05, 90)));
-  }, [width]);
-
-  const { ref, springGrowth } = useScrollAnimation(maxGrowth);
+  const initialY = !width ? -60 : -Math.round(Math.max(60, Math.min(width * 0.05, 90)));
+  const wordY = useTransform(scrollYProgress, [0, 1], [0, initialY * 3]);
 
   return (
-    <motion.section
+    <section
       ref={ref}
       className="work-container"
       style={{
-        height: useTransform(
-          springGrowth,
-          (latest) => `calc(${width < 768 ? "65vh" : "min(85vh, 55rem)"} + ${latest}px)`
-        ),
-        marginTop: useTransform(springGrowth, (latest) => `-${latest}px`),
+        height: width < 768 ? "65vh" : "min(85vh, 55rem)",
+        marginTop: "-6rem",
       }}
     >
       <div className="h-full relative rounded-tl-[clamp(1.5rem,5vw,5rem)] rounded-tr-[clamp(1.5rem,5vw,5rem)] bg-white flex items-center overflow-hidden">
         <div className="h-full w-full flex items-center">
           <motion.div
             className="absolute text-stone-950 font-bold z-0"
-            style={{
-              y: useTransform(
-                springGrowth,
-                [0, maxGrowth],
-                [initialY, initialY - maxGrowth * 0.5],
-                { clamp: true }
-              ),
-            }}
+            style={{ y: wordY }}
           >
             <h1 className="leading-none px-8 md:pl-8 text-[clamp(10rem,40vw,25rem)]">Work</h1>
           </motion.div>
@@ -60,6 +45,6 @@ export default function WorkAnimation() {
           </div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }

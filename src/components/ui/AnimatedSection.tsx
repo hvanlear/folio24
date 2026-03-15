@@ -1,13 +1,7 @@
 "use client";
 import React, { ReactNode, useRef } from "react";
 import styled from "styled-components";
-import {
-  motion,
-  useTransform,
-  useScroll,
-  useSpring,
-  useInView,
-} from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 interface AnimatedSectionProps {
   children: ReactNode;
@@ -38,23 +32,9 @@ export default function AnimatedSection({
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], [200, 0]);
-  const springY = useSpring(y, {
-    stiffness: 60,
-    damping: 20,
-  });
-
   return (
     <ResponsiveDiv
       ref={ref}
-      style={{
-        y: springY,
-      }}
       initial={{ opacity: 0 }}
       animate={isInView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 0.5 }}
