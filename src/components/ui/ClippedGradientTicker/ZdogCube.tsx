@@ -7,6 +7,7 @@ import { useZdogManager } from "@/src/hooks/useZdogManager";
 interface ZdogCubeProps {
   isDark?: boolean;
   velocityRef: MutableRefObject<number>;
+  isVisibleRef: MutableRefObject<boolean>;
 }
 
 const CSS_WIDTH_SM = 32;
@@ -22,6 +23,7 @@ const VELOCITY_MULTIPLIER = 0.0003;
 export default function ZdogCube({
   isDark = false,
   velocityRef,
+  isVisibleRef,
 }: ZdogCubeProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const illoRef = useRef<Zdog.Illustration | null>(null);
@@ -38,7 +40,7 @@ export default function ZdogCube({
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const dpr = window.devicePixelRatio || 1;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
     canvas.width = cssWidth * dpr;
     canvas.height = cssHeight * dpr;
 
@@ -112,6 +114,7 @@ export default function ZdogCube({
     const illo = illoRef.current;
     const face = faceRef.current;
     if (!illo || !face) return;
+    if (!isVisibleRef.current) return;
 
     const velocity = velocityRef.current;
     const speed = BASE_SPEED + Math.abs(velocity) * VELOCITY_MULTIPLIER;

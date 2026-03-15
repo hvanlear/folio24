@@ -1,5 +1,5 @@
 import React from "react";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import ZdogCube from "./ZdogCube";
 import styled from "styled-components";
 import {
@@ -68,7 +68,23 @@ export default function Ticker({
 
   const directionFactor = useRef<number>(1);
   const velocityRef = useRef<number>(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isVisible = useRef(true);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { isVisible.current = entry.isIntersecting; },
+      { threshold: 0 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   useAnimationFrame((t, delta) => {
+    if (!isVisible.current) return;
+
     velocityRef.current = Math.abs(velocityFactor.get());
     let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
 
@@ -95,7 +111,7 @@ export default function Ticker({
     return words.map((word, index) => (
       <React.Fragment key={index}>
         <ScrollerSpan $isDark={isDark}>
-          <ZdogCube isDark={isDark} velocityRef={velocityRef} />
+          <ZdogCube isDark={isDark} velocityRef={velocityRef} isVisibleRef={isVisible} />
           <span className="h-full flex items-center"> {word}</span>
         </ScrollerSpan>
       </React.Fragment>
@@ -110,7 +126,7 @@ export default function Ticker({
    * dynamically generated number of children.
    */
   return (
-    <ParallaxContainer>
+    <ParallaxContainer ref={containerRef}>
       <Scroller style={{ x }}>
         {renderContent()}
         {renderContent()}
