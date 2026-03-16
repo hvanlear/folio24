@@ -116,10 +116,6 @@ export default function ZdogCube({
     if (!illo || !face) return;
     if (!isVisibleRef.current) return;
 
-    const velocity = velocityRef.current;
-    const speed = BASE_SPEED + Math.abs(velocity) * VELOCITY_MULTIPLIER;
-    illo.rotate.y += speed * delta;
-
     if (gradColor) {
       face.color = gradColor;
     }

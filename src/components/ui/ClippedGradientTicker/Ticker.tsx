@@ -64,7 +64,7 @@ export default function Ticker({
    * have to replace for wrapping that works for you or dynamically
    * calculate
    */
-  const x = useTransform(baseX, (v) => `${wrap(0, -25, v)}%`);
+  const x = useTransform(baseX, (v) => `${v}%`);
 
   const directionFactor = useRef<number>(1);
   const velocityRef = useRef<number>(0);
@@ -100,7 +100,7 @@ export default function Ticker({
 
     moveBy += directionFactor.current * moveBy * velocityFactor.get();
 
-    baseX.set(baseX.get() + moveBy);
+    baseX.set(wrap(0, -25, baseX.get() + moveBy));
   });
 
   const renderContent = () => {
