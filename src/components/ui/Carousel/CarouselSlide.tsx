@@ -19,7 +19,7 @@ const CarouselSlide: React.FC<CarouselSlideProps> = ({ project }) => {
             alt={title}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             priority
-            className="embla__slide__img max-h-[272px] 3xl:max-h-[594px] transition-all duration-300 ease-in-out hover:scale-[1.02]"
+            className="embla__slide__img h-full transition-all duration-300 ease-in-out hover:scale-[1.02]"
           />
         </div>
         <h3 className="embla__slide__title">{title}</h3>

@@ -4,7 +4,7 @@
 import "../ui/Carousel/carousel.css";
 import useWindowSize from "@/src/hooks/useWindowSize";
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { EmblaOptionsType } from "embla-carousel";
 import { projects } from "@/src/utils/projectData";
 import Carousel from "../ui/Carousel/Carousel";
@@ -21,14 +21,15 @@ export default function WorkAnimation() {
   });
 
   const initialY = !width ? -60 : -Math.round(Math.max(60, Math.min(width * 0.05, 90)));
-  const wordY = useTransform(scrollYProgress, [0, 1], [0, initialY * 3]);
+  const rawY = useTransform(scrollYProgress, [0, 1], [initialY * 1.5, initialY * 3.5]);
+  const wordY = useSpring(rawY, { stiffness: 40, damping: 20, mass: 1.5 });
 
   return (
     <section
       ref={ref}
       className="work-container"
       style={{
-        height: width < 768 ? "65vh" : "min(85vh, 55rem)",
+        height: width < 768 ? "80vh" : "min(85vh, 55rem)",
         marginTop: "-6rem",
       }}
     >
