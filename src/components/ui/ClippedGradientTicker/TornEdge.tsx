@@ -60,10 +60,15 @@ const STD_BTM = tornLine({ x: 1440, y: 75 }, { x: 0, y: 360 }, 65, 10, 137);
 const STD_FILL = `${toD(STD_TOP)} ${toD(STD_BTM, "L")} Z`;
 const STD_STROKE = toD(STD_TOP);
 
-// Footer: polygon(0% 0%, 100% 0%, 100% 13%, -68% 129%) → viewBox 0 0 1440 600
-const FTR_DIAG = tornLine({ x: 1440, y: 78 }, { x: -979, y: 774 }, 80, 12, 99);
-const FTR_FILL = `M0,0 L1440,0 ${toD(FTR_DIAG, "L")} Z`;
-const FTR_STROKE = toD(FTR_DIAG);
+// Footer: two parallel torn lines forming the gradient band
+// Bottom edge (toward white/ticker area):
+const FTR_BTM = tornLine({ x: 1440, y: 78 }, { x: -979, y: 774 }, 80, 12, 99);
+// Top edge (toward dark area) — same angle, shifted ~78px up:
+const FTR_TOP = tornLine({ x: -979, y: 696 }, { x: 1440, y: 0 }, 80, 12, 211);
+// Fill between the two torn lines (top goes L→R, bottom goes R→L, closing the shape)
+const FTR_FILL = `${toD(FTR_TOP)} ${toD(FTR_BTM, "L")} Z`;
+const FTR_BTM_STROKE = toD(FTR_BTM);
+const FTR_TOP_STROKE = toD(FTR_TOP);
 
 interface TornEdgeProps {
   variant?: "standard" | "footer";
@@ -118,12 +123,21 @@ export default function TornEdge({ variant = "standard", top }: TornEdgeProps) {
         filter={`url(#${shadowId})`}
       />
       <path
-        d={isStd ? STD_STROKE : FTR_STROKE}
+        d={isStd ? STD_STROKE : FTR_BTM_STROKE}
         fill="none"
         stroke="black"
         strokeWidth={0.5}
         vectorEffect="non-scaling-stroke"
       />
+      {!isStd && (
+        <path
+          d={FTR_TOP_STROKE}
+          fill="none"
+          stroke="black"
+          strokeWidth={0.5}
+          vectorEffect="non-scaling-stroke"
+        />
+      )}
     </svg>
   );
 }

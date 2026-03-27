@@ -10,12 +10,12 @@ interface ZdogCubeProps {
   isVisibleRef: MutableRefObject<boolean>;
 }
 
-const CSS_WIDTH_SM = 32;
-const CSS_HEIGHT_SM = 38;
-const CUBE_SIZE_SM = 15;
-const CSS_WIDTH_LG = 59;
-const CSS_HEIGHT_LG = 69;
-const CUBE_SIZE_LG = 28;
+const CSS_WIDTH_SM = 48;
+const CSS_HEIGHT_SM = 57;
+const CUBE_SIZE_SM = 23;
+const CSS_WIDTH_LG = 89;
+const CSS_HEIGHT_LG = 104;
+const CUBE_SIZE_LG = 42;
 const BREAKPOINT = 768;
 const BASE_SPEED = 0.0008;
 const VELOCITY_MULTIPLIER = 0.0003;
@@ -115,6 +115,10 @@ export default function ZdogCube({
     const face = faceRef.current;
     if (!illo || !face) return;
     if (!isVisibleRef.current) return;
+
+    const velocity = velocityRef.current;
+    const speed = BASE_SPEED + Math.abs(velocity) * VELOCITY_MULTIPLIER;
+    illo.rotate.y += speed * delta;
 
     if (gradColor) {
       face.color = gradColor;

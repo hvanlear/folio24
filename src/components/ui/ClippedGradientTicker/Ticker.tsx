@@ -22,7 +22,6 @@ interface ParallaxProps {
 const ParallaxContainer = styled.div`
   overflow: hidden;
   letter-spacing: -2px;
-  line-height: 0.8;
   white-space: nowrap;
   display: flex;
   flex-wrap: nowrap;
