@@ -8,10 +8,12 @@ import Footer from "../components/Footer/Footer";
 export default function Home() {
   return (
     <LayoutProvider>
-      <Hero />
-      <WorkSection />
-      <Contact />
-      <Footer />
+      <div className="bg-stone-50">
+        <Hero />
+        <WorkSection />
+        <Contact />
+        <Footer />
+      </div>
     </LayoutProvider>
   );
 }

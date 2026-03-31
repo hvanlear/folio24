@@ -2,50 +2,43 @@
 "use client";
 
 import "../ui/Carousel/carousel.css";
-import useWindowSize from "@/src/hooks/useWindowSize";
 import { useRef } from "react";
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { useScroll, useSpring, useTransform } from "framer-motion";
 import { EmblaOptionsType } from "embla-carousel";
 import { projects } from "@/src/utils/projectData";
 import Carousel from "../ui/Carousel/Carousel";
+import SectionCardLayout from "../ui/SectionCardLayout";
 
 const OPTIONS: EmblaOptionsType = { loop: true };
 
 export default function WorkAnimation() {
-  const [width] = useWindowSize();
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
   });
 
-  const initialY = !width ? -60 : -Math.round(Math.max(60, Math.min(width * 0.05, 90)));
-  const rawY = useTransform(scrollYProgress, [0, 1], [initialY * 1.5, initialY * 3.5]);
-  const wordY = useSpring(rawY, { stiffness: 40, damping: 20, mass: 1.5 });
+  const rawY = useTransform(scrollYProgress, [0, 1], [0, 60]);
+  const wordY = useSpring(rawY, { stiffness: 60, damping: 20 });
 
   return (
-    <section
-      ref={ref}
-      className="work-container"
-      style={{
-        height: width < 768 ? "80vh" : "min(85vh, 55rem)",
-        marginTop: "-6rem",
-      }}
-    >
-      <div className="h-full relative rounded-tl-[clamp(1.5rem,5vw,5rem)] rounded-tr-[clamp(1.5rem,5vw,5rem)] bg-white border-x-2 border-t-2 border-stone-600 flex items-center overflow-hidden">
-        <div className="h-full w-full flex items-center">
-          <motion.div
-            className="absolute text-stone-950 font-bold z-0"
-            style={{ y: wordY }}
-          >
-            <h1 className="leading-none px-8 md:pl-8 text-[clamp(10rem,40vw,25rem)]">Work</h1>
-          </motion.div>
-          <div className="text-3xl text-stone-950 absolute left-0 z-10 w-full ">
-            <Carousel projects={projects} options={OPTIONS} />
-          </div>
+    <div ref={ref} className="mt-12">
+      <SectionCardLayout
+        heading="Work"
+        headingMotionProps={{
+          style: { y: wordY },
+          initial: { y: -100, opacity: 0 },
+          animate: { y: 30, opacity: 1 },
+          transition: { duration: 0.8, ease: "easeOut" },
+        }}
+        cardClassName="bg-stone-50"
+        innerClassName="min-h-[50rem] 2xl:min-h-[70vh]"
+      >
+        <div className="py-8">
+          <Carousel projects={projects} options={OPTIONS} />
         </div>
-      </div>
-    </section>
+      </SectionCardLayout>
+    </div>
   );
 }
