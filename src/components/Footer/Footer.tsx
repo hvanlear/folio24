@@ -22,6 +22,7 @@ export default function Footer() {
           containerHeight="h-64"
           tickerAlign="end"
           tornEdgeVariant="footer"
+          isDark
         />
       </section>
     </>
