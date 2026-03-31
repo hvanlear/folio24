@@ -33,7 +33,7 @@ export default function WorkAnimation() {
         marginTop: "-6rem",
       }}
     >
-      <div className="h-full relative rounded-tl-[clamp(1.5rem,5vw,5rem)] rounded-tr-[clamp(1.5rem,5vw,5rem)] bg-white flex items-center overflow-hidden">
+      <div className="h-full relative rounded-tl-[clamp(1.5rem,5vw,5rem)] rounded-tr-[clamp(1.5rem,5vw,5rem)] bg-white border-x-2 border-t-2 border-stone-600 flex items-center overflow-hidden">
         <div className="h-full w-full flex items-center">
           <motion.div
             className="absolute text-stone-950 font-bold z-0"

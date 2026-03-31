@@ -20,8 +20,8 @@ export default function TimeDisplay() {
   if (!mounted || !time) {
     return (
       <div>
-        <div className="text-sm font-bold uppercase tracking-wide">--:--</div>
-        <div className="text-xs text-stone-400 uppercase tracking-wide mt-1">
+        <div className="text-sm font-bold uppercase tracking-wide text-stone-950">--:--</div>
+        <div className="text-xs text-stone-600 uppercase tracking-wide mt-1">
           Loading...
         </div>
       </div>
@@ -44,10 +44,10 @@ export default function TimeDisplay() {
 
   return (
     <div>
-      <div className="text-sm font-bold uppercase tracking-wide h-[1.75rem] flex items-center">
+      <div className="text-sm font-bold uppercase tracking-wide h-[1.75rem] flex items-center text-stone-950">
         {hourStr}<span className="animate-blink">:</span>{minuteStr} {period}
       </div>
-      <div className="text-xs text-stone-400 uppercase tracking-wide mt-1">
+      <div className="text-xs text-stone-600 uppercase tracking-wide mt-1">
         {formattedDate}
       </div>
     </div>

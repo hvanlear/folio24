@@ -11,7 +11,7 @@ export default function WelcomeLinks() {
           <li>
             <a
               target="_blank"
-              className="text-h3-clamp font-bold hover:text-blue-500 "
+              className="text-h3-clamp font-bold text-stone-950 hover:text-blue-500 "
               href="/docs/Hunter-Van-Lear-Resume.pdf"
             >
               Resume
@@ -19,7 +19,7 @@ export default function WelcomeLinks() {
           </li>
           <li>
             <a
-              className="text-h3-clamp font-bold hover:text-blue-500 "
+              className="text-h3-clamp font-bold text-stone-950 hover:text-blue-500 "
               href="/contact"
             >
               Contact
