@@ -54,9 +54,9 @@ export default function Hero() {
           animate: { y: 30, opacity: 1 },
           transition: { duration: 0.8, ease: "easeOut" },
         }}
-        innerClassName="3xl:w-[55%] 2xl:min-h-[89vh] md:min-h-[50rem]"
+        innerClassName="3xl:w-[55%] 2xl:min-h-[80vh] md:min-h-[40rem]"
       >
-        <div className="md:p-24 p-12 flex flex-col gap-8">
+        <div className="md:p-24 p-12 flex flex-col gap-4">
           <h2 className="text-stone-950 text-h2-clamp">
             I&apos;m Hunter Van Lear
           </h2>

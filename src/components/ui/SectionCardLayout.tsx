@@ -9,6 +9,7 @@ interface SectionCardLayoutProps {
   headingMotionProps: Omit<ComponentProps<typeof motion.div>, "className">;
   children: ReactNode;
   headingExtra?: ReactNode;
+  headingAlign?: "left" | "right";
   innerClassName?: string;
   cardClassName?: string;
 }
@@ -18,13 +19,14 @@ export default function SectionCardLayout({
   headingMotionProps,
   children,
   headingExtra,
+  headingAlign = "left",
   innerClassName,
   cardClassName,
 }: SectionCardLayoutProps) {
   return (
     <div className="flex w-full justify-center relative isolate">
       <div className={cn("w-full flex items-center flex-col", innerClassName)}>
-        <motion.div className="-z-10 pl-4 w-full flex items-end gap-2" {...headingMotionProps}>
+        <motion.div className={cn("-z-10 w-full flex items-end gap-2", headingAlign === "right" ? "justify-end pr-4" : "pl-4")} {...headingMotionProps}>
           <h1 className="leading-none text-30xl tracking-tighter text-stone-950 font-bold">
             {heading}
           </h1>

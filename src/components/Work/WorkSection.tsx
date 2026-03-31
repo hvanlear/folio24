@@ -26,6 +26,7 @@ export default function WorkAnimation() {
     <div ref={ref} className="mt-12">
       <SectionCardLayout
         heading="Work"
+        headingAlign="right"
         headingMotionProps={{
           style: { y: wordY },
           initial: { y: -100, opacity: 0 },
